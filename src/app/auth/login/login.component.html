@@ -1,0 +1,5 @@
+<div *ngIf="isloggedOut$ | async"><button class="btn btn-primary" (click)="onLogin()" >Login</button>
+</div>
+<div *ngIf="isloggedIn$ | async">
+<button class="btn btn-danger" (click)="onLogout()" >Logout</button>
+</div>
