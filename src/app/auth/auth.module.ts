@@ -8,6 +8,7 @@ import * as fromAuth from './auth.reducer';
 import { AuthGuard } from './auth.guard';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './auth.effects';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
 @NgModule({
 imports: [
   CommonModule,
+  ReactiveFormsModule,
   RouterModule.forChild(routes),
   StoreModule.forFeature(fromAuth.authFeatureKey, fromAuth.authreducer),
   EffectsModule.forFeature([AuthEffects])

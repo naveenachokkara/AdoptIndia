@@ -11,6 +11,7 @@ import { isloggedIn, isloggedOut } from '../auth.selectors';
 import { Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,14 +19,17 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService , private store: Store<AppState>, private router: Router) { }
+
+  constructor(private authService: AuthService ,
+              private store: Store<AppState>,
+              private router: Router,
+              private formbuilder: FormBuilder) { }
  username = 'jyothimamidi@gmail.com';
  password = '123456';
 
  isloggedIn$ : Observable<boolean>;
  isloggedOut$ : Observable<boolean>;
   ngOnInit() {
-
     this.isloggedIn$ = this.store.
       select(isloggedIn);
 
