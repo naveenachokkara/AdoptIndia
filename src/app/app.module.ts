@@ -4,7 +4,10 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
-import {RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import {
+  MatGridListModule
+} from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -22,7 +25,7 @@ const appRoutes: Routes = [
   {
     path: '**',
     redirectTo: '/'
-}
+  }
 ];
 @NgModule({
   declarations: [
@@ -42,7 +45,8 @@ const appRoutes: Routes = [
     }),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-  //  StoreModule.forRoot(reducers),
+    //  StoreModule.forRoot(reducers),
+    MatGridListModule
   ],
   providers: [
   ],

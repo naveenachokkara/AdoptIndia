@@ -1,0 +1,10 @@
+mat-grid-tile {
+  background: lightblue;
+}
+
+/* :mat-grid-list ::ng-deep mat-grid-tile.register{
+  border: 1px solid;
+  margin: 25%;
+} */
+
+
