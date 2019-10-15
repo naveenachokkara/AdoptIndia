@@ -14,9 +14,13 @@
 
 
 :host {
-  display: flex;
+
+  display: inline-block;
+    justify-content: center;
+    margin: 13% 27%;
+  /* display: flex;
   justify-content: center;
-  margin: 100px 0px;
+  margin: 100px 0px; */
 }
 
 .mat-form-field {
@@ -61,5 +65,24 @@ width: 15px !important;
 }
 .loginbtn{
   padding: 15px;color: white;
+}
+.footerdiv{
+  margin-top: 16%;
+  display: flex;
+}
+.footercontent {
+  font-size: 12px;
+  margin-right: 15px;
+  color:#757575
+}
+:host ::ng-deep .mat-checkbox-inner-container{
+  height: 12px !important;
+  width: 12px !important;
+}
+:host ::ng-deep .mat-checkbox-label{
+  margin-top: 4px;
+    font-size: 11px;
+    color: #A5A5A5;
+
 }
 
