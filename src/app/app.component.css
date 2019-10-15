@@ -40,7 +40,11 @@ mat-card-actions{
   background-color: transparent;
   color: white;
   padding: 7px;
-  width: 79px;
-  border-radius: 5px;
+  width: 100px;
+  border-radius: 4px;
+  font-size: 13px;
 }
 
+.login-btn:focus{
+  outline:none !important;
+  }
