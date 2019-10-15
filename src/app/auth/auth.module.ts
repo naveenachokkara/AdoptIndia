@@ -1,6 +1,5 @@
 import { NgModule , ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
 import { Routes, RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
@@ -17,9 +16,12 @@ import {
   MatDividerModule, MatSlideToggleModule, MatListModule
 } from '@angular/material';
 
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-{path: '', component: LoginComponent},
+{path: '', component: RegisterComponent},
+{path: 'register', component: RegisterComponent},
 {path: 'login', component: LoginComponent}
 ];
 @NgModule({
@@ -35,8 +37,8 @@ imports: [
   StoreModule.forFeature(fromAuth.authFeatureKey, fromAuth.authreducer),
   EffectsModule.forFeature([AuthEffects])
 ],
-declarations: [LoginComponent],
-exports: [LoginComponent]
+declarations: [LoginComponent, RegisterComponent],
+exports: [RegisterComponent]
 })
 
 export class AuthModule {
