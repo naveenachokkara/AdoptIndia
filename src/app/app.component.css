@@ -19,7 +19,7 @@ mat-grid-tile {
   margin-top: 15%;
 }
 .sideinfo-title{
-  font-size: 14px;
+  font-size: 24px;
   color: white;
   text-align: left;
   vertical-align: center;
@@ -28,8 +28,8 @@ mat-grid-tile {
 .content{
   color: white;
   text-align: left;
-  font-size: 10px;
-  margin: 5%;
+  font-size: 11px;
+  margin: 14% 0 9% 5%;
   width: 305px;
 }
 mat-card-actions{
