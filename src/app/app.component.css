@@ -13,3 +13,34 @@ mat-grid-tile {
   background-image: url('../assets/bgimage.jpg');
 }
 
+.sideinfo{
+  padding: 25%;
+}
+.sideinfo-title{
+  font-size: 14px;
+  color: white;
+  text-align: left;
+  vertical-align: center;
+  margin: 5%;
+}
+.content{
+  color: white;
+  text-align: left;
+  font-size: 10px;
+  margin: 5%;
+  width: 305px;
+}
+mat-card-actions{
+  margin: 5%;
+}
+.mat-button.mat-primary .mat-button-focus-overlay {
+  background-color: transparent;
+}
+.signup-btn{
+  background-color: transparent;
+  color: white;
+  padding: 7px;
+  width: 79px;
+  border-radius: 5px;
+}
+
