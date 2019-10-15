@@ -12,6 +12,7 @@
   width: 100%;
 }
 
+
 :host {
   display: flex;
   justify-content: center;
@@ -27,6 +28,7 @@ mat-card-title,
 mat-card-content {
   /* display: flex; */
   justify-content: center;
+  font-weight: 0 !important;
 }
 
 .error {
@@ -38,11 +40,26 @@ mat-card-content {
 
 .button {
   display: flex;
-  /* justify-content: flex-end; */
   background-color: #548BC8;
-  /* width: 73px; */
   float: right;
+  width:33%;
+  border-radius: 3px;
 }
 .logindiv{
-  height: 400px;
+  height: 450px;
+  margin-top: -20px;
 }
+.mat-radio-outer-circle{
+height: 15px !important;
+width: 15px !important;
+}
+.mainheader{
+  font-size: 24px;color:#757575;font-weight: 400;margin-top: 8%;
+}
+.subheader{
+  font-size: 11px;color:#A1A1A1;font-weight: 400
+}
+.loginbtn{
+  padding: 15px;color: white;
+}
+

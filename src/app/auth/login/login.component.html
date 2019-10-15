@@ -26,20 +26,20 @@
 </div> -->
 
 <mat-card class="logindiv">
-  <mat-card-title style="font-size: 16px;">Welcome to AdoptIndia.</mat-card-title>
-  <mat-card-title style="font-size: 10px;">Create your account by filling the form bellow.</mat-card-title>
+  <mat-card-title  class="mainheader">Welcome to AdoptIndia.</mat-card-title>
+  <mat-card-title  class="subheader">Create your account by filling the form bellow.</mat-card-title>
 <mat-card-content>
   <br><br><br>
-<form [formGroup]="loginForm" (ngSubmit)="submit()">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 <p>
-  <mat-form-field>
+  <mat-form-field style="font-size: 12px;">
     <input type="text" matInput placeholder="Email" formControlName="Email">
   </mat-form-field>
 </p>
 
 <p>
-  <mat-form-field>
-    <input type="password" matInput placeholder="Password" formControlName="password">
+  <mat-form-field style="font-size: 12px;">
+    <input type="password"  matInput placeholder="Password" formControlName="password">
   </mat-form-field>
 </p>
 <!--
@@ -49,8 +49,9 @@
 <div>
     <mat-radio-button value="value1">Remember Me</mat-radio-button>
 </div>
+<br><br>
 <div class="button">
-  <button type="submit" mat-button>Login</button>
+  <button type="submit" mat-button><span class="loginbtn" >Login</span></button>
 </div>
 
 </form>

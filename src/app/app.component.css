@@ -8,8 +8,9 @@ mat-grid-tile {
   margin: 25%;
 } */
 .maindiv {
-  background-color: blue;
-
-  background-image: url('../assets/bgimage.jpg');
+  background-image: url('../assets/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
 }
 
