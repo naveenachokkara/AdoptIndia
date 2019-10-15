@@ -15,12 +15,13 @@ import {
   , MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatProgressSpinnerModule, MatSnackBarModule, MatDialogModule, MatMenuModule,
   MatDividerModule, MatSlideToggleModule, MatListModule
 } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-{path: '', component: LoginComponent},
+{path: '', component: RegisterComponent},
 {path: 'register', component: RegisterComponent},
 {path: 'login', component: LoginComponent}
 ];
@@ -33,6 +34,7 @@ imports: [
     MatNativeDateModule, MatProgressSpinnerModule, MatSnackBarModule, MatDialogModule,
     MatMenuModule, MatDividerModule, MatSlideToggleModule, MatListModule,
       ReactiveFormsModule,
+      BrowserAnimationsModule,
   RouterModule.forChild(routes),
   StoreModule.forFeature(fromAuth.authFeatureKey, fromAuth.authreducer),
   EffectsModule.forFeature([AuthEffects])
