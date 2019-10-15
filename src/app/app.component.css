@@ -16,6 +16,7 @@ mat-grid-tile {
 
 .sideinfo{
   padding: 25%;
+  margin-top: 15%;
 }
 .sideinfo-title{
   font-size: 24px;
@@ -34,10 +35,8 @@ mat-grid-tile {
 mat-card-actions{
   margin: 5%;
 }
-.mat-button.mat-primary .mat-button-focus-overlay {
-  background-color: transparent;
-}
-.signup-btn{
+
+.login-btn{
   background-color: transparent;
   color: white;
   padding: 7px;
