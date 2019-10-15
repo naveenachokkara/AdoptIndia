@@ -9,6 +9,7 @@ import { noop, Observable } from 'rxjs';
 import { TouchSequence } from 'selenium-webdriver';
 import { isloggedIn, isloggedOut } from '../auth.selectors';
 import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 
 
 
@@ -18,12 +19,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  loginForm: FormGroup;
 
   constructor(private authService: AuthService ,
               private store: Store<AppState>,
-              private router: Router,
-              private formbuilder: FormBuilder) { }
+              private router: Router) { }
  username = 'jyothimamidi@gmail.com';
  password = '123456';
 

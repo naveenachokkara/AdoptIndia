@@ -1,5 +1,81 @@
-<div *ngIf="isloggedOut$ | async"><button class="btn btn-primary" (click)="onLogin()" >Login</button>
+<!-- <div *ngIf="isloggedOut$ | async"><button class="btn btn-primary" (click)="onLogin()" >Login</button>
 </div>
 <div *ngIf="isloggedIn$ | async">
 <button class="btn btn-danger" (click)="onLogout()" >Logout</button>
+</div> -->
+<!-- <div class="col-sm-12">
+<mat-card>
+    <mat-card-title>Welcome To Adoptndia</mat-card-title>
+    <mat-card-title style="font-size:12px" >Create your account by filling the form bellow.</mat-card-title>
+    <br><br>
+    <mat-card-content>
+        <div class="example-container">
+            <mat-form-field>
+              <input matInput placeholder="Email" formControlName="email">
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput type="password" placeholder="Password" formControlName="password">
+            </mat-form-field>
+
+            <button align="end" [disabled]="!loginForm.valid" mat-raised-button color="primary" mat-button>Sign In</button>
+          </div>
+    </mat-card-content>
+
+</mat-card>
+</div> -->
+
+<div style="background-color: blue;">
+<mat-card>
+  <!-- Title of an Card -->
+  <mat-card-title>
+      Angular Material Component With Angular 5
+  </mat-card-title>
+
+  <!-- Actual content starts from here -->
+  <mat-card-content>
+      <form [formGroup]="regiForm" (ngSubmit)="onFormSubmit(regiForm.value)">
+          <table>
+              <tr>
+                  <td colspan="2">
+                      <mat-form-field class="demo-full-width">
+                          <input formControlName="Email" matInput placeholder="Email" >
+                          <mat-hint>use like : demo@demo.com</mat-hint>
+                          <mat-error>
+                              <!-- <span *ngIf="!regiForm.get('Email').valid && regiForm.get('Email').touched">Enter proper Email !!!</span> -->
+                          </mat-error>
+                      </mat-form-field>
+                  </td>
+              </tr>
+              <tr>
+                  <td colspan="2">
+                      <mat-form-field class="demo-full-width">
+                          <input formControlName="password" matInput placeholder="password" class="form-control">
+                      </mat-form-field>
+                      <mat-error>
+                          <!-- <span *ngIf="!regiForm.get('LastName').valid && regiForm.get('LastName').touched">Please enter Last Name !!!</span> -->
+                      </mat-error>
+                  </td>
+              </tr>
+
+              <!-- <tr>
+                  <td colspan="2">
+                      <mat-slide-toggle formControlName="IsAccepted" (change)="onChange($event)">Accept Terms & Conditions</mat-slide-toggle>
+                  </td>
+              </tr> -->
+              <tr>
+                  <td colspan="2" class="content-center">
+                      <button mat-raised-button color="accent" [disabled]="!regiForm.valid">Submit</button>
+                  </td>
+              </tr>
+              <tr>
+                  <td></td>
+              </tr>
+          </table>
+      </form>
+  </mat-card-content>
+</mat-card>
 </div>
+
+
+

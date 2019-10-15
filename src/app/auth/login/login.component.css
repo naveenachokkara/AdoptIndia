@@ -3,3 +3,11 @@
   background-image: linear-gradient(#6D6027,#D3CBB8);
 
 }
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}

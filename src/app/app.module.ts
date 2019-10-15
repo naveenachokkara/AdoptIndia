@@ -6,7 +6,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import {
-  MatGridListModule
+  MatGridListModule, MatCardModule
 } from '@angular/material';
 
 
@@ -34,6 +34,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    MatCardModule,
     RouterModule.forRoot(appRoutes),
     AuthModule.forRoot(),
     StoreModule.forRoot(reducers, {

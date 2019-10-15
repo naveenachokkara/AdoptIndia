@@ -9,6 +9,13 @@ import { AuthGuard } from './auth.guard';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './auth.effects';
 import { ReactiveFormsModule } from '@angular/forms';
+import {
+  MatButtonModule, MatCheckboxModule,
+  MatFormFieldModule, MatInputModule,
+  MatTableModule, MatToolbarModule, MatIconModule, MatTabsModule, MatExpansionModule, MatGridListModule, MatCardModule, MatRadioModule
+  , MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatProgressSpinnerModule, MatSnackBarModule, MatDialogModule, MatMenuModule,
+  MatDividerModule, MatSlideToggleModule, MatListModule
+} from '@angular/material';
 
 
 const routes: Routes = [
@@ -18,7 +25,12 @@ const routes: Routes = [
 @NgModule({
 imports: [
   CommonModule,
-  ReactiveFormsModule,
+  MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule,
+    MatTableModule, MatToolbarModule, MatIconModule, MatTabsModule, MatExpansionModule,
+    MatCardModule, MatGridListModule, MatRadioModule, MatSelectModule, MatDatepickerModule,
+    MatNativeDateModule, MatProgressSpinnerModule, MatSnackBarModule, MatDialogModule,
+    MatMenuModule, MatDividerModule, MatSlideToggleModule, MatListModule,
+      ReactiveFormsModule,
   RouterModule.forChild(routes),
   StoreModule.forFeature(fromAuth.authFeatureKey, fromAuth.authreducer),
   EffectsModule.forFeature([AuthEffects])
