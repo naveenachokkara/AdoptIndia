@@ -62,5 +62,7 @@ export class LoginComponent implements OnInit {
     this.store.dispatch(new Logout());
     this.router.navigateByUrl('login');
   }
-
+  onSubmit() {
+this.router.navigateByUrl('');
+  }
 }
