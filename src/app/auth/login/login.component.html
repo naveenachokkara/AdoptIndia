@@ -31,28 +31,31 @@
 <mat-card-content>
   <br><br><br>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-<p>
+<div class="form-group">
   <mat-form-field style="font-size: 12px;">
-    <input type="text" matInput placeholder="Email" formControlName="Email">
+    <input type="text" matInput placeholder="Email" formControlName="email">
+    <span *ngIf="loginForm.get('email').valid && loginForm.get('email').touched" class="help-block">
+      Please enter valid username
+    </span>
   </mat-form-field>
-</p>
+</div>
 
-<p>
+<div class="form-group">
   <mat-form-field style="font-size: 12px;">
     <input type="password"  matInput placeholder="Password" formControlName="password">
   </mat-form-field>
-</p>
+</div>
 <!--
 <p *ngIf="error" class="error">
   {{ error }}
 </p> -->
-<div>
-    <mat-checkbox value="value1">Remember Me</mat-checkbox>
+<div class="form-group">
+    <mat-checkbox value="value1" formControlName="remember">Remember Me</mat-checkbox>
 </div>
 <br><br>
 
 <div class="button">
-  <button type="submit" mat-button><span class="loginbtn" >Login</span></button>
+  <button type="submit" [disabled]="!loginForm.valid" mat-button><span class="loginbtn" >Login</span></button>
 </div>
 
 
