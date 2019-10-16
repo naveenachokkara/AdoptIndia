@@ -17,6 +17,8 @@ import { environment } from '../environments/environment';
 import { AuthModule } from './auth/auth.module';
 import { AuthGuard } from './auth/auth.guard';
 import { EffectsModule } from '@ngrx/effects';
+import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './home/dashboard/dashboard/dashboard.component';
 
 const appRoutes: Routes = [
   // {
@@ -31,7 +33,9 @@ const appRoutes: Routes = [
 ];
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
