@@ -40,9 +40,8 @@ import { AuthRoutingModule } from './auth.routing.module';
   ],
   declarations: [LoginComponent, RegisterComponent, AuthComponent],
   providers: [
-    AuthService],
-  exports: [AuthComponent],
-  entryComponents: [AuthComponent]
+    AuthService]
+//  exports: [AuthComponent]
 })
 
 export class AuthModule {
