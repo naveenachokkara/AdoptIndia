@@ -9,15 +9,15 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'AdoptIndia';
   constructor(public router: Router) { }
-  goToLogin() {
-    this.router.navigateByUrl('login').then(info => {
-      if (info) {
-        console.log('Navigation is successful!');
-      } else {
-        console.log('Navigation has failed!');
-      }
-    }).catch(e => {
-      console.log(e);
-    });
-  }
+  // goToLogin() {
+  //   this.router.navigateByUrl('login').then(info => {
+  //     if (info) {
+  //       console.log('Navigation is successful!');
+  //     } else {
+  //       console.log('Navigation has failed!');
+  //     }
+  //   }).catch(e => {
+  //     console.log(e);
+  //   });
+  // }
 }

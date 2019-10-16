@@ -19,6 +19,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { AuthComponent } from './auth.component';
+import { AuthRoutingModule } from './auth.routing.module';
+
+
 
 @NgModule({
   imports: [
@@ -30,14 +34,15 @@ import { LoginComponent } from './login/login.component';
     MatMenuModule, MatDividerModule, MatSlideToggleModule, MatListModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    AuthRoutingModule,
     StoreModule.forFeature(fromAuth.authFeatureKey, fromAuth.authreducer),
     EffectsModule.forFeature([AuthEffects])
   ],
-  declarations: [LoginComponent, RegisterComponent],
+  declarations: [LoginComponent, RegisterComponent, AuthComponent],
   providers: [
     AuthService],
-  exports: [RegisterComponent],
-  entryComponents: [LoginComponent, RegisterComponent]
+  exports: [AuthComponent],
+  entryComponents: [AuthComponent]
 })
 
 export class AuthModule {

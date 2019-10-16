@@ -1,0 +1,50 @@
+
+mat-grid-tile {
+  background: lightblue;
+}
+
+/* :mat-grid-list ::ng-deep mat-grid-tile.register{
+  border: 1px solid;
+  margin: 25%;
+} */
+.maindiv {
+  background-image: url('../../assets/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.sideinfo{
+  padding: 24%;
+  margin-top: 7%;
+}
+.sideinfo-title{
+  font-size: 24px;
+  color: white;
+  text-align: left;
+  vertical-align: center;
+  margin: 5%;
+}
+.content{
+  color: white;
+  text-align: left;
+  font-size: 11px;
+  margin: 14% 0 9% 5%;
+  width: 305px;
+}
+mat-card-actions{
+  margin: 5%;
+}
+
+.login-btn{
+  background-color: transparent;
+  color: white;
+  padding: 7px;
+  width: 100px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.login-btn:focus{
+  outline:none !important;
+  }

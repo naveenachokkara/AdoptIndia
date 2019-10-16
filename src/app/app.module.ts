@@ -38,8 +38,9 @@ import { AuthModule } from './auth/auth.module';
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     MatGridListModule,
     BrowserAnimationsModule,
-    AuthModule,
-    AppRoutingModule  ],
+    AppRoutingModule,
+    AuthModule
+      ],
   providers: [
   ],
   bootstrap: [AppComponent]
