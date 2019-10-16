@@ -1,4 +1,4 @@
-import { NgModule , ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from './auth.service';
 import { Routes, RouterModule } from '@angular/router';
@@ -20,34 +20,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
-const routes: Routes = [
-{path: '', component: RegisterComponent},
-{path: 'register', component: RegisterComponent},
-{path: 'login', component: LoginComponent}
-];
 @NgModule({
-imports: [
-  CommonModule,
-  MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule,
+  imports: [
+    CommonModule,
+    MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule,
     MatTableModule, MatToolbarModule, MatIconModule, MatTabsModule, MatExpansionModule,
     MatCardModule, MatGridListModule, MatRadioModule, MatSelectModule, MatDatepickerModule,
     MatNativeDateModule, MatProgressSpinnerModule, MatSnackBarModule, MatDialogModule,
     MatMenuModule, MatDividerModule, MatSlideToggleModule, MatListModule,
-      ReactiveFormsModule,
-      BrowserAnimationsModule,
-  RouterModule.forChild(routes),
-  StoreModule.forFeature(fromAuth.authFeatureKey, fromAuth.authreducer),
-  EffectsModule.forFeature([AuthEffects])
-],
-declarations: [LoginComponent, RegisterComponent],
-exports: [RegisterComponent]
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    StoreModule.forFeature(fromAuth.authFeatureKey, fromAuth.authreducer),
+    EffectsModule.forFeature([AuthEffects])
+  ],
+  declarations: [LoginComponent, RegisterComponent],
+  providers: [
+    AuthService],
+  exports: [RegisterComponent],
+  entryComponents: [LoginComponent, RegisterComponent]
 })
 
 export class AuthModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule : AuthModule,
-      providers: [AuthService, AuthGuard]
-    };
-  }
 }

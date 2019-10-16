@@ -14,35 +14,19 @@ import {
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-import { AuthModule } from './auth/auth.module';
-import { AuthGuard } from './auth/auth.guard';
 import { EffectsModule } from '@ngrx/effects';
 import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './home/dashboard/dashboard/dashboard.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AuthModule } from './auth/auth.module';
 
-const appRoutes: Routes = [
-  // {
-  // path : "/dashboard",
-  // loadChildren :"./Main/dashboard.module#dashboardModule",
-  // canActivate:[AuthGuard]
-  // },
-  {
-    path: '**',
-    redirectTo: '/'
-  }
-];
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    DashboardComponent
-  ],
+    HomeComponent  ],
   imports: [
     BrowserModule,
     HttpClientModule,
     MatCardModule,
-    RouterModule.forRoot(appRoutes),
-    AuthModule.forRoot(),
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
@@ -52,10 +36,10 @@ const appRoutes: Routes = [
     }),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    //  StoreModule.forRoot(reducers),
     MatGridListModule,
-    BrowserAnimationsModule
-  ],
+    BrowserAnimationsModule,
+    AuthModule,
+    AppRoutingModule  ],
   providers: [
   ],
   bootstrap: [AppComponent]
