@@ -15,20 +15,31 @@ import { noop } from 'rxjs';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
-  constructor(private authService : AuthService, private store: Store<AppState> , private formBuilder: FormBuilder ) { }
-
+  constructor(private authService: AuthService, private store: Store<AppState>, private formBuilder: FormBuilder) { }
+  validationMessages = {
+    email: [
+      { type: 'required', message: 'Email is required' },
+      { type: 'email', message: 'Enter a valid Email' }
+    ],
+    password: [
+      { type: 'required', message: 'Password is required' },
+      { type: 'minlength', message: 'Enter min length of 6 chars' }
+    ],
+    username: [
+      { type: 'required', message: 'Username is required' }
+    ]
+  };
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, Validators.required),
+      password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
       username: new FormControl(null, Validators.required)
     });
   }
 
-  onSubmit(){
+  onSubmit() {
 
     console.log(this.registerForm);
-
     this.authService.Login(this.registerForm.value.email, this.registerForm.value.password).
       pipe(
         tap(

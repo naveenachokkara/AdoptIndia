@@ -1,40 +1,53 @@
 <mat-card class="logindiv">
-    <mat-card-title  class="mainheader">Welcome to AdoptIndia.</mat-card-title>
-    <mat-card-title  class="subheader">Create your account by filling the form bellow.</mat-card-title>
-<mat-card-content>
-  <br><br>
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-<p>
-  <mat-form-field style="font-size: 12px;">
-    <input type="text" matInput placeholder="Email" formControlName="email">
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field style="font-size: 12px;">
-    <input type="text" matInput placeholder="Username" formControlName="username">
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field style="font-size: 12px;">
-    <input type="password"  matInput placeholder="Password" formControlName="password">
-  </mat-form-field>
-</p>
-<!--
-<p *ngIf="error" class="error">
-  {{ error }}
-</p> -->
-<br><br>
-<div class="button">
-  <button type="submit" mat-button><span class="loginbtn" >Signup</span></button>
-</div>
-
-</form>
-</mat-card-content>
+  <mat-card-title class="mainheader">Welcome to AdoptIndia.</mat-card-title>
+  <mat-card-title class="subheader">Create your account by filling the form bellow.</mat-card-title>
+  <mat-card-content>
+    <br><br>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <p>
+        <mat-form-field style="font-size: 12px;">
+          <input type="text" matInput placeholder="Email" formControlName="email" required>
+        </mat-form-field>
+      </p>
+        <div fxLayoutAlign="center" *ngFor="let validation of validationMessages.email">
+            <mat-error
+              *ngIf="registerForm.get('email').hasError(validation.type) && (registerForm.get('email').dirty && registerForm.get('email').touched)">
+              {{ validation?.message }}
+            </mat-error>
+          </div>
+      <p>
+        <mat-form-field style="font-size: 12px;">
+          <input type="text" matInput placeholder="Username" formControlName="username" required>
+        </mat-form-field>
+      </p>
+      <div fxLayoutAlign="center" *ngFor="let validation of validationMessages.username">
+        <mat-error
+          *ngIf="registerForm.get('username').hasError(validation.type) && (registerForm.get('username').dirty && registerForm.get('username').touched)">
+          {{ validation?.message }}
+        </mat-error>
+      </div>
+      <p>
+        <mat-form-field style="font-size: 12px;">
+          <input type="password" matInput placeholder="Password" formControlName="password" required>
+        </mat-form-field>
+      </p>
+      <div fxLayoutAlign="center" *ngFor="let validation of validationMessages.password">
+          <mat-error
+            *ngIf="registerForm.get('password').hasError(validation.type) && (registerForm.get('password').dirty && registerForm.get('password').touched)">
+            {{ validation?.message }}
+          </mat-error>
+        </div>
+      <br><br>
+      <div class="button">
+        <button type="submit" mat-button><span class="loginbtn">Signup</span></button>
+      </div>
+    </form>
+  </mat-card-content>
 </mat-card>
 
 <div class="footerdiv">
-    <p class="footercontent">&copy; 2019 AdoptIndia.org</p>
-    <p class="footercontent">Terms</p>
-    <p class="footercontent">Privacy</p>
-    <p  class="footercontent" style="font-weight: 1000;">...</p>
-  </div>
+  <p class="footercontent">&copy; 2019 AdoptIndia.org</p>
+  <p class="footercontent">Terms</p>
+  <p class="footercontent">Privacy</p>
+  <p class="footercontent" style="font-weight: 1000;">...</p>
+</div>
