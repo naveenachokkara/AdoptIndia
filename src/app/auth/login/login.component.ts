@@ -27,6 +27,17 @@ export class LoginComponent implements OnInit {
     private store: Store<AppState>,
     private router: Router,
     private formBuilder: FormBuilder) { }
+
+    validationMessages = {
+      email: [
+        { type: 'required', message: 'Email is required' },
+        { type: 'email', message: 'Enter a valid Email' }
+      ],
+      password: [
+        { type: 'required', message: 'Password is required' },
+        { type: 'minlength', message: 'Enter min length of 6 chars' }
+      ]
+    };
   username = 'jyothimamidi@gmail.com';
   password = '123456';
 
@@ -35,7 +46,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, Validators.required),
+      password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
       remember: new FormControl(false)
     });
 

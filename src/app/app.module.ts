@@ -15,14 +15,14 @@ import {
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent  ],
+    AppComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -39,7 +39,8 @@ import { AuthModule } from './auth/auth.module';
     MatGridListModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    AuthModule
+    AuthModule,
+    HomeModule
       ],
   providers: [
   ],

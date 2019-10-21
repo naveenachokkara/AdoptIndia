@@ -33,18 +33,32 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 <div class="form-group">
   <mat-form-field style="font-size: 12px;">
-    <input type="text" matInput placeholder="Email" formControlName="email">
+    <input type="text" matInput placeholder="Email" formControlName="email" required>
     <!-- <span *ngIf="loginForm.get('email').valid && loginForm.get('email').touched" class="help-block">
       Please enter valid username
     </span> -->
   </mat-form-field>
+  <div fxLayoutAlign="center" *ngFor="let validation of validationMessages.email">
+    <mat-error
+      *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty && loginForm.get('email').touched)">
+      {{ validation?.message }}
+    </mat-error>
+  </div>
 </div>
+
 
 <div class="form-group">
   <mat-form-field style="font-size: 12px;">
-    <input type="password"  matInput placeholder="Password" formControlName="password">
+    <input type="password"  matInput placeholder="Password" formControlName="password" required>
   </mat-form-field>
+  <div fxLayoutAlign="center" *ngFor="let validation of validationMessages.password">
+    <mat-error
+      *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty && loginForm.get('password').touched)">
+      {{ validation?.message }}
+    </mat-error>
+  </div>
 </div>
+
 <!--
 <p *ngIf="error" class="error">
   {{ error }}

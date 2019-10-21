@@ -4,22 +4,24 @@ import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { AuthModule } from '../auth/auth.module';
 import { AuthService } from '../auth/auth.service';
 import { AuthGuard } from '../auth/auth.guard';
+import { HomeComponent } from './home.component';
+import { MatToolbar, MatIcon, MatMenu, MatToolbarRow, MatToolbarModule, MatIconModule, MatMenuModule } from '@angular/material';
 
 
 const routes: Routes = [
-  {path: 'dashboard', component: DashboardComponent}
+  {path: '', component: HomeComponent}
 ];
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  declarations: [DashboardComponent],
+  imports: [MatToolbarModule , MatIconModule ,MatMenuModule, RouterModule.forChild(routes)],
+  declarations: [HomeComponent],
   providers: [],
-  exports: [DashboardComponent]
+  exports: [HomeComponent]
 })
 export class HomeModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule : HomeModule,
-      providers: []
-    };
-  }
+  // static forRoot(): ModuleWithProviders {
+  //   return {
+  //     ngModule : HomeModule,
+  //     providers: []
+  //   };
+  // }
 }
