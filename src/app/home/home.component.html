@@ -1,42 +1,21 @@
-<h1>hello</h1>
-<div>
-  kdjhfjdnfjds
+<div fxLayout="column">
+  <header>
+    <div class="header-main">
+      <div class="logo" fxFlex="15%">Logo</div>
+      <div class="header-left">
+        <svg class="profile header-left-common"></svg>
+        <div class="ring header-left-common"></div>
+        <div class="help header-left-common"></div>
+      </div>
+    </div>
+  </header>
+  <div class="container"
+  fxLayout
+  fxLayout.xs="column"
+  fxLayoutAlign="center"
+  fxLayoutGap="10px"
+  fxLayoutGap.xs="0">
+<div class="item item-1" fxFlex="15%">Item 1</div>
+<div class="item item-3" fxFlex>Item 3</div>
 </div>
-<div fxLayout="row" fxLayoutAlign="space-between">
-  shdgsdhkjsdhjsk
 </div>
-<mat-toolbar color="secondary">
-  <mat-toolbar-row>
-      <button mat-icon-button (click)="toggleSidenav.emit()">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <span> {{ 'APP_TOOLBAR_TITLE'}} </span>
-        <div fxFlex fxLayout fxLayoutAlign="flex-end">
-            <ul fxLayout fxLayoutGap="20px">
-                <li fxHide.xs>
-                    <button mat-icon-button>
-                      <mat-icon>settings</mat-icon>
-                    </button>
-                  </li>
-                  <li fxHide.xs>
-                      <button mat-icon-button>
-                        <mat-icon>help_outline</mat-icon>
-                      </button>
-                    </li>
-                    <li>
-                        <button mat-icon-button >
-                          <mat-icon>person_outline</mat-icon>
-                        </button>
-                        <mat-menu >
-                          <button mat-menu-item (click)="logout()">
-                            <mat-icon>exit_to_app</mat-icon>
-                            <span>Sign out</span>
-                          </button>
-                        </mat-menu>
-                      </li>
-            </ul>
-        </div>
-    </mat-toolbar-row>
-</mat-toolbar>
-<router-outlet></router-outlet>
-
