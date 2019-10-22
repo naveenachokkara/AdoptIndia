@@ -65,13 +65,13 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm);
 
     this.authService.Login(this.loginForm.value.email, this.loginForm.value.password).
-      pipe(
-        tap(
-          user => {
-            this.store.dispatch(new Login({ user }));
-          }
-        )
-      ).
+      // pipe(
+      //   tap(
+      //     user => {
+      //       this.store.dispatch(new Login({ user }));
+      //     }
+      //   )
+      // ).
       subscribe(
         noop,
         () => {

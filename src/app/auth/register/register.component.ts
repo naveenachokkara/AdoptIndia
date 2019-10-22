@@ -4,7 +4,7 @@ import { AuthService } from '../auth.service';
 import { tap } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/reducers';
-import { Login } from '../auth.actions';
+import { Login, Signup } from '../auth.actions';
 import { User } from 'src/app/model/user.model';
 import { noop } from 'rxjs';
 
@@ -41,13 +41,13 @@ export class RegisterComponent implements OnInit {
 
     console.log(this.registerForm);
     this.authService.Login(this.registerForm.value.email, this.registerForm.value.password).
-      pipe(
-        tap(
-          user => {
-            this.store.dispatch(new Login({ user }));
-          }
-        )
-      ).
+      // pipe(
+      //   tap(
+      //     user => {
+      //       this.store.dispatch(new Signup({ user }));
+      //     }
+      //   )
+      // ).
       subscribe(
         noop,
         () => {
@@ -55,7 +55,7 @@ export class RegisterComponent implements OnInit {
             id: '123445rffd',
             email: 'jyothimamidi@gmail.com'
           };
-          this.store.dispatch(new Login({ user }));
+          this.store.dispatch(new Signup({ user }));
           //  alert('please enter valid username or password');
         }
       );

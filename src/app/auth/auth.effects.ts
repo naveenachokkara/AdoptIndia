@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { Login, AuthActionTypes, Logout } from './auth.actions';
+import { Login, AuthActionTypes, Logout, Signup } from './auth.actions';
 import { tap } from 'rxjs/operators';
 import {  Router } from '@angular/router';
 import { defer } from 'rxjs';
@@ -33,6 +33,16 @@ export class AuthEffects {
     )
   );
 
+  @Effect({dispatch:false})
+  signup$ = this.actions$.pipe(
+    ofType<Signup>(AuthActionTypes.SignupAction),
+    tap(
+      ()=>{
+        this.router.navigateByUrl('/login');
+      }
+    )
+  )
+
   @Effect()
   init$ = defer(() => {
     const userData = localStorage.getItem('userData');
@@ -43,6 +53,7 @@ export class AuthEffects {
       return this.store.dispatch(new Logout());
     }
   });
+
 
   constructor(private actions$: Actions, private router: Router, private store: Store<AppState>) {}
 
