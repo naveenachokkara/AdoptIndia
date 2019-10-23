@@ -6,6 +6,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {
   MatGridListModule, MatCardModule
@@ -40,7 +41,8 @@ import { HomeModule } from './home/home.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     AuthModule,
-    HomeModule
+    HomeModule,
+    FlexLayoutModule
       ],
   providers: [
   ],
