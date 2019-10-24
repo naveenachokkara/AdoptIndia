@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {
-  MatGridListModule, MatCardModule
+  MatGridListModule, MatCardModule, MatSidenavModule
 } from '@angular/material';
 
 
@@ -19,6 +19,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
+import { MaterialModule } from 'src/material-module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HomeModule } from './home/home.module';
     BrowserModule,
     HttpClientModule,
     MatCardModule,
+    MatSidenavModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
@@ -42,10 +44,12 @@ import { HomeModule } from './home/home.module';
     AppRoutingModule,
     AuthModule,
     HomeModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MaterialModule
       ],
   providers: [
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [MatSidenavModule]
 })
 export class AppModule { }

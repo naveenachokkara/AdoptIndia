@@ -5,17 +5,29 @@ import { AuthModule } from '../auth/auth.module';
 import { AuthService } from '../auth/auth.service';
 import { AuthGuard } from '../auth/auth.guard';
 import { HomeComponent } from './home.component';
-import { MatToolbar, MatIcon, MatMenu, MatToolbarRow, MatToolbarModule, MatIconModule, MatMenuModule } from '@angular/material';
+import { MatToolbar, MatIcon,
+   MatMenu, MatToolbarRow, MatToolbarModule, MatIconModule, MatMenuModule, MatSidenavModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { CommonModule } from '@angular/common';
+import { MaterialModule } from '../../material-module';
 
 
 const routes: Routes = [
-  {path: '', component: HomeComponent}
+  { path: '', component: HomeComponent }
 ];
 @NgModule({
-  imports: [MatToolbarModule , MatIconModule ,MatMenuModule, RouterModule.forChild(routes)],
+  // tslint:disable-next-line: max-line-length
+  imports: [MatToolbarModule,
+    MaterialModule,
+    MatSidenavModule,
+    MatIconModule,
+    CommonModule,
+    MatMenuModule,
+    FlexLayoutModule,
+    RouterModule.forChild(routes)],
   declarations: [HomeComponent],
   providers: [],
-  exports: [HomeComponent]
+  exports: [MatSidenavModule,HomeComponent]
 })
 export class HomeModule {
   // static forRoot(): ModuleWithProviders {
