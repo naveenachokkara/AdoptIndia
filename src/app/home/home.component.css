@@ -57,7 +57,7 @@ header{
   color:blue; 
 }
 .nav,.sidenav, .sec2{
-  padding-top:20px;
+  /* padding-top:20px; */
   text-align:center
 }
 .content {
@@ -69,7 +69,11 @@ header{
   display: contents;
   background-color: lavenderblush;
   color:white;
-  text-transform: uppercas
+  text-transform: uppercase;
+}
+
+::ng-deep .mat-drawer-inner-container {
+  width: 100%; 
 }
 
 .active{
@@ -78,7 +82,7 @@ header{
 
 .sidenav-item{
     color: white;
-    font-size:20px; 
+    font-size: 10px; 
 }
 
 mat-icon{

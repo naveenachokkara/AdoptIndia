@@ -12,7 +12,7 @@
   <div class="bounds">
 
     <div class="content" fxLayout="row" fxFlexFill>
-      <div fxFlex="5" class="nav">
+      <div [fxFlex]="sidenavWidth" class="nav">
 
         <mat-sidenav #sidenav mode="side" class="sidenav" [ngStyle]="{ 'width.em': sidenavWidth }" opened="true"
           (mouseenter)="increase()" (mouseleave)="decrease()">
@@ -20,25 +20,25 @@
 
             <mat-list-item routerLink="1" routerLinkActive="active">
               <mat-icon mat-list-icon>link</mat-icon>
-              <div fxFlex="10"></div>
-              <div *ngIf="sidenavWidth > 6" class="sidenav-item">
-                <h5>Component 1</h5>
+              <!-- <div fxFlex="10"></div> -->
+              <div *ngIf="sidenavWidth > 4" class="sidenav-item">
+                <h5>Settings</h5>
               </div>
             </mat-list-item>
 
             <mat-list-item routerLink="2" routerLinkActive="active">
               <mat-icon mat-list-icon>face</mat-icon>
-              <div fxFlex="10"></div>
-              <div *ngIf="sidenavWidth > 6" class="sidenav-item">
-                <h5>Component 2</h5>
+              <!-- <div fxFlex="10"></div> -->
+              <div *ngIf="sidenavWidth > 4" class="sidenav-item">
+                <h5>Profile</h5>
               </div>
             </mat-list-item>
 
             <mat-list-item routerLink="3" routerLinkActive="active">
               <mat-icon mat-list-icon>home</mat-icon>
-              <div fxFlex="10"></div>
-              <div *ngIf="sidenavWidth > 6" class="sidenav-item">
-                <h5>Component 3</h5>
+              <!-- <div fxFlex="10"></div> -->
+              <div *ngIf="sidenavWidth > 4" class="sidenav-item">
+                <h5>Home</h5>
               </div>
             </mat-list-item>
 
