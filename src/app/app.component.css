@@ -7,6 +7,10 @@ mat-grid-tile {
   border: 1px solid;
   margin: 25%;
 } */
+.main {
+    height: 100%;
+}
+
 .maindiv {
   background-image: url('../assets/background.jpg');
   background-repeat: no-repeat;

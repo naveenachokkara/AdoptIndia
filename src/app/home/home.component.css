@@ -1,5 +1,5 @@
 header{
-  height:60px;
+  /* height:60px; */
   background-color:gray;
 }
 .header-main{
@@ -51,7 +51,7 @@ header{
 
 .bounds {
   background-color:#ddd;
-  height :800px;
+  /* height :800px; */
 }
 
 .nav {
@@ -61,7 +61,7 @@ header{
 
 .sec2 {
   background: lavender;
-  color:blue; 
+  color:blue;
 }
 .nav,.sidenav, .sec2{
   /* padding-top:20px; */
@@ -80,7 +80,7 @@ header{
 }
 
 ::ng-deep .mat-drawer-inner-container {
-  width: 100%; 
+  width: 100%;
 }
 
 .active{
@@ -89,9 +89,13 @@ header{
 
 .sidenav-item{
     color: white;
-    font-size: 10px; 
+    font-size: 10px;
 }
 
 mat-icon{
   color: white;
+}
+
+.apphome{
+  height: 100% !important;
 }

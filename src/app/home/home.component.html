@@ -1,7 +1,8 @@
-<div fxLayout="column">
-  <header>
+<div style='height:100%'>
+<div fxLayout="column" fxFlex >
+  <header fxFlex='8'>
     <div class="header-main">
-      <div class="logo" fxFlex="7%">Logo</div>
+      <div class="logo" fxFlex="7">Logo</div>
       <div class="header-left">
         <svg class="profile header-left-common"></svg>
         <div class="ring header-left-common"></div>
@@ -9,7 +10,7 @@
       </div>
     </div>
   </header>
-  <div class="bounds">
+  <div class="bounds" fxFlex='92'>
 
     <div class="content" fxLayout="row" fxFlexFill>
       <div [fxFlex]="sidenavWidth" class="nav">
@@ -47,10 +48,13 @@
 
       </div>
       <div fxFlex="95" class="sec2">
+
         <router-outlet></router-outlet>
+
       </div>
     </div>
 
   </div>
 
+</div>
 </div>
