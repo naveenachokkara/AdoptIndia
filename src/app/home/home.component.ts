@@ -6,18 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-show = true;
-sidenavWidth = 4;
+  show = true;
+  sidenavWidth = 4;
   constructor() { }
 
   ngOnInit() {
   }
 
-  increase(){
+  increase() {
     this.sidenavWidth = 18;
     console.log("increase sidenav width");
   }
-  decrease(){
+  decrease() {
     this.sidenavWidth = 4;
     console.log("decrease sidenav width");
   }
