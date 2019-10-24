@@ -1,3 +1,7 @@
 .map-component{
-  height: 300px;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    user-select: none;
 }

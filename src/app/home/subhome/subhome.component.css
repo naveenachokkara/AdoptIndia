@@ -3,10 +3,9 @@
   position: relative;
 } */
 
-app-mapview {
-  height: 100%;
-}
 
-.map {
-  height: 100vh;
+
+.map-wrapper{
+  height: 100%;
+    position: relative;
 }
