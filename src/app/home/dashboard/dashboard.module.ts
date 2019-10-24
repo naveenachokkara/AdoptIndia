@@ -5,8 +5,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MapviewComponent } from './mapview/mapview.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 const routes: Routes = [
-  {path: 'dashboard', component: DashboardComponent}
-  ];
+  { path: 'dashboard', component: DashboardComponent }
+];
 
 
 @NgModule({

@@ -10,7 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 import {
-  MatGridListModule, MatCardModule
+  MatGridListModule, MatCardModule, MatSidenavModule
 } from '@angular/material';
 
 
@@ -20,6 +20,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
+import { MaterialModule } from 'src/material-module';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HomeModule } from './home/home.module';
     HttpClientModule,
     MatCardModule,
     LeafletModule.forRoot(),
+    MatSidenavModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
@@ -44,10 +46,12 @@ import { HomeModule } from './home/home.module';
     AppRoutingModule,
     AuthModule,
     HomeModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MaterialModule
       ],
   providers: [
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [MatSidenavModule]
 })
 export class AppModule { }

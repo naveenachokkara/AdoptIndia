@@ -37,6 +37,61 @@ header{
   color: white;
 }
 .logo{
+  flex: 1 1 7%;
+  box-sizing: border-box;
+  max-width: 7%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  margin-left: 3%;
+  font-weight: bold;
+}
+
+
+.bounds {
+  background-color:#ddd;
+  height :800px;
+}
+
+.nav {
   color:white;
-  padding-left: 40px;
+  text-transform: uppercase
+}
+
+.sec2 {
+  background: lavender;
+  color:blue; 
+}
+.nav,.sidenav, .sec2{
+  /* padding-top:20px; */
+  text-align:center
+}
+.content {
+  min-width: 300px;
+  /*height: 400px;*/
+}
+
+.sidenav{
+  display: contents;
+  background-color: lavenderblush;
+  color:white;
+  text-transform: uppercase;
+}
+
+::ng-deep .mat-drawer-inner-container {
+  width: 100%; 
+}
+
+.active{
+  background-color:rgba(9, 30, 66, 0.25);
+}
+
+.sidenav-item{
+    color: white;
+    font-size: 10px; 
+}
+
+mat-icon{
+  color: white;
 }
