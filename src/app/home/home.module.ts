@@ -9,15 +9,18 @@ import { HomeComponent } from './home.component';
 import { MatToolbar, MatIcon, MatMenu, MatToolbarRow, MatToolbarModule, MatIconModule, MatMenuModule } from '@angular/material';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {  SubhomeModule } from './subhome/subhome.module';
+import { SubhomeComponent } from './subhome/subhome.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent , children: [
-    {path : 'dashboard' , component: DashboardComponent}
+    {path : 'dashboard' , component: DashboardComponent},
+  {path :'Home',component: SubhomeComponent}
   ]}
 ];
 @NgModule({
-  imports: [MatToolbarModule , MatIconModule ,MatMenuModule,DashboardModule, RouterModule.forChild(routes)],
+  imports: [MatToolbarModule , MatIconModule ,MatMenuModule,DashboardModule,SubhomeModule, RouterModule.forChild(routes)],
   declarations: [HomeComponent],
   providers: [],
   exports: [HomeComponent]

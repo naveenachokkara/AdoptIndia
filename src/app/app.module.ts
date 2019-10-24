@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 import {
   MatGridListModule, MatCardModule
@@ -28,6 +29,7 @@ import { HomeModule } from './home/home.module';
     BrowserModule,
     HttpClientModule,
     MatCardModule,
+    LeafletModule.forRoot(),
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
