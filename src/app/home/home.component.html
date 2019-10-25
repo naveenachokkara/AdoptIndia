@@ -17,15 +17,24 @@
             (mouseenter)="increase()" (mouseleave)="decrease()">
             <mat-nav-list>
 
-              <mat-list-item routerLink="1" routerLinkActive="active">
+              <mat-list-item routerLink="./home" routerLinkActive="active">
                 <mat-icon mat-list-icon>link</mat-icon>
                 <div fxFlex="10"></div>
                 <div *ngIf="sidenavWidth > 4" class="sidenav-item">
-                  <h5>Settings</h5>
+                  <h5>Home</h5>
                 </div>
               </mat-list-item>
 
-              <mat-list-item routerLink="2" routerLinkActive="active">
+
+              <mat-list-item routerLink="./dashboard" routerLinkActive="">
+                <mat-icon mat-list-icon>home</mat-icon>
+                <div fxFlex="10"></div>
+                <div *ngIf="sidenavWidth > 4" class="sidenav-item">
+                  <h5>Dashboard</h5>
+                </div>
+              </mat-list-item>
+
+              <mat-list-item routerLink="2" routerLinkActive="">
                 <mat-icon mat-list-icon>face</mat-icon>
                 <div fxFlex="10"></div>
                 <div *ngIf="sidenavWidth > 4" class="sidenav-item">
@@ -33,13 +42,6 @@
                 </div>
               </mat-list-item>
 
-              <mat-list-item routerLink="./dashboard" routerLinkActive="active">
-                <mat-icon mat-list-icon>home</mat-icon>
-                <div fxFlex="10"></div>
-                <div *ngIf="sidenavWidth > 4" class="sidenav-item">
-                  <h5>Home</h5>
-                </div>
-              </mat-list-item>
 
             </mat-nav-list>
           </mat-sidenav>

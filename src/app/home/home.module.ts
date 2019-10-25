@@ -22,7 +22,7 @@ const routes: Routes = [
   {
     path: '', component: HomeComponent, children: [
       {path : 'dashboard' , component: DashboardComponent},
-      {path :'Home',component: SubhomeComponent}
+      {path :'home',component: SubhomeComponent}
     ]
   }
 ];

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,10 @@ export class HomeComponent implements OnInit {
   show = true;
   sidenavWidth = 4;
   mainbodyWidth = 96;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    
   }
 
   increase() {
