@@ -8,12 +8,16 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  Login(email: string, password: string): Observable<User> {
-   const user: User =  {
-     id: '123445rffd',
-     email : 'jyothimamidi@gmail.com'
+  Login(email: string, password: string): any {
+    const result = {
+      token: 'test123',
+      email,
+      userId: 'test123'
     };
-   return this.http.post<User>('url', {email, password});
-  // return user ;
+    //  return this.http.post<User>('url', {email, password});
+    return new Observable((observer) => {
+      observer.next(result);
+      observer.complete();
+    });
   }
 }

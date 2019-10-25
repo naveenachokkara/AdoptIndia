@@ -28,16 +28,16 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private formBuilder: FormBuilder) { }
 
-    validationMessages = {
-      email: [
-        { type: 'required', message: 'Email is required' },
-        { type: 'email', message: 'Enter a valid Email' }
-      ],
-      password: [
-        { type: 'required', message: 'Password is required' },
-        { type: 'minlength', message: 'Enter min length of 6 chars' }
-      ]
-    };
+  validationMessages = {
+    email: [
+      { type: 'required', message: 'Email is required' },
+      { type: 'email', message: 'Enter a valid Email' }
+    ],
+    password: [
+      { type: 'required', message: 'Password is required' },
+      { type: 'minlength', message: 'Enter min length of 6 chars' }
+    ]
+  };
   username = 'jyothimamidi@gmail.com';
   password = '123456';
 
@@ -60,27 +60,17 @@ export class LoginComponent implements OnInit {
     this.store.dispatch(new Logout());
     this.router.navigateByUrl('login');
   }
-  onSubmit() {
-    //this.router.navigateByUrl('');
-    console.log(this.loginForm);
 
+  onSubmit() {
     this.authService.Login(this.loginForm.value.email, this.loginForm.value.password).
-      // pipe(
-      //   tap(
-      //     user => {
-      //       this.store.dispatch(new Login({ user }));
-      //     }
-      //   )
-      // ).
       subscribe(
-        noop,
-        () => {
-          const user: User = {
-            id: '123445rffd',
-            email: 'jyothimamidi@gmail.com'
-          };
-          this.store.dispatch(new Login({ user }));
-          //  alert('please enter valid username or password');
+        (result) => {
+          console.log(result);
+          this.store.dispatch(new Login(result));
+          this.router.navigateByUrl('home');
+        },
+        (err) => {
+          console.error(err);
         }
       );
   }
