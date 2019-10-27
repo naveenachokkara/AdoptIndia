@@ -1,9 +1,10 @@
 <div class="map-wrapper">
   <app-mapview
-  [zoom]="zoom"
   [fitBounds]="fitBounds"
-  (zoomChange)="onZoomChange($event)"
+  [options]="options"
   [activeTile]="activeTilelayer"
- ></app-mapview>
+  ></app-mapview>
+
+
 </div>
 

@@ -1,7 +1,11 @@
 <div style="height: 100%;">
   <div fxLayout="column" fxFlex>
     <div fxFlex="50">
-<app-mapview></app-mapview>a
+<app-mapview
+[options]="options"
+[fitBounds]="fitBounds"
+[activeTile]="activeTilelayer"
+></app-mapview>a
 
     </div>
     <div fxFlex="50"  fxLayout="row" fxFlexFill  fxLayoutAlign="space-evenly" >
