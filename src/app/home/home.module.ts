@@ -21,14 +21,14 @@ import { SubhomeModule } from './subhome/subhome.module';
 const routes: Routes = [
   {
     path: '', component: HomeComponent, children: [
-      {path : 'dashboard' , component: DashboardComponent},
-      {path :'Home',component: SubhomeComponent}
+      { path: 'dashboard', component: DashboardComponent },
+      { path: '', component: SubhomeComponent }
     ]
   }
 ];
 @NgModule({
   imports: [MatToolbarModule, MatIconModule, MatSidenavModule, MaterialModule, MatMenuModule,
-    DashboardModule, RouterModule.forChild(routes), CommonModule, FlexLayoutModule,DashboardModule,SubhomeModule],
+    DashboardModule, RouterModule.forChild(routes), CommonModule, FlexLayoutModule, DashboardModule, SubhomeModule],
   declarations: [HomeComponent],
   providers: [],
   exports: [MatSidenavModule, HomeComponent]

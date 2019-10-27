@@ -39,27 +39,16 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
 
-    console.log(this.registerForm);
     this.authService.Login(this.registerForm.value.email, this.registerForm.value.password).
-      // pipe(
-      //   tap(
-      //     user => {
-      //       this.store.dispatch(new Signup({ user }));
-      //     }
-      //   )
-      // ).
-      subscribe(
-        noop,
-        () => {
-          const user: User = {
-            id: '123445rffd',
-            email: 'jyothimamidi@gmail.com'
-          };
-          this.store.dispatch(new Signup({ user }));
-          //  alert('please enter valid username or password');
-        }
-      );
-
+    subscribe(
+      (result) => {
+        console.log(result);
+        this.store.dispatch(new Signup(result));
+      },
+      (err) => {
+        console.error(err);
+      }
+    );
   }
 
 }

@@ -99,3 +99,8 @@ mat-icon{
 .apphome{
   height: 100% !important;
 }
+
+::ng-deep .mat-sidenav-backdrop.mat-sidenav-shown{
+  background-color: transparent !important;
+}
+

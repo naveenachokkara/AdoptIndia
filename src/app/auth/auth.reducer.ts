@@ -37,7 +37,7 @@ export function authreducer(state = initialAuthState, action: AuthActions): Auth
       return{
         ...state,
         isSignup: true,
-        userprofile: undefined
+        userprofile: action.payload.user
       };
     default:
       return state;
