@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { tileLayer, latLng } from 'leaflet';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { tileLayer, Map,latLng } from 'leaflet';
+
 
 @Component({
   selector: 'app-mapview',
@@ -7,8 +8,27 @@ import { tileLayer, latLng } from 'leaflet';
   styleUrls: ['./mapview.component.css']
 })
 export class MapviewComponent implements OnInit {
+  _zoom:number;
+  _map: Map;
+  _activeTile:'';
+  activetileLayer: any;
+  @Input() fitBounds;
+  @Input() layers;
+  @Output() readonly zoomChange = new EventEmitter<number>();
+  @Input() options;
 
-options: object = null;
+  @Input('activeTile')
+  set activeTile(value: any) {
+    this._activeTile = value;
+    this.changetileLayer(value);
+  }
+  @Input('zoom')
+  set zoom(value: number) {
+    this._zoom = value;
+    this.onZoomChange(value);
+  }
+
+// options: object = null;
   constructor() { }
 
   ngOnInit() {
@@ -20,6 +40,31 @@ options: object = null;
       zoom: 13,
       center: [51.505, -0.09]
     };
+  }
+
+  onZoomChange(zoom){
+
+  }
+  onMapReady(mapIns : Map){
+    this._map = mapIns;
+    this.changetileLayer(this._activeTile);
+    // this.activetileLayer.addTo(this._map);
+    // this.activetileLayer &&
+    //   !this._map.hasLayer(this.activetileLayer) &&
+    //   this.activetileLayer.addTo(this._map);
+  }
+  changetileLayer(tile: any): void {
+
+    // tslint:disable-next-line:no-unused-expression
+    // this._map &&
+    // this._map.hasLayer(this.activetileLayer) &&
+    //   this.activetileLayer.remove();
+    // tile.provider && tile.provider === 'ESRI'
+    //   // ? (this.activetileLayer = ESRI.basemapLayer(tile.layertype))
+    //   ?''
+    //   : (this.activetileLayer = tileLayer(tile.url, tile.settings));
+    // // tslint:disable-next-line:no-unused-expression
+    // this._map && this.activetileLayer.addTo(this._map);
   }
 
 }

@@ -1,4 +1,9 @@
 <div class="map-component"
      leaflet
-     [leafletOptions]="options">
+     [(leafletZoom)]="_zoom"
+     [leafletOptions]="options"
+     (leafletMapReady)="onMapReady($event)"
+     (leafletZoomChange)="onZoomChange($event)"
+
+     >
 </div>
