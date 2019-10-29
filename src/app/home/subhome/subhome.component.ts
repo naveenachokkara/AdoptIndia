@@ -19,22 +19,20 @@ export class SubhomeComponent implements OnInit {
       attribution: ''
     }
   };
-  fitBounds ;
-
-  constructor() { }
+  fitBounds;
 
 
 
-  ngOnInit() {
-    var southWest =  latLng(40.712, -74.227),
-    northEast =  latLng(40.774, -74.125),
-    bounds =  latLngBounds(southWest, northEast);
-this.fitBounds = bounds;
+constructor() { }
+ngOnInit() {
+  const southWest = latLng(40.712, -74.227);
+  const northEast = latLng(40.774, -74.125);
+  const bounds = latLngBounds(southWest, northEast);
+  this.fitBounds = bounds;
 
-  }
+}
+onZoomChange(zoom: number) {
 
-  onZoomChange(zoom: number){
-
-  }
+}
 
 }

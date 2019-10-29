@@ -1,0 +1,508 @@
+{
+    "wasteTrucks": {
+      "rtpmnbx7hdkon5himgmd7tpmwxgj2zwf": {
+        "sid": "rtpmnbx7hdkon5himgmd7tpmwxgj2zwf",
+        "geocoordinates": {
+          "latitude": 16.9861266,
+          "longitude": 82.2568533
+        },
+        "label": "AP05 TG 3913",
+        "tenantId": "kakinada.com",
+        "isValid": true,
+        "createTime": 1569829197457,
+        "isIndependent": true,
+        "status": "In Service",
+        "bturl": "blth://",
+        "thirdPartyId": "AP05 TG 3913",
+        "providerDetails": {
+          "provider": "bioenable"
+        },
+        "lpr": {
+          "registrationNumber": "AP05 TG 3913"
+        },
+        "speed": 0,
+        "lastUpdated": 1572197719000,
+        "geohash": "tg42xu1x7e7r",
+        "locationId": [
+          "10003",
+          "10002",
+          "10001",
+          "10000"
+        ],
+        "locationName": [
+          "Kakinada"
+        ],
+        "applicableDomain": [
+          "WasteManagement"
+        ]
+      },
+      "ztpw74hidofic2xqfqfn4hndvs2dsc3d": {
+        "sid": "ztpw74hidofic2xqfqfn4hndvs2dsc3d",
+        "geocoordinates": {
+          "longitude": 82.2567683,
+          "latitude": 16.9860083
+        },
+        "label": "AP05 TG 3911",
+        "tenantId": "kakinada.com",
+        "thirdPartyId": "AP05 TG 3911",
+        "providerDetails": {
+          "provider": "bioenable"
+        },
+        "lpr": {
+          "registrationNumber": "AP05 TG 3911"
+        },
+        "isValid": true,
+        "createTime": 1569829197527,
+        "isIndependent": true,
+        "status": "In Service",
+        "bturl": "blth://",
+        "geohash": "tg42xu1w9t7y",
+        "lastUpdated": 1572197694000,
+        "speed": 0,
+        "locationId": [
+          "10003",
+          "10002",
+          "10001",
+          "10000"
+        ],
+        "locationName": [
+          "Kakinada"
+        ],
+        "applicableDomain": [
+          "WasteManagement"
+        ]
+      },
+      "6v5umlbhfnzvr4sjmvjrdgge7uc4rjeq": {
+        "sid": "6v5umlbhfnzvr4sjmvjrdgge7uc4rjeq",
+        "lastUpdated": 1572197722000,
+        "geocoordinates": {
+          "longitude": 82.2568016,
+          "latitude": 16.98618
+        },
+        "label": "AP05 TG 3910",
+        "isValid": true,
+        "tenantId": "kakinada.com",
+        "thirdPartyId": "AP05 TG 3910",
+        "providerDetails": {
+          "provider": "bioenable"
+        },
+        "lpr": {
+          "registrationNumber": "AP05 TG 3910"
+        },
+        "createTime": 1569829196992,
+        "isIndependent": true,
+        "status": "In Service",
+        "bturl": "blth://",
+        "geohash": "tg42xu1xdmky",
+        "speed": 0,
+        "locationId": [
+          "10003",
+          "10002",
+          "10001",
+          "10000"
+        ],
+        "locationName": [
+          "Kakinada"
+        ],
+        "applicableDomain": [
+          "WasteManagement"
+        ]
+      },
+      "4vpcwpptkbfupval5m5cmgihrrqrna5s": {
+        "sid": "4vpcwpptkbfupval5m5cmgihrrqrna5s",
+        "label": "AP05 TG 3908",
+        "tenantId": "kakinada.com",
+        "thirdPartyId": "AP05 TG 3908",
+        "providerDetails": {
+          "provider": "bioenable"
+        },
+        "lpr": {
+          "registrationNumber": "AP05 TG 3908"
+        },
+        "isValid": true,
+        "createTime": 1569829197134,
+        "isIndependent": true,
+        "status": "In Service",
+        "bturl": "blth://",
+        "geocoordinates": {
+          "latitude": 16.986115,
+          "longitude": 82.256775
+        },
+        "geohash": "tg42xu1x3c2f",
+        "speed": 0,
+        "lastUpdated": 1572197706000,
+        "locationId": [
+          "10003",
+          "10002",
+          "10001",
+          "10000"
+        ],
+        "applicableDomain": [
+          "WasteManagement"
+        ],
+        "locationName": [
+          "Kakinada"
+        ]
+      },
+      "dirayg2ul5hqwt357ijgzaz7qwkf5edn": {
+        "sid": "dirayg2ul5hqwt357ijgzaz7qwkf5edn",
+        "geohash": "tg42rw7n75gn",
+        "label": "AP05 TG 2882",
+        "tenantId": "kakinada.com",
+        "thirdPartyId": "AP05 TG 2882",
+        "providerDetails": {
+          "provider": "bioenable"
+        },
+        "lpr": {
+          "registrationNumber": "AP05 TG 2882"
+        },
+        "isValid": true,
+        "createTime": 1569829197388,
+        "isIndependent": true,
+        "status": "In Service",
+        "bturl": "blth://",
+        "geocoordinates": {
+          "latitude": 16.9543716,
+          "longitude": 82.247905
+        },
+        "speed": 0,
+        "lastUpdated": 1572197711000,
+        "containerInfo": {
+          "contentType": [
+            "Mixed"
+          ]
+        },
+        "locationId": [
+          "10003",
+          "10002",
+          "10001",
+          "10000"
+        ],
+        "locationName": [
+          "Kakinada"
+        ],
+        "applicableDomain": [
+          "WasteManagement"
+        ]
+      },
+      "jxkgrxqgvbprjeottqto6yhqbpglf46q": {
+        "sid": "jxkgrxqgvbprjeottqto6yhqbpglf46q",
+        "label": "AP05 TG 2884",
+        "tenantId": "kakinada.com",
+        "thirdPartyId": "AP05 TG 2884",
+        "providerDetails": {
+          "provider": "bioenable"
+        },
+        "lpr": {
+          "registrationNumber": "AP05 TG 2884"
+        },
+        "isValid": true,
+        "createTime": 1569829196478,
+        "isIndependent": true,
+        "status": "In Service",
+        "bturl": "blth://",
+        "geohash": "tg42rw7nek9h",
+        "speed": 0,
+        "geocoordinates": {
+          "longitude": 82.2479133,
+          "latitude": 16.9544183
+        },
+        "lastUpdated": 1572197693000,
+        "locationId": [
+          "10003",
+          "10002",
+          "10001",
+          "10000"
+        ],
+        "locationName": [
+          "Kakinada"
+        ],
+        "applicableDomain": [
+          "WasteManagement"
+        ],
+        "containerInfo": {
+          "contentType": [
+            "Mixed"
+          ]
+        }
+      },
+      "sy2zaiysye7a7g37hohwncbjqnoufb5z": {
+        "sid": "sy2zaiysye7a7g37hohwncbjqnoufb5z",
+        "speed": 0,
+        "geocoordinates": {
+          "longitude": 82.2570533,
+          "latitude": 16.9860783
+        },
+        "label": "AP05 TG 3905",
+        "tenantId": "kakinada.com",
+        "thirdPartyId": "AP05 TG 3905",
+        "providerDetails": {
+          "provider": "bioenable"
+        },
+        "lpr": {
+          "registrationNumber": "AP05 TG 3905"
+        },
+        "isValid": true,
+        "createTime": 1569829197266,
+        "isIndependent": true,
+        "status": "In Service",
+        "bturl": "blth://",
+        "geohash": "tg42xu1z062r",
+        "lastUpdated": 1572197717000,
+        "locationName": [
+          "Kakinada"
+        ],
+        "applicableDomain": [
+          "WasteManagement"
+        ],
+        "containerInfo": {
+          "contentType": [
+            "Mixed"
+          ]
+        },
+        "locationId": [
+          "10003",
+          "10002",
+          "10001",
+          "10000"
+        ]
+      },
+      "46ztnm2j6jdrbh7wjt5t3pebyi3g2l77": {
+        "sid": "46ztnm2j6jdrbh7wjt5t3pebyi3g2l77",
+        "label": "AP05 CC 4909",
+        "tenantId": "kakinada.com",
+        "thirdPartyId": "AP05 CC 4909",
+        "providerDetails": {
+          "provider": "bioenable"
+        },
+        "lpr": {
+          "registrationNumber": "AP05 CC 4909"
+        },
+        "isValid": true,
+        "createTime": 1569829196535,
+        "isIndependent": true,
+        "status": "In Service",
+        "bturl": "blth://",
+        "geocoordinates": {
+          "latitude": 16.9610566,
+          "longitude": 82.230495
+        },
+        "speed": 0,
+        "geohash": "tg42rpwmm6j5",
+        "lastUpdated": 1572197700000,
+        "locationName": [
+          "Kakinada"
+        ],
+        "applicableDomain": [
+          "WasteManagement"
+        ],
+        "containerInfo": {
+          "contentType": [
+            "Mixed"
+          ]
+        },
+        "locationId": [
+          "10003",
+          "10002",
+          "10001",
+          "10000"
+        ]
+      },
+      "h6pvvzeb2qefycj6ztsjn2vxrcgk2k3v": {
+        "sid": "h6pvvzeb2qefycj6ztsjn2vxrcgk2k3v",
+        "label": "AP05 TG 3909",
+        "tenantId": "kakinada.com",
+        "thirdPartyId": "AP05 TG 3909",
+        "providerDetails": {
+          "provider": "bioenable"
+        },
+        "lpr": {
+          "registrationNumber": "AP05 TG 3909"
+        },
+        "isValid": true,
+        "createTime": 1569829196795,
+        "isIndependent": true,
+        "status": "In Service",
+        "bturl": "blth://",
+        "speed": 0,
+        "geohash": "tg42xu1xe796",
+        "geocoordinates": {
+          "latitude": 16.98617,
+          "longitude": 82.25684
+        },
+        "lastUpdated": 1572197729000,
+        "locationName": [
+          "Kakinada"
+        ],
+        "applicableDomain": [
+          "WasteManagement"
+        ],
+        "containerInfo": {
+          "contentType": [
+            "Mixed"
+          ]
+        },
+        "locationId": [
+          "10003",
+          "10002",
+          "10001",
+          "10000"
+        ]
+      },
+      "m33gyqiwxvoggtb2iyych2pwk3ijccnl": {
+        "sid": "m33gyqiwxvoggtb2iyych2pwk3ijccnl",
+        "label": "AP05 TG 2883",
+        "tenantId": "kakinada.com",
+        "thirdPartyId": "AP05 TG 2883",
+        "providerDetails": {
+          "provider": "bioenable"
+        },
+        "lpr": {
+          "registrationNumber": "AP05 TG 2883"
+        },
+        "isValid": true,
+        "createTime": 1569829197075,
+        "isIndependent": true,
+        "status": "In Service",
+        "bturl": "blth://",
+        "geocoordinates": {
+          "longitude": 82.247895,
+          "latitude": 16.9542933
+        },
+        "speed": 0,
+        "geohash": "tg42rw7jfv7d",
+        "lastUpdated": 1572197692000,
+        "locationId": [
+          "10003",
+          "10002",
+          "10001",
+          "10000"
+        ],
+        "locationName": [
+          "Kakinada"
+        ],
+        "applicableDomain": [
+          "WasteManagement"
+        ],
+        "containerInfo": {
+          "contentType": [
+            "Mixed"
+          ]
+        }
+      },
+      "dlwtjhyz2uaa34ita4q3ssgk7ywuaj5p": {
+        "sid": "dlwtjhyz2uaa34ita4q3ssgk7ywuaj5p",
+        "label": "AP05 TG 3620",
+        "tenantId": "kakinada.com",
+        "thirdPartyId": "AP05 TG 3620",
+        "providerDetails": {
+          "provider": "bioenable"
+        },
+        "lpr": {
+          "registrationNumber": "AP05 TG 3620"
+        },
+        "isValid": true,
+        "createTime": 1569829197329,
+        "isIndependent": true,
+        "status": "In Service",
+        "bturl": "blth://",
+        "speed": 0,
+        "geocoordinates": {
+          "latitude": 16.9544433,
+          "longitude": 82.2479516
+        },
+        "geohash": "tg42rw7nu1mc",
+        "lastUpdated": 1572197690000,
+        "containerInfo": {
+          "contentType": [
+            "Mixed"
+          ]
+        },
+        "locationId": [
+          "10003",
+          "10002",
+          "10001",
+          "10000"
+        ],
+        "locationName": [
+          "Kakinada"
+        ],
+        "applicableDomain": [
+          "WasteManagement"
+        ]
+      },
+      "mqxbmp7zqkfarw4pbvreuy4rsqbbyzch": {
+        "sid": "mqxbmp7zqkfarw4pbvreuy4rsqbbyzch",
+        "label": "AP05 TG 3914",
+        "tenantId": "kakinada.com",
+        "thirdPartyId": "AP05 TG 3914",
+        "providerDetails": {
+          "provider": "bioenable"
+        },
+        "lpr": {
+          "registrationNumber": "AP05 TG 3914"
+        },
+        "isValid": true,
+        "createTime": 1569829196717,
+        "isIndependent": true,
+        "status": "In Service",
+        "bturl": "blth://",
+        "geohash": "tg42xu1x6qx7",
+        "speed": 0,
+        "lastUpdated": 1572197705000,
+        "geocoordinates": {
+          "latitude": 16.9861433,
+          "longitude": 82.256805
+        },
+        "locationName": [
+          "Kakinada"
+        ],
+        "applicableDomain": [
+          "WasteManagement"
+        ],
+        "locationId": [
+          "10003",
+          "10002",
+          "10001",
+          "10000"
+        ]
+      },
+      "nfawqbow52srbsn3n6yc3sihlxwx3n4c": {
+        "sid": "nfawqbow52srbsn3n6yc3sihlxwx3n4c",
+        "label": "AP05 BG 7566",
+        "tenantId": "kakinada.com",
+        "thirdPartyId": "AP05 BG 7566",
+        "providerDetails": {
+          "provider": "bioenable"
+        },
+        "lpr": {
+          "registrationNumber": "AP05 BG 7566"
+        },
+        "isValid": true,
+        "status": "In Service",
+        "bturl": "blth://",
+        "createTime": 1569829196861,
+        "isIndependent": true,
+        "geocoordinates": {
+          "longitude": 82.2304783,
+          "latitude": 16.9609316
+        },
+        "speed": 0,
+        "lastUpdated": 1572197596000,
+        "geohash": "tg42rpwkt4b9",
+        "locationId": [
+          "10003",
+          "10002",
+          "10001",
+          "10000"
+        ],
+        "locationName": [
+          "Kakinada"
+        ],
+        "applicableDomain": [
+          "WasteManagement"
+        ]
+      }
+    }
+  }
+
