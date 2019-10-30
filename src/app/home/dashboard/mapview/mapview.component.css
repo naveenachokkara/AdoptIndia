@@ -17,7 +17,7 @@
   top: 0;
   left: 0;
   bottom: 0;
-  background-color:rgba(255, 255, 255,0.9);
+  background-color:rgba(255, 255, 255);
   z-index: 1000;
   margin-left: 75%;
 }
@@ -31,7 +31,7 @@
 {
   float: left;
   clear: both;
-  margin-left: 23px;
+  margin-left: 9px;
   margin-top: -15px;
   font-size: 11px;
 }
@@ -51,5 +51,10 @@
   height: 90%;
   margin-top: 7px;
   margin-left: 5px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
 }
 

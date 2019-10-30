@@ -19,7 +19,7 @@ export class MapviewComponent implements OnInit {
   selactiveTile = '';
   selectedRegion: string;
   createdRegion;
-  showDetails = true;
+  showDetails = false;
   @Input('activeTile')
   set activeTile(value: any) {
     this.selactiveTile = value;
@@ -623,15 +623,20 @@ export class MapviewComponent implements OnInit {
       }
       layer.bindPopup('<div style="max-height: 120px; overflow-y: auto;"><pre style="color: black;"><code>' +
       out.join('<br />') + '</code></pre></div>');
-      layer.on('click', (): void =>{
-        this.showDetails = true;
-      });
+
       layer.on('mouseover', (): void => {
                   layer.openPopup();
                 });
       layer.on('mouseout', (): void => {
                   layer.closePopup();
                 })
+      layer.on('click',(): void =>{
+        if(!this.showDetails) {
+        this.showDetails = true;
+        } else {
+        this.showDetails = false;
+        }
+      })
       markers.push(layer);
       layer.addTo(this.map);
     }, this);
