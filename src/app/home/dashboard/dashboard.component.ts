@@ -18,16 +18,18 @@ export class DashboardComponent implements OnInit {
   activeTilelayer = {
     url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     settings: {
-      attribution: ''
+      // tslint:disable-next-line:max-line-length
+      attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
     }
   };
   constructor() { }
 
   ngOnInit() {
-    var southWest =  latLng(40.712, -74.227),
-    northEast =  latLng(40.774, -74.125),
-    bounds =  latLngBounds(southWest, northEast);
-this.fitBounds = bounds;
+//     var southWest =  latLng(40.712, -74.227),
+//     northEast =  latLng(40.774, -74.125),
+//     bounds =  latLngBounds(southWest, northEast);
+// this.fitBounds = bounds;
+
 
   }
 

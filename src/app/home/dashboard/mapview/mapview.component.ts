@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { tileLayer, Map,latLng, geoJSON } from 'leaflet';
-
+import { tileLayer, Map, latLng, geoJSON } from 'leaflet';
+import * as _ from 'underscore';
+import * as L from 'leaflet';
 
 
 
@@ -13,21 +14,21 @@ export class MapviewComponent implements OnInit {
 
   @Input() options;
   @Input() fitBounds;
- json = require('../../../../assets/vehicledata.json');
-  _map: Map;
-activetileLayer: any;
-_activeTile = '';
+  map: Map;
+  activetileLayer: any;
+  selactiveTile = '';
   selectedRegion: string;
   createdRegion;
+  showDetails = true;
   @Input('activeTile')
-  set activeTile(value: any){
-    this._activeTile= value;
+  set activeTile(value: any) {
+    this.selactiveTile = value;
     this.changetileLayer(value);
   }
 
 
 
- regioncords =[
+  regioncords = [
     [
       [
         77.83745079947457,
@@ -574,8 +575,7 @@ _activeTile = '';
         35.494009507787766
       ]
     ]
-  ]
-// options: object = null;
+  ];
   constructor() { }
 
   ngOnInit() {
@@ -592,24 +592,68 @@ _activeTile = '';
   }
 
   onMapReady(mapIns: Map): void {
-  this._map = mapIns;
-  // tslint:disable-next-line:no-unused-expression
-  this.activetileLayer &&
-  !this._map.hasLayer(this.activetileLayer) &&
-  this.activetileLayer.addTo(this._map);
-  this.drawRegion();
-  console.log(this.json);
-  //this._map.fitBounds(this.fitBounds);
+    this.map = mapIns;
+    // tslint:disable-next-line:no-unused-expression
+    this.activetileLayer &&
+      !this.map.hasLayer(this.activetileLayer) &&
+      this.activetileLayer.addTo(this.map);
+    this.drawRegion();
+    const datajson = require('../../../../assets/vehicledata.json');
+    this.dropMarkers(datajson);
+    // this._map.fitBounds(this.fitBounds);
+  }
+
+  dropMarkers(dataObj) {
+    const greenIcon = L.icon({
+      iconUrl: '../../../../assets/truck.png',
+      iconSize: [25, 25]
+    });
+    let markers =[];
+
+    _.each(dataObj.wasteTrucks, function(item) {
+      console.log(item);
+      const location = item.geocoordinates;
+      const layer = new L.Marker([location.latitude, location.longitude], { icon: greenIcon });
+      layer.sid = item.sid;
+      layer.label = item.label;
+      layer.status = item.status;
+      const out = [];
+      for (const key of Object.keys(layer)) {
+        out.push(key + ' : ' + layer[key]);
+      }
+      layer.bindPopup('<div style="max-height: 120px; overflow-y: auto;"><pre style="color: black;"><code>' +
+      out.join('<br />') + '</code></pre></div>');
+      layer.on('click', (): void =>{
+        this.showDetails = true;
+      });
+      layer.on('mouseover', (): void => {
+                  layer.openPopup();
+                });
+      layer.on('mouseout', (): void => {
+                  layer.closePopup();
+                })
+      markers.push(layer);
+      layer.addTo(this.map);
+    }, this);
+    if(markers.length > 0){
+      const group =  L.featureGroup(markers);
+      this.map.fitBounds(group.getBounds());
+    }
 
   }
-  changetileLayer(tile:any):void{
-    this._map && this._map.hasLayer(this.activetileLayer) && this.activetileLayer.remove();
+
+  changetileLayer(tile: any): void {
+    if (this.map && this.map.hasLayer(this.activetileLayer) ) {
+      this.activetileLayer.remove();
+    }
+
     tile.provider && tile.provider === 'ESRI'
       // ? (this.activetileLayer = ESRI.basemapLayer(tile.layertype))
-      ? ""
+      ? ''
       : (this.activetileLayer = tileLayer(tile.url, tile.settings));
-
-    this._map && this.activetileLayer.addTo(this._map);
+    if (this.map && this.activetileLayer) {
+      this.activetileLayer.addTo(this.map);
+      }
   }
 
   drawRegion() {
@@ -634,8 +678,8 @@ _activeTile = '';
       const exteriorStyle = {
         fillOpacity: 0.1
       };
-      this.createdRegion = geoJSON(geoJson, { style: () => exteriorStyle }).addTo(this._map);
-      this._map.fitBounds(this.createdRegion.getBounds());
+      this.createdRegion = geoJSON(geoJson, { style: () => exteriorStyle }).addTo(this.map);
+      this.map.fitBounds(this.createdRegion.getBounds());
     } else if (this.createdRegion) {
       this.createdRegion.remove();
     }

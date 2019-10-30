@@ -1,7 +1,47 @@
-<div class="map-component"
+<div class="mapContainer" >
+    <div class="map-component"
     leaflet
     [leafletOptions]="options"
     [leafletFitBounds]="fitBounds"
     (leafletMapReady)="onMapReady($event)"
      >
 </div>
+<div class="overlay" *ngIf='showDetails'>
+  <div fxLayout="column" fxFlex>
+      <div fxFlex="10">
+        <div class="showdeatilsHeader">
+          <span class="dot"></span>
+            <label>Hello Marker</label>
+        </div>
+        <label class="showdetailssubinfo">hello</label>
+        </div>
+<div fxFlex="30" style="background-color:khaki;">
+  <!-- <div  class ="detailsClass "style="background-color: red;">
+ehfudhuvhdsu
+  </div> -->
+  <div fxLayout="column" fxFlex>
+      <div fxFlex="10" style="background-color: yellowgreen;">
+        innerdiv 1
+        </div>
+        <div fxFlex="10" style="background-color: red;">
+            innerdiv 2
+          </div>
+          <div fxFlex="10" style="background-color: green;">
+              innerdiv 3
+            </div>
+  </div>
+</div>
+<div fxFlex="10" style="background-color:lemonchiffon;">
+
+</div>
+<div fxFlex="50" style="background-color:lightpink;">
+
+</div>
+  </div>
+
+  </div>
+</div>
+
+
+
+

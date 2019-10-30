@@ -17,12 +17,12 @@ export class HomeComponent implements OnInit {
 
   increase() {
     this.sidenavWidth = 18;
-    this.mainbodyWidth = 82;
+   // this.mainbodyWidth = 82;
     console.log("increase sidenav width");
   }
   decrease() {
     this.sidenavWidth = 4;
-    this.mainbodyWidth = 96;
+ //   this.mainbodyWidth = 96;
     console.log("decrease sidenav width");
   }
 

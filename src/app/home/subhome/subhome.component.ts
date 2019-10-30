@@ -9,14 +9,15 @@ import { latLng, latLngBounds } from 'leaflet';
 })
 export class SubhomeComponent implements OnInit {
   options: any = {
-    zoomControl: false,
+    zoomControl: true,
     center: latLng(27.15608625, 75.7476063556986)
   };
 
   activeTilelayer = {
     url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     settings: {
-      attribution: ''
+      // tslint:disable-next-line:max-line-length
+      attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
     }
   };
   fitBounds;
