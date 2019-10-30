@@ -13,10 +13,9 @@
     <div class="bounds" fxFlex='92'>
       <div class="content" fxLayout="row" fxFlexFill>
         <div [fxFlex]="sidenavWidth" class="nav">
-          <mat-sidenav #sidenav mode="over" class="sidenav" [ngStyle]="{ 'width.em': sidenavWidth }" opened="true"
+          <!-- <mat-sidenav #sidenav mode="push" class="sidenav" [ngStyle]="{ 'width.em': sidenavWidth }" opened="true"
             (mouseenter)="increase()" (mouseleave)="decrease()">
             <mat-nav-list>
-
               <mat-list-item routerLink="./" routerLinkActive="active">
                 <mat-icon mat-list-icon>link</mat-icon>
                 <div fxFlex="10"></div>
@@ -24,8 +23,6 @@
                   <h5>Home</h5>
                 </div>
               </mat-list-item>
-
-
               <mat-list-item routerLink="./dashboard" routerLinkActive="active">
                 <mat-icon mat-list-icon>home</mat-icon>
                 <div fxFlex="10"></div>
@@ -41,11 +38,27 @@
                   <h5>Profile</h5>
                 </div>
               </mat-list-item>
-
-
             </mat-nav-list>
+          </mat-sidenav> -->
+          <mat-sidenav #entitiesMenu class="items-sidenav" mode='side' [class.open]="navOpen" (mouseover)="navOpen=true"
+          (mouseout)="navOpen=false">
+          <div class="sidenav-item-container">
+            <a class="sidenav-item mat-ripple" fxlayout="row" fxlayoutalign="start center"
+              [routerLink]="['./']" routerLinkActive="active">
+              <span class="name">Home</span>
+              <span fxflex class="flex-span"></span>
+              <mat-icon mat-list-icon>link</mat-icon>
+            </a>
+          </div>
+          <div class="sidenav-item-container">
+            <a class="sidenav-item mat-ripple" fxlayout="row" fxlayoutalign="start center"
+              routerLink="./dashboard" routerLinkActive="active">
+              <span class="name">Dashboard</span>
+              <span fxflex class="flex-span"></span>
+              <mat-icon mat-list-icon>link</mat-icon>
+            </a>
+          </div>
           </mat-sidenav>
-
         </div>
         <div [fxFlex]="mainbodyWidth" class="sec2">
 
