@@ -11,7 +11,7 @@
   padding: 0 ;
 }
 
-.overlay {
+/* .overlay {
   width: 25%;
   position: absolute;
   top: 0;
@@ -20,7 +20,7 @@
   background-color:rgba(255, 255, 255);
   z-index: 1000;
   margin-left: 75%;
-}
+} */
 .showdeatilsHeader
 {
   font-size: 15px;
@@ -58,3 +58,6 @@ img {
   height: 100%;
 }
 
+.map-full-component {
+  max-width: 100% !important; 
+}

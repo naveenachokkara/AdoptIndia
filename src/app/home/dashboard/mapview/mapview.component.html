@@ -1,12 +1,13 @@
-<div class="mapContainer" >
-    <div class="map-component"
+<div class="mapContainer" fxLayout ="row">
+    <div class="map-component" [ngClass]="{
+      'map-full-component':!showDetails}"
     leaflet
     [leafletOptions]="options"
     [leafletFitBounds]="fitBounds"
     (leafletMapReady)="onMapReady($event)"
-     >
+     fxFlex="70">
 </div>
-<div class="overlay" *ngIf='showDetails'>
+<div class="details" *ngIf='showDetails' fxFlex = '30'>
   <div fxLayout="column" fxFlex>
       <div fxFlex="8">
         <div class="showdeatilsHeader">
