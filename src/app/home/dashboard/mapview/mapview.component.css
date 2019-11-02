@@ -83,6 +83,33 @@ img {
   color: white;
 }
 
+.geomap{
+  background-image: url('../../../../assets/map.svg');
+}
+
+.reportImg{
+  background-image: url('../../../../assets/upload.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20%;
+  height: 19px;
+  cursor: pointer;
+}
+.geo{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  cursor: pointer;
+}
+.geonavigate{
+  background-image: url('../../../../assets/navigation.svg');
+
+}
+.geofence{
+  background-image: url('../../../../assets/geofence.svg');
+}
 #search-button {
   width: 100%;
     background: white;

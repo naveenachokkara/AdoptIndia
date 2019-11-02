@@ -648,7 +648,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
         if(!this.showDetails) {
         this.showDetails = true;
         this.changeDetector.detectChanges();
-        this.searchcontainer.nativeElement.style.marginLeft ='45%';
+        this.searchcontainer.nativeElement.style.marginLeft ='47%';
         console.log(this.chartContainer);
         this.drawChart();
         } else {
