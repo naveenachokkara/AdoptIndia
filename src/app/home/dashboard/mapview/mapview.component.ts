@@ -717,11 +717,9 @@ export class MapviewComponent implements OnInit, AfterViewInit {
       type: 'column'
   },
   title: {
-      text: 'Activity Monitor'
+      text: 'Activity Monitor',
+      margin: -10
   },
-  // subtitle: {
-  //     text: 'Source: WorldClimate.com'
-  // },
   xAxis: {
       categories: [
           'Mon',
@@ -738,15 +736,15 @@ export class MapviewComponent implements OnInit, AfterViewInit {
       min: 0,
       title: {
           // text: 'Rainfall (mm)',
-          margin: 4,
-          floating: false,
-          verticalAlign: null
+          // margin: 4,
+          // floating: false,
+          // verticalAlign: null
       }
   },
   tooltip: {
       headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
       pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-          '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+          '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
       footerFormat: '</table>',
       shared: true,
       useHTML: true
@@ -757,21 +755,19 @@ export class MapviewComponent implements OnInit, AfterViewInit {
           borderWidth: 0
       }
   },
-  'legend': {
-    "enabled": true,
-    "align": "center",
-    "floating": false,
-    "itemWidth": null,
-    "labelFormat": "",
-    "margin": 3,
-    "layout": "horizontal",
-    "verticalAlign": "top",
-    "itemStyle": {
-      "color": "#000000",
-      "fontSize": "8px",
-      "fontWeight": "normal",
-      "textDecoration": "normal",
-      "fontFamily": "Lucida Grande,Lucida Sans Unicode, Arial, Helvetica, sans-serif"
+  legend: {
+    enabled: true,
+    align: 'center',
+    floating: false,
+    itemWidth: null,
+    layout: 'horizontal',
+    verticalAlign: 'top',
+    itemStyle: {
+      color: '#000000',
+      fontSize: '8px',
+      fontWeight: 'normal',
+      textDecoration: 'underline',
+      fontFamily: 'Lucida Grande,Lucida Sans Unicode, Arial, Helvetica, sans-serif'
     }
   },
   series: [{
