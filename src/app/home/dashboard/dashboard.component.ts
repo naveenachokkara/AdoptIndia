@@ -8,8 +8,9 @@ import { latLng, latLngBounds } from 'leaflet';
 })
 export class DashboardComponent implements OnInit {
 
-
+  // isShowDetails = false;
   fitBounds;
+
   options: any = {
     zoomControl: true,
     center: latLng(27.15608625, 75.7476063556986)

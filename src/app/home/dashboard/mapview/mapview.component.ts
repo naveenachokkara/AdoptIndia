@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { tileLayer, Map, latLng, geoJSON } from 'leaflet';
 import * as _ from 'underscore';
 import * as L from 'leaflet';
+import * as Highcharts from 'highcharts';
 
 
 
@@ -10,21 +11,31 @@ import * as L from 'leaflet';
   templateUrl: './mapview.component.html',
   styleUrls: ['./mapview.component.css']
 })
-export class MapviewComponent implements OnInit {
+export class MapviewComponent implements OnInit, AfterViewInit {
+   private chartContainer: ElementRef;
+
+  @ViewChild('chartContainer') set content(content: ElementRef) {
+     this.chartContainer = content;
+  }
+
+//  @ViewChild('chartContainer', { static: false }) chartContainer: ElementRef;
 
   @Input() options;
   @Input() fitBounds;
+  chartoptions : any;
   map: Map;
   activetileLayer: any;
   selactiveTile = '';
   selectedRegion: string;
   createdRegion;
   showDetails = false;
+  // @Input() fromDashboardMap;
   @Input('activeTile')
   set activeTile(value: any) {
     this.selactiveTile = value;
     this.changetileLayer(value);
   }
+
 
 
 
@@ -576,7 +587,7 @@ export class MapviewComponent implements OnInit {
       ]
     ]
   ];
-  constructor() { }
+  constructor(private changeDetector : ChangeDetectorRef ) { }
 
   ngOnInit() {
     // this.options = {
@@ -589,6 +600,10 @@ export class MapviewComponent implements OnInit {
     // };
 
 
+  }
+
+  ngAfterViewInit(){
+    //console.log(this.container);
   }
 
   onMapReady(mapIns: Map): void {
@@ -633,6 +648,9 @@ export class MapviewComponent implements OnInit {
       layer.on('click',(): void =>{
         if(!this.showDetails) {
         this.showDetails = true;
+        this.changeDetector.detectChanges();
+        console.log(this.chartContainer);
+        this.drawChart();
         } else {
         this.showDetails = false;
         }
@@ -691,5 +709,94 @@ export class MapviewComponent implements OnInit {
 
   }
 
+  drawChart() {
+    const element = document.getElementById('chartsDiv');
+    this.chartoptions=
+    {
+    chart: {
+      type: 'column'
+  },
+  title: {
+      text: 'Activity Monitor'
+  },
+  // subtitle: {
+  //     text: 'Source: WorldClimate.com'
+  // },
+  xAxis: {
+      categories: [
+          'Mon',
+          'Tue',
+          'Wed',
+          'Thur',
+          'Fri',
+          'Sat',
+          'Sun'
+      ],
+      crosshair: true
+  },
+  yAxis: {
+      min: 0,
+      title: {
+          text: 'Rainfall (mm)',
+          margin: 4,
+          floating: false,
+          verticalAlign: null
+      }
+  },
+  tooltip: {
+      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+      pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+          '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+      footerFormat: '</table>',
+      shared: true,
+      useHTML: true
+  },
+  plotOptions: {
+      column: {
+          pointPadding: 0.2,
+          borderWidth: 0
+      }
+  },
+  'legend': {
+    "enabled": true,
+    "align": "center",
+    "floating": false,
+    "itemWidth": null,
+    "labelFormat": "",
+    "margin": 3,
+    "layout": "horizontal",
+    "verticalAlign": "top",
+    "itemStyle": {
+      "color": "#000000",
+      "fontSize": "8px",
+      "fontWeight": "normal",
+      "textDecoration": "normal",
+      "fontFamily": "Lucida Grande,Lucida Sans Unicode, Arial, Helvetica, sans-serif"
+    }
+  },
+  series: [{
+      name: 'Day',
+      data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6]
+
+
+  }, {
+      name: 'Week',
+      data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0],
+      visible: false
+
+  }, {
+      name: 'Month',
+      data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0],
+      visible: false
+
+  }]
+};
+
+    Highcharts.chart(this.chartContainer.nativeElement, this.chartoptions);
+    //console.log(this.container);
+
+
+
+  }
 
 }
