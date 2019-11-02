@@ -29,14 +29,14 @@
 {
   font-size: 15px;
     float: left;
-    margin: 8px;
+    /* margin: 8px; */
 }
 .showdetailssubinfo
 {
   float: left;
   clear: both;
-  margin-left: 9px;
-  margin-top: -15px;
+  /* margin-left: 9px; */
+  margin-top: -11px;
   font-size: 11px;
 }
 .dot {

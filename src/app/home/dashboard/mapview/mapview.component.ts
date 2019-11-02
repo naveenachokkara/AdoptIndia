@@ -3,6 +3,7 @@ import { tileLayer, Map, latLng, geoJSON } from 'leaflet';
 import * as _ from 'underscore';
 import * as L from 'leaflet';
 import * as Highcharts from 'highcharts';
+import * as moment from 'moment';
 
 
 
@@ -28,6 +29,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
   selectedRegion: string;
   createdRegion;
   showDetails = false;
+  currentDate: any;
   // @Input() fromDashboardMap;
   @Input('activeTile')
   set activeTile(value: any) {
@@ -589,6 +591,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
   constructor(private changeDetector : ChangeDetectorRef ) { }
 
   ngOnInit() {
+    this.currentDate =moment().format('YYYY-MM-DD') ;
     // this.options = {
     //   layers: [
     //     // tslint:disable-next-line:max-line-length
