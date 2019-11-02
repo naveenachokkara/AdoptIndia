@@ -4,6 +4,7 @@
     width: 100%;
     position: relative;
     user-select: none;
+    margin: 7px;
 }
 .mapContainer{
   width: 100%;
