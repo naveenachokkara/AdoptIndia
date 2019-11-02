@@ -10,6 +10,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 
 
 import { ReportsComponent } from './reports/reports.component';
+import { MatSelectModule, MatIconModule } from '@angular/material';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent }
@@ -17,7 +18,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [FlexLayoutModule, LeafletModule, CommonModule, MatFormFieldModule, MatTabsModule],
+  imports: [FlexLayoutModule, LeafletModule, CommonModule, MatFormFieldModule, MatTabsModule,MatSelectModule,MatIconModule ],
   declarations: [DashboardComponent, MapviewComponent, ReportsComponent],
   providers: [],
   exports: [DashboardComponent, MapviewComponent, ReportsComponent]

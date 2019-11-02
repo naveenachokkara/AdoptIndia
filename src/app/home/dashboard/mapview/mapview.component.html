@@ -5,9 +5,9 @@
     [leafletOptions]="options"
     [leafletFitBounds]="fitBounds"
     (leafletMapReady)="onMapReady($event)"
-     fxFlex="70">
+     fxFlex="75">
 </div>
-<div class="details" *ngIf='showDetails' fxFlex = '30'>
+<div class="details" *ngIf='showDetails' fxFlex = '25'>
   <div fxLayout="column" fxFlex>
       <div fxFlex="8">
         <div class="showdeatilsHeader">
@@ -74,9 +74,7 @@
   </div> -->
 <div fxFlex="9">
   <div>
-      <button class="btn btn-primary" style="width: 40%;
-      margin-top: 1%;
-      margin-bottom: 1%;"><span class="dot" style="float: right;"></span>View Report</button>
+      <button class="btn btn-primary reportsBtn"><span class="dot" style="float: right;"></span>View Report</button>
   </div>
   </div>
 <div fxFlex="43" style="background-color:lightpink;">
@@ -85,7 +83,58 @@
   </div>
 
   </div>
+
+
 </div>
+<div class='overlay' #searchcontainer fxFlex fxLayout="row">
+<div fxFlex='60' >
+    <input type="text" class="searchbar" placeholder="Search.." name="search">
+
+</div>
+<div fxFlex='20' style="background-color: blue;">
+    <button id="search-button">
+        <!-- <svg id="search-icon" class="search-icon" viewBox="0 0 24 24">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            <path d="M0 0h24v24H0z" fill="none"/>
+        </svg> -->
+        <svg class="search"></svg>
+     </button>
+  </div>
+  <div fxFlex='20' style="background-color: red;">
+
+        <!-- <mat-form-field>
+          <mat-label>Cars</mat-label>
+          <select matNativeControl required>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+        </mat-form-field> -->
+
+        <!-- <mat-form-field>
+            <mat-select [(value)]="selected">
+                <mat-option *ngFor="let source of sources" [value]="source.value">
+                    <mat-icon class="far fa-hdd"></mat-icon>
+                    <b>{{source.name}}</b><br>
+                    <small>{{source.url}}</small>
+                </mat-option>
+            </mat-select>
+        </mat-form-field> -->
+
+
+        <!-- <mat-form-field>
+            <mat-select [(value)]="selected">
+                <mat-select-trigger>{{selected}}</mat-select-trigger>
+                <mat-option *ngFor="let source of sources" [value]="source.value">
+                    <mat-icon class="far fa-hdd"></mat-icon>
+                    <b>{{source.name}}</b><br>
+                    <small>{{source.url}}</small>
+                </mat-option>
+            </mat-select>
+        </mat-form-field> -->
+  </div>
+  </div>
 
 
 

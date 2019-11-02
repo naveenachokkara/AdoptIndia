@@ -17,8 +17,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
   @ViewChild('chartContainer') set content(content: ElementRef) {
      this.chartContainer = content;
   }
-
-//  @ViewChild('chartContainer', { static: false }) chartContainer: ElementRef;
+ @ViewChild('searchcontainer') searchcontainer: ElementRef;
 
   @Input() options;
   @Input() fitBounds;
@@ -649,10 +648,13 @@ export class MapviewComponent implements OnInit, AfterViewInit {
         if(!this.showDetails) {
         this.showDetails = true;
         this.changeDetector.detectChanges();
+        this.searchcontainer.nativeElement.style.marginLeft ='45%';
         console.log(this.chartContainer);
         this.drawChart();
         } else {
         this.showDetails = false;
+        this.changeDetector.detectChanges();
+        this.searchcontainer.nativeElement.style.marginLeft ='70%';
         }
       })
       markers.push(layer);
