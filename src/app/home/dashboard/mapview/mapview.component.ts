@@ -30,12 +30,19 @@ export class MapviewComponent implements OnInit, AfterViewInit {
   createdRegion;
   showDetails = false;
   currentDate: any;
+  selected = 'A';
   // @Input() fromDashboardMap;
   @Input('activeTile')
   set activeTile(value: any) {
     this.selactiveTile = value;
     this.changetileLayer(value);
   }
+   banks = [
+    {name: 'Bank A (Switzerland)', id: 'A'},
+    {name: 'Bank B (Switzerland)', id: 'B'},
+    {name: 'Bank C (France)', id: 'C'},
+    {name: 'Bank D (France)', id: 'D'}
+  ];
 
 
 
@@ -740,7 +747,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
   yAxis: {
       min: 0,
       title: {
-          // text: 'Rainfall (mm)',
+          //  text: 'Rainfall (mm)' ,
           // margin: 4,
           // floating: false,
           // verticalAlign: null
