@@ -1,29 +1,41 @@
-<div style="background-color:white; display: flex;" fxFlex="15">
-  <title style="display: contents; color: black;flex: 50%;">Activity Monitor</title>
+<div style="background-color:white; display: flex; padding: 6px;" fxFlex="10">
+  <title style="display: contents; color: black;flex: 50%; font-weight: bold;">Activity Monitor</title>
   <div style="flex: 50%;text-align: right;">
-    <mat-label>Cars: </mat-label>
-    <select matNativeControl required>
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
-    </select>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="dotsmenu" aria-label="Example icon-button with a menu">
+
+      <mat-icon style="font-size: 17px;">more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" xPosition="before">
+      <button mat-menu-item class="menuitem">
+        <span>Cars</span>
+      </button>
+      <button mat-menu-item class="menuitem">
+        <span>Busses</span>
+      </button>
+      <button mat-menu-item class="menuitem">
+        <span>Trucks</span>
+      </button>
+      <button mat-menu-item class="menuitem">
+        <span>Vans</span>
+      </button>
+    </mat-menu>
   </div>
 </div>
-<div style="background-color:pink;display: flex;" fxFlex="85">
-
-  <mat-tab-group style="flex: 50%;">
-    <mat-tab label="First"> Content 1 </mat-tab>
-    <mat-tab label="Second"> Content 2 </mat-tab>
-    <mat-tab label="Third"> Content 3 </mat-tab>
-  </mat-tab-group>
-
-  <div style="flex: 50%; text-align: right;">
-    naveena jyothi</div>
+<div style="background-color:white; display: flex;" fxFlex="10">
+  <div class="tabmenu">
+    <button mat-menu-item>
+      Day
+    </button>
+    <button mat-menu-item>
+      Week
+    </button>
+    <button mat-menu-item>
+      Month
+    </button>
+  </div>
+  <!-- <div style="flex: 50%; text-align: right;">
+    ... ... ... </div> -->
 </div>
-
-
-
-<!-- <div style="background-color: rebeccapurple;" fxFlex="70">
-
-</div> -->
+<div fxFlex="80">
+  <div #chartContainer style="min-width: 310px;height: 240px;"></div>
+</div>

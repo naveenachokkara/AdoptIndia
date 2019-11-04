@@ -1,0 +1,34 @@
+// .reporticon{
+  
+// }
+.dotsmenu {
+  border: 0;
+  background-color: white;
+  outline:0;
+}
+.menuitem{
+  outline:none;
+  border: 0;
+}
+
+// ::ng-deep mat-icon-button mat-menu-item{
+//   border: none;
+//   outline: none;
+// }
+
+.tabmenu{
+  flex: 50%; 
+  display: flex;
+  button{
+    padding: 6px;
+    max-height: 35px;
+    line-height: normal;
+    height: auto;
+    width: 54px;
+    &:focus{
+      border-bottom: 2px solid skyblue;
+      outline: none;
+    }
+  }
+  
+}

@@ -45,7 +45,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
   ];
 
 
-
+  
 
   regioncords = [
     [
@@ -634,42 +634,42 @@ export class MapviewComponent implements OnInit, AfterViewInit {
     });
     let markers =[];
 
-    _.each(dataObj.wasteTrucks, function(item) {
-      console.log(item);
-      const location = item.geocoordinates;
-      const layer = new L.Marker([location.latitude, location.longitude], { icon: greenIcon });
-      layer.sid = item.sid;
-      layer.label = item.label;
-      layer.status = item.status;
-      const out = [];
-      for (const key of Object.keys(layer)) {
-        out.push(key + ' : ' + layer[key]);
-      }
-      layer.bindPopup('<div style="max-height: 120px; overflow-y: auto;"><pre style="color: black;"><code>' +
-      out.join('<br />') + '</code></pre></div>');
+    // _.each(dataObj.wasteTrucks, function(item) {
+    //   console.log(item);
+    //   const location = item.geocoordinates;
+    //   const layer = new L.Marker([location.latitude, location.longitude], { icon: greenIcon });
+    //   layer.sid = item.sid;
+    //   layer.label = item.label;
+    //   layer.status = item.status;
+    //   const out = [];
+    //   for (const key of Object.keys(layer)) {
+    //     out.push(key + ' : ' + layer[key]);
+    //   }
+    //   layer.bindPopup('<div style="max-height: 120px; overflow-y: auto;"><pre style="color: black;"><code>' +
+    //   out.join('<br />') + '</code></pre></div>');
 
-      layer.on('mouseover', (): void => {
-                  layer.openPopup();
-                });
-      layer.on('mouseout', (): void => {
-                  layer.closePopup();
-                })
-      layer.on('click',(): void =>{
-        if(!this.showDetails) {
-        this.showDetails = true;
-        this.changeDetector.detectChanges();
-        this.searchcontainer.nativeElement.style.marginLeft ='47%';
-        console.log(this.chartContainer);
-        this.drawChart();
-        } else {
-        this.showDetails = false;
-        this.changeDetector.detectChanges();
-        this.searchcontainer.nativeElement.style.marginLeft ='70%';
-        }
-      })
-      markers.push(layer);
-      layer.addTo(this.map);
-    }, this);
+    //   layer.on('mouseover', (): void => {
+    //               layer.openPopup();
+    //             });
+    //   layer.on('mouseout', (): void => {
+    //               layer.closePopup();
+    //             })
+    //   layer.on('click',(): void =>{
+    //     if(!this.showDetails) {
+    //     this.showDetails = true;
+    //     this.changeDetector.detectChanges();
+    //     this.searchcontainer.nativeElement.style.marginLeft ='47%';
+    //     console.log(this.chartContainer);
+    //     this.drawChart();
+    //     } else {
+    //     this.showDetails = false;
+    //     this.changeDetector.detectChanges();
+    //     this.searchcontainer.nativeElement.style.marginLeft ='70%';
+    //     }
+    //   })
+    //   markers.push(layer);
+    //   layer.addTo(this.map);
+    // }, this);
     if(markers.length > 0){
       const group =  L.featureGroup(markers);
       this.map.fitBounds(group.getBounds());
@@ -688,7 +688,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
       : (this.activetileLayer = tileLayer(tile.url, tile.settings));
     if (this.map && this.activetileLayer) {
       this.activetileLayer.addTo(this.map);
-      }
+    }
   }
 
   drawRegion() {

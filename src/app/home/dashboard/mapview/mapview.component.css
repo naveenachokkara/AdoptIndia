@@ -1,10 +1,10 @@
 .map-component{
-    height: 100%;
     overflow: hidden;
     width: 100%;
     position: relative;
     user-select: none;
-    margin: 7px;
+    height: auto;
+    margin: 0;
 }
 .mapContainer{
   width: 100%;
