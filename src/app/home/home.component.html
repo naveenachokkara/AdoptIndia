@@ -4,7 +4,22 @@
       <div class="header-main">
         <div class="logo" fxFlex="7">Logo</div>
         <div class="header-left">
-          <svg class="profile header-left-common"></svg>
+          <div>
+            <button mat-icon-button [matMenuTriggerFor]="menu" title="User Profile"
+              style="outline: 0; height: 100%;width: 100%;">
+              <mat-icon style="display: block;">account_circle</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" color="primary" [overlapTrigger]="false">
+              <button mat-menu-item (click)="showSidenav()" style="outline: 0;">
+                <mat-icon>account_circle</mat-icon>
+                <span>{{'Naveena Jyothi'}}</span>
+              </button>
+              <button mat-menu-item (click)="logout()" style="outline: 0;">
+                <mat-icon>exit_to_app</mat-icon>
+                <span l10n-attribute l10nTranslate>Log Out</span>
+              </button>
+            </mat-menu>
+          </div>
           <div class="ring header-left-common"></div>
           <div class="help header-left-common"></div>
         </div>
@@ -14,24 +29,22 @@
       <div class="content" fxLayout="row" fxFlexFill>
         <div [fxFlex]="sidenavWidth" class="nav">
           <mat-sidenav #entitiesMenu class="items-sidenav" mode='side' [class.open]="navOpen" (mouseover)="navOpen=true"
-          (mouseout)="navOpen=false">
-          <div class="sidenav-item-container">
-            <a class="sidenav-item mat-ripple" fxlayout="row" fxlayoutalign="start center"
-              routerLink="./">
-              <span class="name">Home</span>
-              <span fxflex class="flex-span"></span>
-              <mat-icon mat-list-icon>link</mat-icon>
-            </a>
-          </div>
-          <div class="sidenav-item-container">
-            <a class="sidenav-item mat-ripple" fxlayout="row" fxlayoutalign="start center"
-              routerLink="./dashboard">
-              <span class="name">Dashboard</span>
-              <span fxflex class="flex-span"></span>
-              <mat-icon mat-list-icon>link</mat-icon>
-            </a>
-          </div>
-          <!-- <div class="sidenav-item-container">
+            (mouseout)="navOpen=false">
+            <div class="sidenav-item-container">
+              <a class="sidenav-item mat-ripple" fxlayout="row" fxlayoutalign="start center" routerLink="./">
+                <span class="name">Home</span>
+                <span fxflex class="flex-span"></span>
+                <mat-icon mat-list-icon>link</mat-icon>
+              </a>
+            </div>
+            <div class="sidenav-item-container">
+              <a class="sidenav-item mat-ripple" fxlayout="row" fxlayoutalign="start center" routerLink="./dashboard">
+                <span class="name">Dashboard</span>
+                <span fxflex class="flex-span"></span>
+                <mat-icon mat-list-icon>link</mat-icon>
+              </a>
+            </div>
+            <!-- <div class="sidenav-item-container">
             <a class="sidenav-item mat-ripple" fxlayout="row" fxlayoutalign="start center"
               routerLink="./dashboard1">
               <span class="name">Dashboard 1</span>
