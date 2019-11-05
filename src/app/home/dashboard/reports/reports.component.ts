@@ -9,6 +9,11 @@ import * as Highcharts from 'highcharts';
 export class ReportsComponent implements OnInit {
   chartoptions: any;
   private chartContainer: ElementRef;
+  tabIndex = 0;
+  
+  onTabClick(index) {
+    this.tabIndex = index;
+  }
 
   @ViewChild('chartContainer') set content(content: ElementRef) {
     this.chartContainer = content;
@@ -16,9 +21,8 @@ export class ReportsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.drawChart(null);
+    this.drawChart('Day');
   }
-
 
   drawChart(type) {
     this.chartoptions =
@@ -78,19 +82,25 @@ export class ReportsComponent implements OnInit {
           },
           position: 'right'
         },
-        series: [{
-          name: 'Day',
-          data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6]
-        }, {
-          name: 'Week',
-          data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0]
-
-        }, {
-          name: 'Month',
-          data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0]
-
-        }]
+        series: []
       };
+
+    const types = {
+      Day: {
+        name: 'Day',
+        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6]
+      },
+      Week: {
+        name: 'Week',
+        data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0]
+      },
+      Month: {
+        name: 'Month',
+        data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0]
+
+      }
+    };
+    this.chartoptions.series = [types[type]];
     Highcharts.chart(this.chartContainer.nativeElement, this.chartoptions);
   }
 
