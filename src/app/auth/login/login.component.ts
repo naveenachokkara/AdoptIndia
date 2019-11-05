@@ -56,18 +56,13 @@ export class LoginComponent implements OnInit {
     this.isloggedOut$ = this.store.select(isloggedOut);
   }
 
-  onLogout() {
-    this.store.dispatch(new Logout());
-    this.router.navigateByUrl('login');
-  }
-
   onSubmit() {
     this.authService.Login(this.loginForm.value.email, this.loginForm.value.password).
       subscribe(
         (result) => {
           console.log(result);
           this.store.dispatch(new Login(result));
-          this.router.navigateByUrl('home');
+          // this.router.navigateByUrl('home');
         },
         (err) => {
           console.error(err);
