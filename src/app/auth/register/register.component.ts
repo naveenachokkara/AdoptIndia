@@ -7,6 +7,7 @@ import { AppState } from 'src/app/reducers';
 import { Login, Signup } from '../auth.actions';
 import { User } from 'src/app/model/user.model';
 import { noop } from 'rxjs';
+import { AuthState } from '../auth.reducer';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,7 @@ import { noop } from 'rxjs';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
-  constructor(private authService: AuthService, private store: Store<AppState>, private formBuilder: FormBuilder) { }
+  constructor(private authService: AuthService, private store: Store<AuthState>, private formBuilder: FormBuilder) { }
   validationMessages = {
     email: [
       { type: 'required', message: 'Email is required' },

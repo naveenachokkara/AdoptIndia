@@ -10,6 +10,7 @@ import { TouchSequence } from 'selenium-webdriver';
 import { isloggedIn, isloggedOut } from '../auth.selectors';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { AuthState } from '../auth.reducer';
 
 
 
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
   formData: any;
 
   constructor(private authService: AuthService,
-    private store: Store<AppState>,
+    private store: Store<AuthState>,
     private router: Router,
     private formBuilder: FormBuilder) { }
 

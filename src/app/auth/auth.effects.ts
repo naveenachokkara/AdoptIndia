@@ -31,16 +31,7 @@ export class AuthEffects {
     tap(
       () => {
         localStorage.removeItem('userData');
-        // this.router.navigateByUrl('login');
-        this.router.navigateByUrl('login').then(info => {
-          if (info) {
-            console.log('Navigation is successful!');
-          } else {
-            console.log('Navigation has failed!');
-          }
-        }).catch(e => {
-          console.log(e);
-        });
+        this.router.navigateByUrl('login');
       }
     )
   );
@@ -59,10 +50,10 @@ export class AuthEffects {
   init$ = defer(() => {
     const userData = localStorage.getItem('userData');
     if (userData) {
-      // return of(new Login(JSON.parse(userData)));
       return this.store.dispatch(new Login(JSON.parse(userData)));
     } else {
-      return this.store.dispatch(new Logout());
+      localStorage.removeItem('userData');
+      this.router.navigateByUrl('register');
     }
   });
 
