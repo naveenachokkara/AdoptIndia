@@ -12,6 +12,9 @@ header{
   display: flex;
   flex-direction: row-reverse;
   height: 30px;
+  div{
+    margin: 0 3px 0 3px;
+  }
 }
 // .header-left-common{
 //   background-position: center;
