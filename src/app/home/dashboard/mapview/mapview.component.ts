@@ -45,7 +45,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
   ];
 
 
-  
+
 
   regioncords = [
     [
@@ -751,7 +751,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
           // margin: 4,
           // floating: false,
           // verticalAlign: null
-      }
+       }
   },
   tooltip: {
       headerFormat: '<span style="font-size:10px">{point.key}</span><table>',

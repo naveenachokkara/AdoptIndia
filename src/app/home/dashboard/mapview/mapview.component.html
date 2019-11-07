@@ -8,7 +8,7 @@
       <div fxFlex="8">
         <div class="showdeatilsHeader" style="padding: 3px 0px 0px 6px;">
           <span class="dot"></span>
-          <label><b>TN41AT4287</b></label>
+          <label class="bold">TN41AT4287</label>
         </div>
         <label class="showdetailssubinfo" style="margin-left: 25px;">Fire Truck</label>
       </div>
@@ -21,22 +21,22 @@
       </div>
       <div fxFlex="30">
         <div fxLayout="column" fxFlex>
-          <div fxFlex="33" style="margin: 2% 10% 2% 10%;">
-            <label class="showdeatilsHeader"><b>Home Visakhapatnam</b></label>
+          <div fxFlex="33" style="margin: 0% 10% ;">
+            <label class="showdeatilsHeader bold">Home Visakhapatnam</label>
             <label class="showdetailssubinfo">{{currentDate}}</label>
           </div>
-          <div fxFlex="33" style="margin: 2% 10% 2% 10%;">
-            <label class="showdeatilsHeader"><b>Office Visakhapatnam</b></label>
+          <div fxFlex="33" style="margin: 0% 10% ;">
+            <label class="showdeatilsHeader bold ">Office Visakhapatnam</label>
             <label class="showdetailssubinfo">{{currentDate}}</label>
           </div>
-          <div fxFlex="33" style="margin: 2% 10% 2% 10%">
+          <div fxFlex="33" style="margin: 0% 10% ;">
             <div fxLayout="row" fxFlex>
               <div fxFlex="50" style="margin: 2%;">
-                <label class="showdeatilsHeader"><b>Average Speed</b></label>
+                <label class="showdeatilsHeader bold">Average Speed</label>
                 <label class="showdetailssubinfo">{{'24 Km/h'}}</label>
               </div>
               <div fxFlex="50" style="margin: 2%;">
-                <label class="showdeatilsHeader"><b>Distance</b></label>
+                <label class="showdeatilsHeader bold">Distance</label>
                 <label class="showdetailssubinfo">{{'51.22 Kms'}}</label>
               </div>
             </div>
@@ -74,7 +74,7 @@
             Report</button>
         </div>
       </div>
-      <div fxFlex="43" style="background-color:lightpink;">
+      <div fxFlex="33" style="background-color:lightpink;">
         <div #chartContainer style="min-width: 310px;height: 260px;"></div>
       </div>
     </div>
@@ -94,12 +94,12 @@
     </div>
     <div fxFlex='20' style="background-color:white">
       <mat-form-field style="width:100%;margin-top:-17%;text-align: center;">
-            <mat-select [(value)]="selected" style="border-left: 1px solid gray;">
-                <mat-select-trigger>{{selected}}</mat-select-trigger>
-                <mat-option *ngFor="let source of banks" [value]="source.id">
-                    <mat-icon class="geo geofence"></mat-icon>
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+        <mat-select [(value)]="selected" style="border-left: 1px solid gray;">
+          <mat-select-trigger>{{selected}}</mat-select-trigger>
+          <mat-option *ngFor="let source of banks" [value]="source.id">
+            <mat-icon class="geo geofence"></mat-icon>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
   </div>
