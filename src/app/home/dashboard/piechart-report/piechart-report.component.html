@@ -1,0 +1,41 @@
+<div style="height: 100%;">
+  <div fxLayout="column" fxFlex>
+    <div fxFlex="10" style="display: flex;background-color:#ffffff;">
+        <title  class ="title">Status</title>
+        <div style="flex: 50%;text-align: right;">
+          <span>Vehicle</span>
+            <button mat-icon-button [matMenuTriggerFor]="menu" class="dotsmenu" aria-label="Example icon-button with a menu">
+
+                <mat-icon style="font-size: 17px;">more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu" xPosition="before">
+                <button mat-menu-item class="menuitem">
+                  <span>Cars</span>
+                </button>
+                <button mat-menu-item class="menuitem">
+                  <span>Busses</span>
+                </button>
+                <button mat-menu-item class="menuitem">
+                  <span>Trucks</span>
+                </button>
+                <button mat-menu-item class="menuitem">
+                  <span>Vans</span>
+                </button>
+              </mat-menu>
+        </div>
+      </div>
+      <div fxFlex="60" style="background-color:yellow ;">
+          <div #chartContainer style="min-width: 310px;height: 220px;"></div>
+      </div>
+      <div fxFlex=30>
+          <div fxLayout="row" fxFlex>
+            <div fxFlex="50" style="background-color:red;">
+
+            </div>
+            <div fxFlex="50" style="background-color:yellow;" >
+
+            </div>
+          </div>
+        </div>
+  </div>
+  </div>

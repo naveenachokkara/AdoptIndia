@@ -11,6 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
 
 import { ReportsComponent } from './reports/reports.component';
 import { MatSelectModule, MatIconModule } from '@angular/material';
+import { PiechartReportComponent } from './piechart-report/piechart-report.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent }
@@ -20,7 +21,7 @@ const routes: Routes = [
 @NgModule({
   imports: [FlexLayoutModule, LeafletModule, CommonModule, MatFormFieldModule,
     MatSelectModule, MatTabsModule, MatIconModule, MatMenuModule],
-  declarations: [DashboardComponent, MapviewComponent, ReportsComponent],
+  declarations: [DashboardComponent, MapviewComponent, ReportsComponent, PiechartReportComponent],
   providers: [],
   exports: [DashboardComponent, MapviewComponent, ReportsComponent]
 })

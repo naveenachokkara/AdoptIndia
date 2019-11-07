@@ -27,7 +27,8 @@ export class ReportsComponent implements OnInit {
           type: 'column'
         },
         title: {
-          text: ''
+          text: '',
+          margin: -10
         },
         xAxis: {
           categories: [
