@@ -29,6 +29,9 @@
       border-bottom: 2px solid skyblue;
       outline: none;
     }
+    &.active{
+      border-bottom: 2px solid skyblue;
+    }
   }
   
 }

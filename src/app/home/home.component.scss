@@ -6,31 +6,34 @@ header{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 13px;
+  padding: 10px;
 }
 .header-left{
   display: flex;
   flex-direction: row-reverse;
   height: 30px;
+  div{
+    margin: 0 3px 0 3px;
+  }
 }
-.header-left-common{
-  background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: 4px;
-    width: 30px;
-    color: white;
-}
-.profile {
-  background-image: url('../../assets/user.svg');
-  fill:white;
-}
-.ring {
-  background-image: url('../../assets/ring.svg');
-}
-.help {
-  background-image: url('../../assets/info.svg');
-}
+// .header-left-common{
+//   background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: contain;
+//     margin: 4px;
+//     width: 30px;
+//     color: white;
+// }
+// .profile {
+//   background-image: url('../../assets/user.svg');
+//   fill:white;
+// }
+// .ring {
+//   background-image: url('../../assets/ring.svg');
+// }
+// .help {
+//   background-image: url('../../assets/info.svg');
+// }
 .header-left > div {
   font-size: 2px;
   padding: 2px;

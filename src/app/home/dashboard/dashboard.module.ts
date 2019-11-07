@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { Routes, Router, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MapviewComponent } from './mapview/mapview.component';
@@ -12,11 +11,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ReportsComponent } from './reports/reports.component';
 import { MatSelectModule, MatIconModule } from '@angular/material';
 import { PiechartReportComponent } from './piechart-report/piechart-report.component';
-
-const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent }
-];
-
 
 @NgModule({
   imports: [FlexLayoutModule, LeafletModule, CommonModule, MatFormFieldModule,

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Logout } from '../auth/auth.actions';
+import { AuthState } from '../auth/auth.reducer';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +13,8 @@ export class HomeComponent implements OnInit {
   show = true;
   sidenavWidth = 4;
   mainbodyWidth = 96;
-  constructor(private router: Router) { }
+
+  constructor(private router: Router, private store: Store<AuthState>) { }
 
   ngOnInit() {
   }
@@ -27,7 +31,7 @@ export class HomeComponent implements OnInit {
   }
 
   logout() {
-    this.router.navigateByUrl('');
+    this.store.dispatch(new Logout());
   }
 
 }

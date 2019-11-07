@@ -23,13 +23,13 @@
 </div>
 <div style="background-color:white; display: flex;" fxFlex="10">
   <div class="tabmenu">
-    <button mat-menu-item>
+    <button mat-menu-item [ngClass]="{'active': tabIndex === 0}" (click)="onTabClick(0); drawChart('Day')">
       Day
     </button>
-    <button mat-menu-item>
+    <button mat-menu-item (click)="onTabClick(1); drawChart('Week')">
       Week
     </button>
-    <button mat-menu-item>
+    <button mat-menu-item (click)="onTabClick(2); drawChart('Month')">
       Month
     </button>
   </div>
