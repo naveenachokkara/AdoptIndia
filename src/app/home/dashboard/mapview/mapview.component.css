@@ -118,8 +118,8 @@ img {
 }
 
 #search-button svg {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 *:focus {
   outline: none;
@@ -156,4 +156,8 @@ mat-select {
 ::ng-deep mat-select .mat-select-placeholder {
   width: fit-content;
   min-width: 10ch;
+}
+
+::ng-deep .mat-form-field-underline{
+  display: none;
 }

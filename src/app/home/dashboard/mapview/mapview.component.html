@@ -81,8 +81,7 @@
   </div>
   <div class='overlay' #searchcontainer fxFlex fxLayout="row">
     <div fxFlex='60'>
-      <input type="text" class="searchbar" placeholder="Search.." name="search">
-
+      <input style="cursor: pointer;" type="text" class="searchbar" placeholder="Search.." name="search">
     </div>
     <div fxFlex='20' style="background-color: blue;">
       <button id="search-button">
@@ -94,30 +93,8 @@
       </button>
     </div>
     <div fxFlex='20' style="background-color:white">
-
-      <!-- <mat-form-field>
-          <mat-label>Cars</mat-label>
-          <select matNativeControl required>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-          </select>
-        </mat-form-field> -->
-
-      <!-- <mat-form-field>
-            <mat-select [(value)]="selected">
-                <mat-option *ngFor="let source of sources" [value]="source.value">
-                    <mat-icon class="far fa-hdd"></mat-icon>
-                    <b>{{source.name}}</b><br>
-                    <small>{{source.url}}</small>
-                </mat-option>
-            </mat-select>
-        </mat-form-field> -->
-
-
       <mat-form-field style="width:100%;margin-top:-17%;text-align: center;">
-            <mat-select [(value)]="selected">
+            <mat-select [(value)]="selected" style="border-left: 1px solid gray;">
                 <mat-select-trigger>{{selected}}</mat-select-trigger>
                 <mat-option *ngFor="let source of banks" [value]="source.id">
                     <mat-icon class="geo geofence"></mat-icon>
