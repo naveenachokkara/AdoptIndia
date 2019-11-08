@@ -104,5 +104,4 @@ export class ReportsComponent implements OnInit {
     this.chartoptions.series = [types[type]];
     Highcharts.chart(this.chartContainer.nativeElement, this.chartoptions);
   }
-
 }

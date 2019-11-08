@@ -13,6 +13,7 @@
     padding: 1px;
     display: block;
     margin: 8px;
+
   }
   .dotsmenu {
     border: 0;
@@ -47,3 +48,67 @@
     }
 
   }
+
+  .seperator {
+    border-left: 4px solid #757575;
+    height: 80px;
+    position: Relative;
+    top: -4px;
+  }
+  .Availableprogress {
+    width: 100px;
+    height: 3px;
+    background:#757575;
+    position: relative;
+    align-self: center;
+    border-radius: 3px;
+}
+.Availableprogress:after {
+    content:'\A';
+    position:absolute;
+    background:#4286F5;
+    top:0; bottom:0;
+    left:0;
+    width:70%;
+}
+
+.DormantProgress {
+  width: 100px;
+  height: 3px;
+  background:#757575;
+  position: relative;
+  align-self: center;
+  border-radius: 3px;
+}
+.DormantProgress:after {
+  content:'\A';
+  position:absolute;
+  background:#FF535F;
+  top:0; bottom:0;
+  left:0;
+  width:30%;
+}
+.lblCount{
+  font-family: Helvetica;
+  font-size: 30px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4a4a4a;
+}
+.lbl{
+  font-size: 12px !important;
+}
+.Vehicle {
+  font-family: Helvetica;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #232425;
+}

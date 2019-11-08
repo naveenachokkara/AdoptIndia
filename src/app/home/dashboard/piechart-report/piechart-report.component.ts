@@ -33,6 +33,9 @@ export class PiechartReportComponent implements OnInit {
   tooltip: {
       pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
   },
+  credits: {
+    enabled: false
+  },
   plotOptions: {
       pie: {
           allowPointSelect: true,
@@ -52,11 +55,14 @@ export class PiechartReportComponent implements OnInit {
           // sliced: true,
           // selected: true
       }, {
-          name: 'dormant',
+          name: 'Dormant',
           y: 3
       }]
   }]
       };
+    Highcharts.setOptions({
+        colors: ['#4286F5' ,'#FF535F']
+    });
     Highcharts.chart(this.chartContainer.nativeElement, this.chartoptions);
   }
 }
