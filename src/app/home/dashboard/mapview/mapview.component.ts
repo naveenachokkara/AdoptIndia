@@ -748,7 +748,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
       min: 0,
       title: {
           //  text: 'Rainfall (mm)' ,
-          // margin: 4,
+          // margin:4,
           // floating: false,
           // verticalAlign: null
        }

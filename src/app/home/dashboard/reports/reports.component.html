@@ -1,4 +1,5 @@
-<div style="background-color:white; display: flex; padding: 6px;" fxFlex="10">
+<div fxLayout="column" fxFlex>
+<div  style="background-color:white; display: flex; padding: 6px;" fxFlex="10">
   <title style="display: contents; color: black;flex: 50%; font-weight: bold;">Activity Monitor</title>
   <div style="flex: 50%;text-align: right;">
     <button mat-icon-button [matMenuTriggerFor]="menu" class="dotsmenu" aria-label="Example icon-button with a menu">
@@ -37,5 +38,6 @@
     ... ... ... </div> -->
 </div>
 <div fxFlex="80">
-  <div #chartContainer style="min-width: 310px;height: 240px;"></div>
+  <div #chartContainer style="height: 240px;"></div>
+</div>
 </div>
