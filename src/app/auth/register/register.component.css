@@ -23,7 +23,9 @@
   width: 100%;
   min-width: 300px;
 }
-
+::ng-deep .mat-form-field-flex{
+  height: 30px;
+}
 mat-card-title,
 mat-card-content {
   /* display: flex; */
