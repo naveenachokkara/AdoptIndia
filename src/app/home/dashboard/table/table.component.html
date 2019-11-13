@@ -2,8 +2,18 @@
   <div fxFlex="20" style="display: flex; justify-content: space-between; flex-wrap:nowrap;padding: 6px;">
     <div style="font-weight: bold;"><label>Notification</label></div>
     <div> 
-      <span>{{'Inactive'}}</span>
-      <button style="border: none;background-color: white;" mat-icon-button>
+      <button style="padding: 0;" [matMenuTriggerFor]="menu" class="dotsmenu">
+          <mat-icon style="font-size: 17px;">more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" xPosition="after">
+          <button mat-menu-item class="menuitem">
+            <span>Inactive</span>
+          </button>
+          <button mat-menu-item class="menuitem">
+            <span>Active</span>
+          </button>
+        </mat-menu>
+      <button style="border: none;background-color: white; padding: 0;" mat-icon-button>
         <mat-icon style="font-size: 17px;">filter_list</mat-icon>
       </button></div>
   </div>
