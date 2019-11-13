@@ -1,25 +1,27 @@
-<div  style="width: 100%;height: 100%;">
-  <ngx-datatable class="material"
-  style="width: 100%;height: 100%;box-shadow: none;"
-  [rows]="rows"
-  [columnMode]="'force'"
-  [headerHeight]="50"
-  [footerHeight]="auto"
-  [rowHeight]="'50'"
-  [count]="true">
-  <ngx-datatable-column name="name">
-    <ng-template let-row="row" ngx-datatable-cell-template>
-      {{row.company}}
-    </ng-template>
-  </ngx-datatable-column>
-  <ngx-datatable-column name="Vheicle Type">
-    <ng-template let-row="row" ngx-datatable-cell-template>
-      {{row.name}}
-    </ng-template>
-  </ngx-datatable-column>
-</ngx-datatable>
+<div style="width: 100%;height: 100%;" fxFlex fxLayout="column wrap">
+  <div fxFlex="20" style="display: flex; justify-content: space-between; flex-wrap:nowrap;padding: 6px;">
+    <div style="font-weight: bold;"><label>Notification</label></div>
+    <div> 
+      <span>{{'Inactive'}}</span>
+      <button style="border: none;background-color: white;" mat-icon-button>
+        <mat-icon style="font-size: 17px;">filter_list</mat-icon>
+      </button></div>
+  </div>
+  <ngx-datatable fxFlex="80" class="material" style="width: 100%;height: 100%;box-shadow: none;" [rows]="rows"
+    [columnMode]="'force'" [headerHeight]="50" [footerHeight]="auto" [rowHeight]="'50'" [count]="true">
+    <ngx-datatable-column name="name">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{row.company}}
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Vheicle Type">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{row.name}}
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
 </div>
- <!-- <ngx-datatable-column name="Time">
+<!-- <ngx-datatable-column name="Time">
     <ng-template let-row="row" ngx-datatable-cell-template>
       {{row.name}}
     </ng-template>
@@ -34,5 +36,5 @@
       {{row.name}}
     </ng-template>
   </ngx-datatable-column> -->
-  <!-- <ngx-datatable-column name="Gender">
+<!-- <ngx-datatable-column name="Gender">
   </ngx-datatable-column> -->
