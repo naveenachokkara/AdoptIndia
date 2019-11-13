@@ -10,7 +10,7 @@ export class ReportsComponent implements OnInit {
   chartoptions: any;
   private chartContainer: ElementRef;
   tabIndex = 0;
-  
+
   onTabClick(index) {
     this.tabIndex = index;
   }
@@ -25,10 +25,15 @@ export class ReportsComponent implements OnInit {
   }
 
   drawChart(type) {
-    this.chartoptions =
-      {
+
+    // const  height = this.chartContainer.nativeElement.offsetHeight;
+    // const width =this.chartContainer.nativeElement.offsetHeight
+    this.chartoptions = {
         chart: {
           type: 'column'
+        //  margin: 0,
+        // width,
+        // height,
         },
         title: {
           text: '',

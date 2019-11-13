@@ -9,6 +9,7 @@ import { latLng, latLngBounds } from 'leaflet';
 export class DashboardComponent implements OnInit {
 
   // isShowDetails = false;
+
   fitBounds;
 
   options: any = {
