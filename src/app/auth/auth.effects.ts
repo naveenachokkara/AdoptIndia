@@ -31,7 +31,7 @@ export class AuthEffects {
     tap(
       () => {
         localStorage.removeItem('userData');
-        this.router.navigateByUrl('login');
+        this.router.navigateByUrl('register');
       }
     )
   );

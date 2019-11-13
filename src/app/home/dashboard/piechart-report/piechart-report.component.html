@@ -1,52 +1,52 @@
-<div style="height: 100%;background-color:#ffffff;" fxLayout="column" fxFlex>
+<div style="height: 100%;background-color:#ffffff;" fxLayout="column" fxFlex fxLayoutAlign="space-arround">
   <!-- <div fxLayout="column" fxFlex> -->
-    <div fxFlex="10" style="display: flex;background-color:#ffffff;">
-        <title  class ="title">Status</title>
-        <div style="flex: 50%;text-align: right;">
-          <span class="Vehicle">Vehicle</span>
-            <button mat-icon-button [matMenuTriggerFor]="menu" class="dotsmenu" aria-label="Example icon-button with a menu">
+  <div fxFlex="10" style="display: flex;background-color:#ffffff;">
+    <title class="title">Status</title>
+    <div style="flex: 50%;text-align: right;">
+      <span class="Vehicle">Vehicle</span>
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="dotsmenu" aria-label="Example icon-button with a menu">
 
-                <mat-icon style="font-size: 17px;">more_vert</mat-icon>
-              </button>
-              <mat-menu #menu="matMenu" xPosition="before">
-                <button mat-menu-item class="menuitem">
-                  <span>Cars</span>
-                </button>
-                <button mat-menu-item class="menuitem">
-                  <span>Busses</span>
-                </button>
-                <button mat-menu-item class="menuitem">
-                  <span>Trucks</span>
-                </button>
-                <button mat-menu-item class="menuitem">
-                  <span>Vans</span>
-                </button>
-              </mat-menu>
-        </div>
-      </div>
-      <div fxFlex="60">
-          <div #chartContainer style="height: 180px;"></div>
-      </div>
-      <div fxFlex=30>
-          <div fxLayout="row" fxFlex>
-            <div fxFlex="49">
-                <div fxLayout="column" fxFlex>
-                    <label fxFlex=20 class="lblCount lbl ">Available</label>
-                    <label fxFlex=40 class="lblCount">07</label>
-                    <div class="Availableprogress">
-                      </div>
-                </div>
-            </div>
-            <div  fxFlex ="2" class="seperator"></div>
-            <div fxFlex="49">
-              <div fxLayout="column" fxFlex>
-                  <label fxFlex=20 class="lblCount lbl ">Dormant</label>
-                  <label fxFlex=40 class="lblCount">03</label>
-                  <div class="DormantProgress">
-                    </div>
-              </div>
-            </div>
+        <mat-icon style="font-size: 17px;">more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" xPosition="before">
+        <button mat-menu-item class="menuitem">
+          <span>Cars</span>
+        </button>
+        <button mat-menu-item class="menuitem">
+          <span>Busses</span>
+        </button>
+        <button mat-menu-item class="menuitem">
+          <span>Trucks</span>
+        </button>
+        <button mat-menu-item class="menuitem">
+          <span>Vans</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+  <div fxFlex="60">
+    <div #chartContainer style="height: 180px; max-width: 100%;"></div>
+  </div>
+  <div fxFlex="30">
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap>
+      <div fxFlex="49">
+        <div fxLayout="column" fxFlex>
+          <label fxFlex=20 class="lblCount lbl ">Available</label>
+          <label fxFlex=40 class="lblCount">07</label>
+          <div class="Availableprogress">
           </div>
         </div>
-  <!-- </div> -->
+      </div>
+      <div fxFlex="2" class="seperator"></div>
+      <div fxFlex="49">
+        <div fxLayout="column" fxFlex>
+          <label fxFlex=20 class="lblCount lbl ">Dormant</label>
+          <label fxFlex=40 class="lblCount">03</label>
+          <div class="DormantProgress">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <!-- </div> -->
+</div>

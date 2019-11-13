@@ -3,3 +3,14 @@
 //   margin-left: 10px;
 //   min-width: 0;
 // }
+
+button{
+  &:focus{
+    outline: none;
+  }
+}
+.dotsmenu {
+  border: 0;
+  background-color: white;
+  outline:0;
+}

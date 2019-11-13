@@ -1,25 +1,22 @@
-<div style="height: 100%;">
-  <div fxLayout="column" fxFlex >
+<div style="height: 100%; background-color: gray;">
+  <!-- <div fxLayout="column wrap" fxLayoutAlign="space-around stretch" fxFlex> -->
+  <div fxLayout="column wrap" fxFlex>
     <div fxFlex="50">
-<app-mapview
-[options]="options"
-[fitBounds]="fitBounds"
-[activeTile]="activeTilelayer"
-></app-mapview>
+      <app-mapview [options]="options" [fitBounds]="fitBounds" [activeTile]="activeTilelayer"></app-mapview>
     </div>
     <div fxFlex="50">
-    <div  fxLayout="row" fxLayoutAlign="space-evenly" >
-      <div fxFlex="33">
-        <app-dashboard-reports ></app-dashboard-reports>
-      </div >
-      <div style="background-color: #ffffff;" fxFlex="33">
-        <app-table></app-table>
+      <div style="background-color: gray;" fxLayout="row wrap" fxLayout.xs="column"
+        fxLayoutAlign="space-evenly stretch">
+        <div fxFlex="32">
+          <app-dashboard-reports></app-dashboard-reports>
+        </div>
+        <div style="background-color: #ffffff;" fxFlex="32">
+          <app-table></app-table>
+        </div>
+        <div style="background-color: #604ec2;" fxFlex="32">
+          <app-piechart-report></app-piechart-report>
+        </div>
       </div>
-      <div style="background-color: #604ec2;" fxFlex="33">
-        <app-piechart-report></app-piechart-report>
-      </div>
-    </div>
     </div>
   </div>
 </div>
-
