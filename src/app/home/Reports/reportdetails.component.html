@@ -1,3 +1,12 @@
-<p>
-  reportdetails works!
-</p>
+<div fxFlex fxLayout="column wrap">
+  <div fxFlex="25" class="tabsmenu">
+    <div class='tab' *ngFor="let tab of tabs">
+      <button mat-menu-item [routerLink]='tab?.route'>
+        {{tab.name}}
+      </button>
+    </div>
+  </div>
+  <div fxFlex="75">
+    <router-outlet></router-outlet>
+  </div>
+</div>

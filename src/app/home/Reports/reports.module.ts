@@ -1,10 +1,26 @@
 import { NgModule } from '@angular/core';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule, MatIconModule } from '@angular/material';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+// import { InlineSVGModule } from 'ng-inline-svg';
 
 import { ReportdetailsComponent } from './reportdetails.component';
+import { DriverComponent } from './driver/driver.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
 
+const routes: Routes = [
+  {
+    path: '', component: ReportdetailsComponent, children: [
+      { path: '', redirectTo: 'drivers', pathMatch: 'full' },
+      { path: 'drivers', component: DriverComponent },
+      { path: 'vehicles', component: VehicleComponent }
+    ]
+  }
+];
 @NgModule({
-  imports: [],
-  declarations: [ReportdetailsComponent],
+  imports: [CommonModule, MatTabsModule, MatIconModule, RouterModule, RouterModule.forChild(routes)],
+  declarations: [ReportdetailsComponent, DriverComponent, VehicleComponent],
   providers: [],
   exports: [ReportdetailsComponent]
 })
