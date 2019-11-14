@@ -16,19 +16,23 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { SubhomeComponent } from './subhome/subhome.component';
 import { SubhomeModule } from './subhome/subhome.module';
+import { ReportsModule } from './Reports/reports.module';
+import { ReportdetailsComponent } from './Reports/reportdetails.component';
 
 
 const routes: Routes = [
   {
     path: '', component: HomeComponent, children: [
       { path: 'dashboard', component: DashboardComponent },
-      { path: '', component: SubhomeComponent }
+      { path: '', component: SubhomeComponent },
+      { path: 'reports', component: ReportdetailsComponent }
     ]
   }
 ];
 @NgModule({
   imports: [MatToolbarModule, MatIconModule, MatSidenavModule, MaterialModule, MatMenuModule,
-    DashboardModule, RouterModule.forChild(routes), CommonModule, FlexLayoutModule, DashboardModule, SubhomeModule],
+    DashboardModule, RouterModule.forChild(routes), CommonModule, FlexLayoutModule, DashboardModule,
+    SubhomeModule, ReportsModule],
   declarations: [HomeComponent],
   providers: [],
   exports: [MatSidenavModule, HomeComponent]

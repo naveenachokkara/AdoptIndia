@@ -1,9 +1,13 @@
-import { NgModule } from "@angular/core";
-import { CustomtableComponent } from './customtable/customtable.component';
+import { NgModule } from '@angular/core';
+
+import { ReportdetailsComponent } from './reportdetails.component';
 
 @NgModule({
-
-  declarations: [CustomtableComponent]
+  imports: [],
+  declarations: [ReportdetailsComponent],
+  providers: [],
+  exports: [ReportdetailsComponent]
 })
-export class ReportsModule{
+export class ReportsModule {
+
 }
