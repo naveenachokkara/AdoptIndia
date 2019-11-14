@@ -17,7 +17,7 @@ import { PiechartReportComponent } from './piechart-report/piechart-report.compo
 @NgModule({
   imports: [FlexLayoutModule, LeafletModule, CommonModule, MatFormFieldModule, NgxDatatableModule,
     MatSelectModule, MatTabsModule, MatIconModule, MatMenuModule],
-  declarations: [DashboardComponent, MapviewComponent, ReportsComponent, TableComponent,PiechartReportComponent],
+  declarations: [DashboardComponent, MapviewComponent, ReportsComponent, TableComponent, PiechartReportComponent],
   providers: [],
   exports: [DashboardComponent, MapviewComponent, ReportsComponent, TableComponent]
 })
