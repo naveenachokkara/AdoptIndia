@@ -17,18 +17,17 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { SubhomeComponent } from './subhome/subhome.component';
 import { SubhomeModule } from './subhome/subhome.module';
 import { ReportsModule } from './Reports/reports.module';
-import { ReportdetailsComponent } from './Reports/reportdetails.component';
-
 
 const routes: Routes = [
   {
     path: '', component: HomeComponent, children: [
       { path: 'dashboard', component: DashboardComponent },
-      { path: '', component: SubhomeComponent },
+      { path: 'subhome', component: SubhomeComponent },
       {
         path: 'reports',
         loadChildren: () => import('./Reports/reports.module').then(m => m.ReportsModule)
-    }
+      },
+      { path: '', redirectTo: 'subhome', pathMatch: 'full' }
     ]
   }
 ];
