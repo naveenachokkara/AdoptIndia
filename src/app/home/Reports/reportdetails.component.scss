@@ -1,26 +1,20 @@
 .tabsmenu {
-  display       : flex;
+  display: flex;
   flex-direction: row;
-  padding       : 10px;
+  padding: 10px;
 
   .tab {
     button {
-      border          : none;
-      background-color: #FAFAFA;
+      border: none;
+      background-color: #fafafa;
 
       &:focus {
         outline: none;
       }
     }
-
-  }
-
-  .active {
-    border-bottom: solid 1px blue;
-
-    button {
+    .active {
       color: blue;
+      border-bottom: solid 1px blue;
     }
   }
-
 }

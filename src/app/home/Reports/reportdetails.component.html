@@ -1,7 +1,8 @@
 <div fxFlex fxLayout="column wrap">
   <div fxFlex="25" class="tabsmenu">
-    <div class='tab' *ngFor="let tab of tabs; let isFirst = first; let index = index" [ngClass]="{'active': tabIndex === index && activeLink === tab?.route}">
-      <button mat-menu-item [routerLink]='tab?.route' (click)="onButtonClick(index)">
+    <div class='tab' *ngFor="let tab of tabs; let isFirst = first; let index = index">
+      <button mat-menu-item [routerLink]='tab?.route' [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:
+        true}" (click)="onButtonClick(index)">
         {{tab.name}}
       </button>
     </div>
