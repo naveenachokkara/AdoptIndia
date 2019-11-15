@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, TemplateRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, AfterViewInit, Input } from '@angular/core';
 import { Page } from '../vehicle/vehicle.model';
 import { Data } from '../../../../assets/reportsdata';
 import { SelectionType, ColumnMode } from '@swimlane/ngx-datatable';
@@ -11,14 +11,16 @@ import { SelectionType, ColumnMode } from '@swimlane/ngx-datatable';
 
 export class CustomtableComponent implements OnInit,AfterViewInit {
 
+  @Input() rows = [];
+  @Input() columns= [];
   constructor() {
     //this.setPage({offset: 0, pageSize: 10});
     this.rows= Data;
    }
 
   page = new Page();
-    columns = [];
-  rows = [];
+  //   columns = [];
+  // rows = [];
   cache: any = {};
   private isLoading = false;
   @ViewChild('dataTable') table;
@@ -31,18 +33,18 @@ export class CustomtableComponent implements OnInit,AfterViewInit {
 
   ngOnInit() {
 
-    this.columns = [
-      { prop: 'regNumber', name: 'Reg Number' },
-      { prop: 'vehicleType', name: 'Vehicle Type' },
-      { prop: 'VehicleBrand', name: 'Vehicle Brand' },
-      { prop: 'mfgDate', name: 'Mfg Date' },
-      { prop: 'engineNumber', name: 'Engine Number' },
-      { prop: 'insurance', name: 'Insurance' },
-      { prop: 'VendorName', name: 'Vendor Name' },
-      {prop : 'topSpeed', name : 'Top Speed'},
-      {prop:'location', name :'Location'},
-      { prop: 'actions', name: 'Actions', cellTemplate: this.buttonsTemplate }
-    ];
+    // this.columns = [
+    //   { prop: 'regNumber', name: 'Reg Number' },
+    //   { prop: 'vehicleType', name: 'Vehicle Type' },
+    //   { prop: 'VehicleBrand', name: 'Vehicle Brand' },
+    //   { prop: 'mfgDate', name: 'Mfg Date' },
+    //   { prop: 'engineNumber', name: 'Engine Number' },
+    //   { prop: 'insurance', name: 'Insurance' },
+    //   { prop: 'VendorName', name: 'Vendor Name' },
+    //   {prop : 'topSpeed', name : 'Top Speed'},
+    //   {prop:'location', name :'Location'},
+    //   { prop: 'actions', name: 'Actions' }
+    // ];
   }
   ngAfterViewInit() {
     // this.table.bodyComponent.updatePage = function(direction: string): void {
