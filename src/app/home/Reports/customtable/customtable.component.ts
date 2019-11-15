@@ -32,17 +32,6 @@ export class CustomtableComponent implements OnInit,AfterViewInit {
   ngOnInit() {
 
     this.columns = [
-      {
-        prop: 'selected',
-        name: '',
-        sortable: false,
-        canAutoResize: false,
-        draggable: false,
-        resizable: false,
-        headerCheckboxable: true,
-        checkboxable: true,
-        width: 30
-      },
       { prop: 'regNumber', name: 'Reg Number' },
       { prop: 'vehicleType', name: 'Vehicle Type' },
       { prop: 'VehicleBrand', name: 'Vehicle Brand' },

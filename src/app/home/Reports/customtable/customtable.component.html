@@ -1,5 +1,5 @@
 <div style="width: 90%;">
-  <ngx-datatable  #dataTable class='material' [rows]="rows" [columnMode]="'force'"
+  <ngx-datatable  #dataTable class='material' [rows]="rows" [columnMode]="'flex'"
     [headerHeight]="'50'" [scrollbarV]="false"  [footerHeight]="'50'" [rowHeight]="'45'"  [limit]="6" [count]="true"  [draggable]="false"  [selected]="selected"
     [selectionType]="SelectionType.checkbox"
     [selectAllRowsOnPage]="false"
@@ -17,7 +17,7 @@
             [checkboxable]="true"
           >
           </ngx-datatable-column>
-     <ngx-datatable-column  *ngFor="let col of columns"  [name]="col.name" [draggable]="true" [flexGrow]="1.6"
+     <ngx-datatable-column  *ngFor="let col of columns"  [name]="col.name" [draggable]="true" [flexGrow]="0.5"
      [resizeable]="true">
       <ng-template let-row="row" *ngIf="col.name !=='Actions'"  ngx-datatable-cell-template>
         {{row[col.prop]}}
