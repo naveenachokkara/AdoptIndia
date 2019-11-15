@@ -2,7 +2,7 @@
   <div fxFlex="25" class="tabsmenu">
     <div class='tab' *ngFor="let tab of tabs; let isFirst = first; let index = index">
       <button mat-menu-item [routerLink]='tab?.route' [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:
-        true}" (click)="onButtonClick(index)">
+        true}">
         {{tab.name}}
       </button>
     </div>

@@ -1,7 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
-import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
 @Component({
   selector: 'app-reportdetails',
   templateUrl: './reportdetails.component.html',
@@ -9,20 +6,13 @@ import { Subject } from 'rxjs';
 })
 export class ReportdetailsComponent implements OnInit {
   tabs = [{ name: 'Drivers', route: './' }, { name: 'Vehicles', route: './vehicles' }];
-  tabIndex = 0;
-  activeLink: string;
-  
-  private readonly destroyed$ = new Subject<boolean>();
-
-  constructor(private readonly router: Router) {
+  constructor() {
 
   }
 
   ngOnInit() {
 
   }
-  onButtonClick(index) {
-    this.tabIndex = index;
-  }
+
 
 }
