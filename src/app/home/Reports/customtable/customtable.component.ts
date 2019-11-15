@@ -22,11 +22,13 @@ export class CustomtableComponent implements OnInit,AfterViewInit {
   private isLoading = false;
   @ViewChild('dataTable') table;
   @ViewChild('buttonTemplate') buttonsTemplate: TemplateRef<any>;
+  @ViewChild('checkboxTemplate') checkboxsTemplate: TemplateRef<any>;
 
 
   ngOnInit() {
 
     this.columns = [
+      { prop: 'actions', name: '', cellTemplate: this.checkboxsTemplate },
       { prop: 'regNumber', name: 'Reg Number' },
       { prop: 'vehicleType', name: 'Vehicle Type' },
       { prop: 'VehicleBrand', name: 'Vehicle Brand' },
