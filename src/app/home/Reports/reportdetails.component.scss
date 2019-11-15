@@ -1,22 +1,26 @@
 .tabsmenu {
   display       : flex;
   flex-direction: row;
+  padding       : 10px;
 
   .tab {
     button {
       border          : none;
-      background-color: white;
+      background-color: #FAFAFA;
 
       &:focus {
         outline: none;
       }
     }
 
-    &:hover {
-      border-bottom: solid 1px blue;
+  }
+
+  .active {
+    border-bottom: solid 1px blue;
+
+    button {
+      color: blue;
     }
-
-
   }
 
 }

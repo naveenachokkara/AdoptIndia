@@ -12,9 +12,8 @@ import { VehicleComponent } from './vehicle/vehicle.component';
 const routes: Routes = [
   {
     path: '', component: ReportdetailsComponent, children: [
-      { path: '', redirectTo: 'drivers', pathMatch: 'full' },
-      { path: 'drivers', component: DriverComponent },
-      { path: 'vehicles', component: VehicleComponent }
+      { path: 'vehicles', component: VehicleComponent },
+      { path: '', component: DriverComponent }
     ]
   }
 ];

@@ -17,8 +17,6 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { SubhomeComponent } from './subhome/subhome.component';
 import { SubhomeModule } from './subhome/subhome.module';
 import { ReportsModule } from './Reports/reports.module';
-import { ReportdetailsComponent } from './Reports/reportdetails.component';
-
 
 const routes: Routes = [
   {
