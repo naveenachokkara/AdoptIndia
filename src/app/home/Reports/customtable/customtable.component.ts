@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, TemplateRef, AfterViewInit } from '@angular/core';
 import { Page } from '../vehicle/vehicle.model';
 import { Data } from '../../../../assets/reportsdata';
+import { SelectionType, ColumnMode } from '@swimlane/ngx-datatable';
 
 @Component({
   selector: 'app-customtable',
@@ -23,12 +24,25 @@ export class CustomtableComponent implements OnInit,AfterViewInit {
   @ViewChild('dataTable') table;
   @ViewChild('buttonTemplate') buttonsTemplate: TemplateRef<any>;
   @ViewChild('checkboxTemplate') checkboxsTemplate: TemplateRef<any>;
-
+  selected = [];
+  ColumnMode = ColumnMode;
+  SelectionType = SelectionType;
+  index;
 
   ngOnInit() {
 
     this.columns = [
-      { prop: 'actions', name: '', cellTemplate: this.checkboxsTemplate },
+      {
+        prop: 'selected',
+        name: '',
+        sortable: false,
+        canAutoResize: false,
+        draggable: false,
+        resizable: false,
+        headerCheckboxable: true,
+        checkboxable: true,
+        width: 30
+      },
       { prop: 'regNumber', name: 'Reg Number' },
       { prop: 'vehicleType', name: 'Vehicle Type' },
       { prop: 'VehicleBrand', name: 'Vehicle Brand' },
@@ -55,6 +69,20 @@ export class CustomtableComponent implements OnInit,AfterViewInit {
     //     this.page.emit({ offset });
     //   }
     // }
+  }
+
+  onSelect({ selected }) {
+    console.log('Select Event', selected, this.selected);
+
+    this.selected.splice(0, this.selected.length);
+    this.selected.push(...selected);
+  }
+
+  onActivate(event) {
+    console.log('Activate Event', event);
+  }
+  displayCheck(row) {
+    return row.name !== 'Ethel Price';
   }
 
 
