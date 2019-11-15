@@ -24,11 +24,12 @@ const routes: Routes = [
   {
     path: '', component: HomeComponent, children: [
       { path: 'dashboard', component: DashboardComponent },
-      { path: '', component: SubhomeComponent },
+      { path: 'subhome', component: SubhomeComponent },
       {
         path: 'reports',
         loadChildren: () => import('./Reports/reports.module').then(m => m.ReportsModule)
-    }
+      },
+      { path: '', redirectTo: 'subhome', pathMatch: 'full' }
     ]
   }
 ];

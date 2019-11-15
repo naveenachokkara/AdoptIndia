@@ -20,7 +20,7 @@ export class AuthEffects {
     tap(
       action => {
         localStorage.setItem('userData', JSON.stringify(action.payload.user));
-        this.router.navigateByUrl('home');
+        this.router.navigateByUrl('home/subhome');
       }
     )
   );
