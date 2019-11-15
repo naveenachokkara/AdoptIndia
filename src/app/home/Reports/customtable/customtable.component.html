@@ -1,3 +1,14 @@
-<p>
-  customtable works!
-</p>
+<div style="width: 90%;">
+  <ngx-datatable  #dataTable class='material' [rows]="rows" [columns]="columns" [columnMode]="'force'"
+    [headerHeight]="'50'" [scrollbarV]="false"  [footerHeight]="'50'" [rowHeight]="'45'"  [limit]="10" [count]="true"  [draggable]="false"
+     >
+  </ngx-datatable>
+</div>
+<ng-template #buttonTemplate let-row="row" let-value="value">
+  <button class="btn btn-transparent" (click)='onSelect(row)'>Button
+  </button>
+
+  <button class="btn btn-primary" (click)='onSelect(row)'>Button
+  </button>
+</ng-template>
+

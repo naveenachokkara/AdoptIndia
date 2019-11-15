@@ -8,6 +8,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReportdetailsComponent } from './reportdetails.component';
 import { DriverComponent } from './driver/driver.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { CustomtableComponent } from './customtable/customtable.component';
 
 const routes: Routes = [
   {
@@ -19,8 +21,8 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  imports: [CommonModule, MatTabsModule, MatIconModule, RouterModule, RouterModule.forChild(routes)],
-  declarations: [ReportdetailsComponent, DriverComponent, VehicleComponent],
+  imports: [CommonModule, MatTabsModule, MatIconModule, RouterModule, NgxDatatableModule ,RouterModule.forChild(routes)],
+  declarations: [ReportdetailsComponent, DriverComponent, VehicleComponent,CustomtableComponent],
   providers: [],
   exports: [ReportdetailsComponent]
 })
