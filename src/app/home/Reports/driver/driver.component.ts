@@ -25,7 +25,7 @@ export class DriverComponent implements OnInit {
       { prop: 'VendorName', name: 'Vendor Name' },
       {prop : 'topSpeed', name : 'Top Speed'},
       {prop:'location', name :'Location'},
-      { prop: 'actions', name: 'Actions' }
+      { prop: 'documents', name: 'Documents' }
     ];
   }
 

@@ -1,5 +1,5 @@
 <div fxFlex fxLayout="column wrap">
-  <div fxFlex="25" class="tabsmenu">
+  <div fxFlex="20" class="tabsmenu">
     <div class='tab' *ngFor="let tab of tabs; let isFirst = first; let index = index">
       <button mat-menu-item [routerLink]='tab?.route' [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:
         true}">
@@ -7,7 +7,19 @@
       </button>
     </div>
   </div>
-  <div fxFlex="75">
+  <div fxFlex="20" class="searchcontainer">
+    <div class="add">
+        <button mat-menu-item>
+            <mat-icon>add_circle_outline</mat-icon>
+            <span>Add</span>
+          </button>
+    </div>
+    <div class="search">
+      <mat-icon>search</mat-icon>
+      <input type="text" placeholder="Search">
+    </div>
+  </div>
+  <div fxFlex="60" style="padding-top: 10px;">
     <router-outlet></router-outlet>
   </div>
 </div>

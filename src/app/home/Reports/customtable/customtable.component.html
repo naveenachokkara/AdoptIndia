@@ -19,10 +19,10 @@
           </ngx-datatable-column>
      <ngx-datatable-column  *ngFor="let col of columns"  [name]="col.name" [draggable]="true" [flexGrow]="0.5"
      [resizeable]="true">
-      <ng-template let-row="row" *ngIf="col.name !=='Actions'"  ngx-datatable-cell-template>
+      <ng-template let-row="row" *ngIf="col.name !=='Documents'"  ngx-datatable-cell-template>
         {{row[col.prop]}}
       </ng-template>
-      <ng-template let-value="value" let-row="row" *ngIf="col.name==='Actions'" ngx-datatable-cell-template>
+      <ng-template let-value="value" let-row="row" *ngIf="col.name==='Documents'" ngx-datatable-cell-template>
         <span>
           <button  class="btnReport" (click)='onSelectRed(row)'><svg class="reportImg"></svg></button>
           <button class="btnReport" (click)='onSelectBlue(value)'><svg class="reportImg"></svg></button>

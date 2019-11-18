@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
-import { MatSelectModule, MatIconModule, MatCheckboxModule } from '@angular/material';
+import { MatIconModule, MatCheckboxModule, MatInputModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 // import { InlineSVGModule } from 'ng-inline-svg';
@@ -20,8 +20,9 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  imports: [CommonModule, MatTabsModule, MatIconModule, RouterModule, NgxDatatableModule ,MatCheckboxModule, RouterModule.forChild(routes)],
-  declarations: [ReportdetailsComponent, DriverComponent, VehicleComponent,CustomtableComponent],
+  imports: [CommonModule, MatTabsModule, MatIconModule, RouterModule, NgxDatatableModule, MatCheckboxModule,
+     MatInputModule, RouterModule.forChild(routes)],
+  declarations: [ReportdetailsComponent, DriverComponent, VehicleComponent, CustomtableComponent],
   providers: [],
   exports: [ReportdetailsComponent]
 })
