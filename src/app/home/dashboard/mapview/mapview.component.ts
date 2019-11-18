@@ -22,7 +22,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
 
   @Input() options;
   @Input() fitBounds;
-  chartoptions : any;
+  chartoptions: any;
   map: Map;
   activetileLayer: any;
   selactiveTile = '';
@@ -31,6 +31,8 @@ export class MapviewComponent implements OnInit, AfterViewInit {
   showDetails = false;
   currentDate: any;
   selected = 'A';
+  isActionEnabled = true;
+  @Input() showAction;
   // @Input() fromDashboardMap;
   @Input('activeTile')
   set activeTile(value: any) {
@@ -595,10 +597,10 @@ export class MapviewComponent implements OnInit, AfterViewInit {
       ]
     ]
   ];
-  constructor(private changeDetector : ChangeDetectorRef ) { }
+  constructor(private changeDetector: ChangeDetectorRef ) { }
 
   ngOnInit() {
-    this.currentDate =moment().format('YYYY-MM-DD') ;
+    this.currentDate = moment().format('YYYY-MM-DD') ;
     // this.options = {
     //   layers: [
     //     // tslint:disable-next-line:max-line-length
@@ -611,8 +613,8 @@ export class MapviewComponent implements OnInit, AfterViewInit {
 
   }
 
-  ngAfterViewInit(){
-    //console.log(this.container);
+  ngAfterViewInit() {
+    // console.log(this.container);
   }
 
   onMapReady(mapIns: Map): void {
@@ -632,45 +634,47 @@ export class MapviewComponent implements OnInit, AfterViewInit {
       iconUrl: '../../../../assets/truck.png',
       iconSize: [25, 25]
     });
-    let markers =[];
+    const markers = [];
 
-    // _.each(dataObj.wasteTrucks, function(item) {
-    //   console.log(item);
-    //   const location = item.geocoordinates;
-    //   const layer = new L.Marker([location.latitude, location.longitude], { icon: greenIcon });
-    //   layer.sid = item.sid;
-    //   layer.label = item.label;
-    //   layer.status = item.status;
-    //   const out = [];
-    //   for (const key of Object.keys(layer)) {
-    //     out.push(key + ' : ' + layer[key]);
-    //   }
-    //   layer.bindPopup('<div style="max-height: 120px; overflow-y: auto;"><pre style="color: black;"><code>' +
-    //   out.join('<br />') + '</code></pre></div>');
+    _.each(dataObj.wasteTrucks, function(item) {
+      console.log(item);
+      const location = item.geocoordinates;
+      const layer = new L.Marker([location.latitude, location.longitude], { icon: greenIcon });
+      // layer.sid = item.sid;
+      // layer.label = item.label;
+      // layer.status = item.status;
+      const out = [];
+      for (const key of Object.keys(layer)) {
+        out.push(key + ' : ' + layer[key]);
+      }
+      layer.bindPopup('<div style="max-height: 120px; overflow-y: auto;"><pre style="color: black;"><code>' +
+      out.join('<br />') + '</code></pre></div>');
 
-    //   layer.on('mouseover', (): void => {
-    //               layer.openPopup();
-    //             });
-    //   layer.on('mouseout', (): void => {
-    //               layer.closePopup();
-    //             })
-    //   layer.on('click',(): void =>{
-    //     if(!this.showDetails) {
-    //     this.showDetails = true;
-    //     this.changeDetector.detectChanges();
-    //     this.searchcontainer.nativeElement.style.marginLeft ='47%';
-    //     console.log(this.chartContainer);
-    //     this.drawChart();
-    //     } else {
-    //     this.showDetails = false;
-    //     this.changeDetector.detectChanges();
-    //     this.searchcontainer.nativeElement.style.marginLeft ='70%';
-    //     }
-    //   })
-    //   markers.push(layer);
-    //   layer.addTo(this.map);
-    // }, this);
-    if(markers.length > 0){
+      layer.on('mouseover', (): void => {
+                  layer.openPopup();
+                });
+      layer.on('mouseout', (): void => {
+                  layer.closePopup();
+                });
+      if (this.showAction) {
+      layer.on('click', (): void => {
+        if (!this.showDetails) {
+        this.showDetails = true;
+        this.changeDetector.detectChanges();
+        this.searchcontainer.nativeElement.style.marginLeft = '47%';
+        console.log(this.chartContainer);
+        this.drawChart();
+        } else {
+        this.showDetails = false;
+        this.changeDetector.detectChanges();
+        this.searchcontainer.nativeElement.style.marginLeft = '70%';
+        }
+      });
+    }
+      markers.push(layer);
+      layer.addTo(this.map);
+    }, this);
+    if (markers.length > 0) {
       const group =  L.featureGroup(markers);
       this.map.fitBounds(group.getBounds());
     }
@@ -723,8 +727,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
 
   drawChart() {
     const element = document.getElementById('chartsDiv');
-    this.chartoptions=
-    {
+    this.chartoptions = {
     chart: {
       type: 'column'
   },
@@ -804,7 +807,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
 };
 
     Highcharts.chart(this.chartContainer.nativeElement, this.chartoptions);
-    //console.log(this.container);
+    // console.log(this.container);
 
 
 

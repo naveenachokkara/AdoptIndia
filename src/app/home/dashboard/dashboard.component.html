@@ -1,11 +1,11 @@
-<div style="height: 100%; background-color: gray;">
+<div style="height: 100%;">
   <!-- <div fxLayout="column wrap" fxLayoutAlign="space-around stretch" fxFlex> -->
   <div fxLayout="column wrap" fxFlex>
     <div fxFlex="50">
-      <app-mapview [options]="options" [fitBounds]="fitBounds" [activeTile]="activeTilelayer"></app-mapview>
+      <app-mapview [options]="options" [fitBounds]="fitBounds" [activeTile]="activeTilelayer" [showAction]="isShowAction" ></app-mapview>
     </div>
     <div fxFlex="50">
-      <div style="background-color: gray;" fxLayout="row wrap"
+      <div  fxLayout="row wrap"
         fxLayoutAlign="space-evenly stretch">
         <div fxFlex="32">
           <app-dashboard-reports></app-dashboard-reports>

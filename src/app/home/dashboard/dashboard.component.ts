@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
   // isShowDetails = false;
 
   fitBounds;
+  isShowAction =false;
 
   options: any = {
     zoomControl: true,

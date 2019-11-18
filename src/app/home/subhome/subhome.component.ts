@@ -12,6 +12,7 @@ export class SubhomeComponent implements OnInit {
     zoomControl: true,
     center: latLng(27.15608625, 75.7476063556986)
   };
+  isShowAction = true;
 
   activeTilelayer = {
     url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
