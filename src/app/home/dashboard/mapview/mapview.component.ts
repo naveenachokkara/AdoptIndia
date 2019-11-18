@@ -10,7 +10,7 @@ import * as moment from 'moment';
 @Component({
   selector: 'app-mapview',
   templateUrl: './mapview.component.html',
-  styleUrls: ['./mapview.component.css']
+  styleUrls: ['./mapview.component.scss']
 })
 export class MapviewComponent implements OnInit, AfterViewInit {
    private chartContainer: ElementRef;
