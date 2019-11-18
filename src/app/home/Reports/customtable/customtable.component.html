@@ -24,8 +24,8 @@
       </ng-template>
       <ng-template let-value="value" let-row="row" *ngIf="col.name==='Documents'" ngx-datatable-cell-template>
         <span>
-          <button  class="btnReport" (click)='onSelectRed(row)'><svg class="reportImg"></svg></button>
-          <button class="btnReport" (click)='onSelectBlue(value)'><svg class="reportImg"></svg></button>
+          <button  class="alignBtn btnReport" (click)='onSelectRed(row)'><svg class="reportImg"></svg></button>
+          <button   class="btnReport" (click)='onSelectBlue(value)'><svg class="reportImg"></svg></button>
         </span>
       </ng-template>
     </ngx-datatable-column>
