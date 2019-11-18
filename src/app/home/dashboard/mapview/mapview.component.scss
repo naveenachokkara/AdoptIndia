@@ -176,13 +176,18 @@ font-weight: 500;
   background:red
 }
 
-// .legend{
-//   min-width: 10px !important;
-// }
+.legend{
+ background: none;
+ box-shadow: none;
+}
 // ::ng-deep .mat-select-panel {
 //   margin-left: 75px;
 //   min-width: 40px !important;
 // }
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
 
 
 ::ng-deep .cdk-overlay-connected-position-bounding-box {
