@@ -1,4 +1,5 @@
-<div style="height: 100%;background-color:#ffffff;" fxLayout="column" fxFlex fxLayoutAlign="space-arround">
+<div style="height: 100%;background-color:#ffffff;width:100%" fxLayout="column wrap" fxFlex
+  fxLayoutAlign="space-arround">
   <!-- <div fxLayout="column" fxFlex> -->
   <div fxFlex="10" style="display: flex;background-color:#ffffff;">
     <title class="title">Status</title>
@@ -25,12 +26,12 @@
     </div>
   </div>
   <div fxFlex="60">
-    <div #chartContainer style="height: 180px; max-width: 100%;"></div>
+    <div #chartContainer style="height: 180px; max-width: 30.7vw;"></div>
   </div>
   <div fxFlex="30">
-    <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap>
+    <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutWrap>
       <div fxFlex="49">
-        <div fxLayout="column" fxFlex>
+        <div fxLayout="column wrap" fxFlex>
           <label fxFlex=20 class="lblCount lbl ">Available</label>
           <label fxFlex=40 class="lblCount">07</label>
           <div class="Availableprogress">
