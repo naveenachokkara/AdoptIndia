@@ -619,6 +619,10 @@ export class MapviewComponent implements OnInit, AfterViewInit {
 
   onMapReady(mapIns: Map): void {
     this.map = mapIns;
+
+    this.map.on('click', function(e) {
+     console.log(e);
+  });
     // tslint:disable-next-line:no-unused-expression
     this.activetileLayer &&
       !this.map.hasLayer(this.activetileLayer) &&
@@ -810,6 +814,46 @@ export class MapviewComponent implements OnInit, AfterViewInit {
     // console.log(this.container);
 
 
+
+  }
+
+  addRoute() {
+  console.log(this.map);
+  const data = [
+    {lat: 16.960168570809433, lng: 82.24521366724679},
+    {lat: 16.962219517057594, lng: 82.23834909390479},
+    {lat: 16.96574709222348, lng: 82.22865288405919},
+    {lat: 16.960742838015914, lng: 82.22187411788391},
+    {lat: 16.955328248897295, lng: 82.22144508205005},
+    {lat: 16.948436728029463, lng: 82.22573544038883}
+  ];
+  const latlngs = [];
+  data.forEach((item, index) => {
+  latlngs.push([item.lat, item.lng]);
+});
+  const polyline = L.polyline(latlngs, {color: 'blue'}).addTo(this.map);
+  this.map.fitBounds(polyline.getBounds());
+  }
+
+  addGeoFence() {
+  const data =[
+   { lat: 16.961563216694344, lng: 82.22041539604876},
+{lat: 16.968700360011653, lng: 82.2362039147354},
+{lat: 16.95787148443053, lng: 82.24238203074319},
+{lat: 16.948518771430518, lng: 82.23560326456797},
+{lat: 16.951144141359723, lng: 82.22050120321553},
+{lat: 16.962301554441787, lng: 82.22084443188263},
+{lat: 16.961563216694344, lng: 82.22041539604876}
+  ];
+  const latlongs= [];
+  data.forEach((item, index) => {
+    latlongs.push([item.lat, item.lng]);
+  });
+  const polygon = L.polygon(latlongs, {color: 'red'}).addTo(this.map);
+  this.map.fitBounds(polygon.getBounds());
+  }
+
+  addGeo() {
 
   }
 

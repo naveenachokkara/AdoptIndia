@@ -14,9 +14,10 @@
       </div>
       <div fxFlex="10">
         <div fxFlex="row" fxFlex fxLayoutAlign="space-evenly center">
-          <svg class="geo geomap"></svg>
-          <svg class="geo geonavigate"></svg>
-          <svg class="geo geofence"></svg>
+            <div (click)="addGeoFence()"><svg class="geo geomap"></svg></div>
+
+            <div (click)="addRoute()"><svg class="geo geonavigate"></svg></div>
+            <div (click)="addGeo()"><svg class="geo geofence"></svg></div>
         </div>
       </div>
       <div fxFlex="30">
