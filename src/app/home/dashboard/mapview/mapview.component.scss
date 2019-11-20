@@ -1,64 +1,65 @@
-.map-component{
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-    user-select: none;
-    height: auto;
-    margin: 0;
+.map-component {
+  overflow   : hidden;
+  width      : 100%;
+  position   : relative;
+  user-select: none;
+  height     : auto;
+  margin     : 0;
 }
-.mapContainer{
-  width: 100%;
-  height: 100%;
-  padding: 0 ;
+
+.mapContainer {
+  width  : 100%;
+  height : 100%;
+  padding: 0;
 }
 
 .overlay {
-  width: 25%;
-  height: 6%;
-  position: absolute;
-  /* top: 100%; */
-  /* left: 0; */
-  /* bottom: 0; */
+  width           : 25%;
+  height          : 6%;
+  position        : absolute;
+  /* top          : 100%; */
+  /* left         : 0; */
+  /* bottom       : 0; */
   background-color: rgb(255, 255, 255);
-  z-index: 1000;
-  /* margin-left: 75%; */
-  margin-left: 70%;
-  margin-top: 2%;
-}
-.showdeatilsHeader
-{
-  font-size: 15px;
-    float: left;
-    /* margin: 8px; */
-}
-.showdetailssubinfo
-{
-  float: left;
-  clear: both;
-  /* margin-left: 9px; */
-  margin-top: -22px;
-  font-size: 11px;
-}
-.dot {
-  height: 11px;
-  width: 11px;
-  background-color:red;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 4px;
+  z-index         : 1000;
+  /* margin-left  : 75%; */
+  margin-left     : 70%;
+  margin-top      : 2%;
 }
 
-.detailsClass
-{
+.showdeatilsHeader {
+  font-size: 15px;
+  float    : left;
+  /* margin: 8px; */
+}
+
+.showdetailssubinfo {
+  float         : left;
+  clear         : both;
+  /* margin-left: 9px; */
+  margin-top    : -22px;
+  font-size     : 11px;
+}
+
+.dot {
+  height          : 11px;
+  width           : 11px;
   background-color: red;
-  width: 97%;
-  height: 90%;
-  margin-top: 7px;
-  margin-left: 5px;
+  border-radius   : 50%;
+  display         : inline-block;
+  margin-right    : 4px;
+}
+
+.detailsClass {
+  background-color: red;
+  width           : 97%;
+  height          : 90%;
+  margin-top      : 7px;
+  margin-left     : 5px;
 }
 
 img {
-  width: 100%;
+  width : 100%;
   height: 100%;
 }
 
@@ -66,150 +67,165 @@ img {
   max-width: 100% !important;
 }
 
-.searchbar{
-  font-size: 17px;
-  border: none;
+.searchbar {
+  font-size : 17px;
+  border    : none;
   text-align: left;
-    margin: 4px;
+  margin    : 4px;
 }
 
-.search{
-  background-image: url('../../../../assets/search.svg');
+.search {
+  background-image   : url('../../../../assets/search.svg');
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin: 4px;
-  width: 30px;
-  color: white;
+  background-repeat  : no-repeat;
+  background-size    : contain;
+  margin             : 4px;
+  width              : 30px;
+  color              : white;
 }
 
-.geomap{
+.geomap {
   background-image: url('../../../../assets/map.svg');
 }
 
-.reportImg{
-  background-image: url('../../../../assets/upload.svg');
+.reportImg {
+  background-image   : url('../../../../assets/upload.svg');
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 20%;
-  height: 19px;
-  cursor: pointer;
+  background-repeat  : no-repeat;
+  background-size    : contain;
+  width              : 20%;
+  height             : 19px;
+  cursor             : pointer;
 }
-.geo{
+
+.geo {
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 20px;
-  cursor: pointer;
+  background-repeat  : no-repeat;
+  background-size    : contain;
+  width              : 20px;
+  cursor             : pointer;
 }
-.geonavigate{
+
+.geonavigate {
   background-image: url('../../../../assets/navigation.svg');
 
 }
-.geofence{
+
+.geofence {
   background-image: url('../../../../assets/geofence.svg');
 }
+
 #search-button {
-  width: 100%;
-    background: white;
-    border: none;
-    height: 100%;
+  width     : 100%;
+  background: white;
+  border    : none;
+  height    : 100%;
 }
 
 #search-button svg {
-  width: 16px;
+  width : 16px;
   height: 16px;
 }
+
 *:focus {
   outline: none;
 }
 
-.details{
+.details {
 
-  margin: 7px;
+  margin    : 7px;
   background: #FFFFFF;
 }
 
-.reportsBtn{
-  width: 45%;
-  margin-top: 2%;
+.reportsBtn {
+  width        : 45%;
+  margin-top   : 2%;
   margin-bottom: 1%;
-  line-height: 18px;
+  line-height  : 18px;
 }
 
 // mat-select {
-//   width: fit-content !important;
+//   width      : fit-content !important;
 //  // min-width: 100%;
 // }
 
 // ::ng-deep .mat-form-field-infix {
 //   min-width: 75px !important;
-//   width: fit-content !important;
+//   width    : fit-content !important;
 // }
 
 // ::ng-deep mat-select .mat-select-value {
-//   width: fit-content;
+//   width    : fit-content;
 //   min-width: 2ch;
 //   max-width: 25ch;
 // }
 // ::ng-deep mat-select .mat-select-placeholder {
-//   width: fit-content;
+//   width    : fit-content;
 //   min-width: 10ch;
 // }
 
 // ::ng-deep .mat-form-field-underline{
 //   display: none;
 // }
-.bold{
-font-weight: 500;
+
+.bold {
+  font-weight: 500;
 }
 
 .circle {
-  width: 25px;
-  height: 25px;
+  width        : 25px;
+  height       : 25px;
   border-radius: 50%;
-  font-size: 12px;
-  color: #fff;
-  line-height: 25px;
-  text-align: center;
-  background:red
+  font-size    : 12px;
+  color        : #fff;
+  line-height  : 25px;
+  text-align   : center;
+  background   : red
 }
 
-.legend{
- background: none;
- box-shadow: none;
-}
 // ::ng-deep .mat-select-panel {
 //   margin-left: 75px;
-//   min-width: 40px !important;
+//   min-width  : 40px !important;
 // }
 
 ::ng-deep .mat-form-field-underline {
   display: none;
 }
 
-
 ::ng-deep .cdk-overlay-connected-position-bounding-box {
 
   .cdk-overlay-pane {
     padding-left: 33px !important;
 
-  .mat-select-panel {
-      min-width: 10px !important;
+    .mat-select-panel {
+      min-width : 10px !important;
+      background: transparent;
+      .mat-selected {
+        background: transparent;
+      }
+      .mat-option{
+        height: 2.5em;
+      }
+    }
+
+    .legend {
+      box-shadow: none;
+      position: absolute;
+      left: 10px;
+      top: -9px;
     }
   }
 }
 
 ::ng-deep .mat-select-arrow {
-  border-left: 15px solid transparent !important;
-  border-right: none !important;
-  border-top: 15px solid transparent !important;
+  border-left        : 15px solid transparent !important;
+  border-right       : none !important;
+  border-top         : 15px solid transparent !important;
   border-image-source: url('../../../../assets/doublearrow.png') !important;
   border-image-repeat: stretch !important;
 }
 
-.geoRef{
+.geoRef {
   background: none;
-    border: none;
+  border    : none;
 }
