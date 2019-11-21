@@ -16,10 +16,10 @@
     </div>
     <div class="search">
       <mat-icon>search</mat-icon>
-      <input type="text" placeholder="Search">
+      <input type="text" placeholder="Search" (change)="onSearch($event)">
     </div>
   </div>
   <div fxFlex="60" style="padding-top: 10px;">
-    <router-outlet></router-outlet>
+    <router-outlet ></router-outlet>
   </div>
 </div>
