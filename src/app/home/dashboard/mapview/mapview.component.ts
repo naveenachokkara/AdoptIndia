@@ -32,7 +32,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
   createdRegion;
   showDetails = false;
   currentDate: any;
-  selected = 'A';
+  selected = 0;
   isActionEnabled = true;
   @Input() showAction;
   // @Input() fromDashboardMap;
@@ -606,6 +606,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
     // };
     const totalTrucks = Object.keys(this.data.wasteTrucks);
     this.legends.push({ status: 'All', total: totalTrucks.length });
+    this.selected = totalTrucks.length;
     this.groupedData = _.groupBy(totalTrucks.map(i => this.data.wasteTrucks[i]), 'status');
     _.each(this.groupedData, (arr: any, key) => {
       this.legends.push({ status: key, total: arr.length });
