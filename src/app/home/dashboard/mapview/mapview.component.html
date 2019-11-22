@@ -97,7 +97,13 @@
       <mat-form-field style="width:100%;margin-top:-17%;text-align: center;">
         <mat-select disableOptionCentering panelClass="legend" [(value)]="selected"
           style="border-left: 1px solid gray; padding-right: 8px;">
-          <mat-select-trigger>{{selected}}</mat-select-trigger>
+          <mat-select-trigger [ngClass]="{
+            'active': getStatus(selected) === 'Active',
+            'inactive': getStatus(selected) === 'Inactive',
+            'all': getStatus(selected) === 'All',
+            'idle': getStatus(selected) === 'Idle',
+            'selectedcircle': true
+         }">{{selected}}</mat-select-trigger>
           <mat-option *ngFor="let legend of legends" [value]="legend.total">
             <!-- <mat-icon class="geo geofence"></mat-icon> -->
             <div [ngClass]="{

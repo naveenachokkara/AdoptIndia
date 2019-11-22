@@ -617,6 +617,10 @@ export class MapviewComponent implements OnInit, AfterViewInit {
     // console.log(this.container);
   }
 
+  getStatus(num){
+   return _.findWhere(this.legends,{total:num}).status;
+  }
+
   onMapReady(mapIns: Map): void {
     this.map = mapIns;
 
