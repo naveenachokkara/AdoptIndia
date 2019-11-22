@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, TemplateRef, AfterViewInit, Input } from '@angular/core';
-import { Page } from '../vehicle/vehicle.model';
-import { Data } from '../../../../assets/reportsdata';
+//import { Page } from '../vehicle/vehicle.model';
+//import { Data } from '../../../../assets/reportsdata';
 import { SelectionType, ColumnMode } from '@swimlane/ngx-datatable';
 
 @Component({
@@ -15,10 +15,10 @@ export class CustomtableComponent implements OnInit,AfterViewInit {
   @Input() columns= [];
   constructor() {
     //this.setPage({offset: 0, pageSize: 10});
-    this.rows= Data;
+   // this.rows= Data;
    }
 
-  page = new Page();
+  // page = new Page();
   //   columns = [];
   // rows = [];
   cache: any = {};
