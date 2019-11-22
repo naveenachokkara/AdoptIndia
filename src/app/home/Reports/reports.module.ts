@@ -24,7 +24,7 @@ const routes: Routes = [
 @NgModule({
   imports: [CommonModule, MatTabsModule, MatIconModule, RouterModule, NgxDatatableModule, MatCheckboxModule,
     MatInputModule, RouterModule.forChild(routes),
-    StoreModule.forFeature('reportsSearch', reportsreducer)],
+    StoreModule.forFeature('reports', reportsreducer)],
   declarations: [ReportdetailsComponent, DriverComponent, VehicleComponent, CustomtableComponent],
   providers: [],
   exports: [ReportdetailsComponent]

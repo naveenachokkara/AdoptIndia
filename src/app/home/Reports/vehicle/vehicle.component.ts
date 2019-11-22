@@ -1,11 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { Data } from '../../../../assets/reportsdata';
+// import { Data } from '../../../../assets/reportsdata';
 import { SearchState } from '../store/reports.reducer';
-import { searchdata } from '../store/reports.selector';
+import { searchdata, AddVehicle } from '../store/reports.selector';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { takeUntil, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-vehicle',
@@ -13,21 +13,25 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./vehicle.component.css']
 })
 export class VehicleComponent implements OnInit, OnDestroy {
-  vehicleData;
+  vehicleData =[] ;
   columns = [];
+  Data =[];
 
   private readonly destroyed$ = new Subject<boolean>();
 
-  constructor(private store: Store<SearchState>) {
-    this.vehicleData = Data;
+  constructor(private store: Store<SearchState>,private changeDetector: ChangeDetectorRef) {
+  //  this.vehicleData = Data;
+  this.store.select(AddVehicle).pipe(takeUntil(this.destroyed$)).subscribe(data => {
+    this.vehicleData = data;
+  });
 
-    this.store.select(searchdata).pipe(takeUntil(this.destroyed$)).subscribe(data => {
-      this.vehicleData = Data;
-      this.vehicleData = this.vehicleData.filter(row => {
+  this.store.select(searchdata).pipe(takeUntil(this.destroyed$)).subscribe(data => {
+     // this.vehicleData = this.Data;
+      this.vehicleData = this.vehicleData && this.vehicleData.filter(row => {
         return (JSON.stringify(row).toLowerCase().indexOf(data) > -1);
       });
       if (this.vehicleData.length === 0) {
-        this.vehicleData = Data;
+       // this.vehicleData = this.Data;
       }
     });
 

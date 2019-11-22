@@ -9,14 +9,14 @@
   </div>
   <div fxFlex="20" class="searchcontainer">
     <div class="add">
-        <button mat-menu-item>
+        <button mat-menu-item (click)="onAddRow()">
             <mat-icon>add_circle_outline</mat-icon>
             <span>Add</span>
           </button>
     </div>
     <div class="search">
       <mat-icon>search</mat-icon>
-      <input type="text" placeholder="Search" (change)="onSearch($event)">
+      <input type="text" placeholder="Search" #searchInput (change)="onSearch($event)">
     </div>
   </div>
   <div fxFlex="60" style="padding-top: 10px;">

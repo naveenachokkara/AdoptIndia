@@ -3,10 +3,14 @@ import { createFeatureSelector } from '@ngrx/store';
 
 export interface SearchState {
   SearchingData: string;
+  AddedVehicleData : any;
+  AddedDriverData : any;
 }
 
 export const initialSearchState: SearchState = {
-  SearchingData: ''
+  SearchingData: '',
+  AddedVehicleData : [],
+  AddedDriverData: []
 };
 
 export function reportsreducer(state: SearchState = initialSearchState, action: ReportActions): SearchState {
@@ -16,11 +20,21 @@ export function reportsreducer(state: SearchState = initialSearchState, action: 
         ...state,
         SearchingData: action.payload
       };
+    case ReportActionTypes.AddVehicle :
+      return {
+        ...state,
+        AddedVehicleData: [ action.payload, ... state.AddedVehicleData]
+      };
+    case ReportActionTypes.AddDriverAction :
+      return {
+        ...state,
+        AddedDriverData: [action.payload, ...state.AddedDriverData]
+      };
     default:
       return state;
   }
 }
 
 export const getReportState = createFeatureSelector<SearchState>(
-  'reportsSearch'
+  'reports'
 );
