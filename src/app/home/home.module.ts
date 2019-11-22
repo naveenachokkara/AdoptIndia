@@ -17,6 +17,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { SubhomeComponent } from './subhome/subhome.component';
 import { SubhomeModule } from './subhome/subhome.module';
 import { ReportsModule } from './Reports/reports.module';
+import { HistoryModule } from './history/history.module';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
         path: 'reports',
         loadChildren: () => import('./Reports/reports.module').then(m => m.ReportsModule)
       },
+      {
+        path: 'history',
+        loadChildren: () => import('./history/history.module').then(m => m.HistoryModule)
+      },
       { path: '', redirectTo: 'subhome', pathMatch: 'full' }
     ]
   }
@@ -34,7 +39,7 @@ const routes: Routes = [
 @NgModule({
   imports: [MatToolbarModule, MatIconModule, MatSidenavModule, MaterialModule, MatMenuModule,
     DashboardModule, RouterModule.forChild(routes), CommonModule, FlexLayoutModule, DashboardModule,
-    SubhomeModule, ReportsModule],
+    SubhomeModule, ReportsModule, HistoryModule],
   declarations: [HomeComponent],
   providers: [],
   exports: [MatSidenavModule, HomeComponent]
