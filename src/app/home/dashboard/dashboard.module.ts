@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { DashboardComponent } from './dashboard.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
@@ -13,10 +13,15 @@ import { ReportsComponent } from './reports/reports.component';
 import { TableComponent } from './table/table.component';
 import { MatSelectModule, MatIconModule } from '@angular/material';
 import { PiechartReportComponent } from './piechart-report/piechart-report.component';
+import { Routes, RouterModule } from '@angular/router';
 
+
+const routes: Routes = [{
+path: '', component: DashboardComponent}
+];
 @NgModule({
   imports: [FlexLayoutModule, LeafletModule, CommonModule, MatFormFieldModule, NgxDatatableModule,
-    MatSelectModule, MatTabsModule, MatIconModule, MatMenuModule],
+    MatSelectModule, MatTabsModule, MatIconModule, MatMenuModule , RouterModule.forChild(routes)],
   declarations: [DashboardComponent, MapviewComponent, ReportsComponent, TableComponent, PiechartReportComponent],
   providers: [],
   exports: [DashboardComponent, MapviewComponent, ReportsComponent, TableComponent]

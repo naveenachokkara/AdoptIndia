@@ -21,7 +21,10 @@ import { ReportsModule } from './Reports/reports.module';
 const routes: Routes = [
   {
     path: '', component: HomeComponent, children: [
-      { path: 'dashboard', component: DashboardComponent },
+      //  { path: 'dashboard', component: DashboardComponent },
+      {path : 'dashboard' ,
+      loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+        },
       { path: 'subhome', component: SubhomeComponent },
       {
         path: 'reports',

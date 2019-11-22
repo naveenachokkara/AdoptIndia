@@ -2,7 +2,7 @@ import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 //import { Data } from '../../../../assets/reportsdata';
 import { Store } from '@ngrx/store';
 import { SearchState } from '../store/reports.reducer';
-import { searchdata, AddedData, AddedDriverData } from '../store/reports.selector';
+import { searchdata, AddedDriverData } from '../store/reports.selector';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
