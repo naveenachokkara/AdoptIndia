@@ -21,12 +21,12 @@
             </mat-menu>
           </div>
           <div class="ring">
-            <button mat-icon-button [matMenuTriggerFor]="menu" title="Notifications" style="outline: 0; height: 100%;width: 100%;">
+            <button mat-icon-button [matMenuTriggerFor]="notiMenu" title="Notifications" style="outline: 0; height: 100%;width: 100%;">
               <mat-icon style="display: block;" matBadge="2" matBadgeColor="warn">notifications</mat-icon>
               <span class="cdk-visually-hidden">
               </span>
             </button>
-            <mat-menu #menu="matMenu" color="primary" [overlapTrigger]="false">
+            <mat-menu #notiMenu="matMenu" color="primary" [overlapTrigger]="false">
               <button mat-menu-item style="outline: 0;" *ngFor="let noti of ['dummy noification 1','notification 2']">
                 <span>{{noti}}</span>
               </button>
