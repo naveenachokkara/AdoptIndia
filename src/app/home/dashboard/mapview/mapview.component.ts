@@ -26,6 +26,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
   @Input() fitBounds;
   chartoptions: any;
   map: Map;
+  markerGroup: any;
   activetileLayer: any;
   selactiveTile = '';
   selectedRegion: string;
@@ -590,7 +591,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
       ]
     ]
   ];
-  constructor(private changeDetector: ChangeDetectorRef) {
+  constructor(private changeDetector: ChangeDetectorRef, private elem: ElementRef) {
     this.data = require('../../../../assets/vehicledata.json');
   }
 
@@ -613,12 +614,26 @@ export class MapviewComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit() {
-    // console.log(this.container);
+  getStatus(num) {
+    return _.findWhere(this.legends, { total: num }).status;
   }
 
-  getStatus(num){
-   return _.findWhere(this.legends,{total:num}).status;
+  ngAfterViewInit() {
+    //
+  }
+
+  onSelectLegend(event) {
+    // this.map.removeLayer(this.markerGroup._layers);
+    const regionMap = this.map;
+    this.markerGroup.eachLayer((layer) => { regionMap.removeLayer(layer); });
+    const data = _.map(this.data.wasteTrucks, (obj) => obj);
+    let datajson;
+    if (this.getStatus(event.value) === 'All') {
+      datajson = this.data.wasteTrucks;
+    } else {
+      datajson = _.where(data, { status: this.getStatus(event.value) });
+    }
+    this.dropMarkers(datajson);
   }
 
   onMapReady(mapIns: Map): void {
@@ -633,7 +648,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
       this.activetileLayer.addTo(this.map);
     this.drawRegion();
     const datajson = this.data;
-    this.dropMarkers(datajson);
+    this.dropMarkers(datajson.wasteTrucks);
     // this._map.fitBounds(this.fitBounds);
   }
 
@@ -644,7 +659,7 @@ export class MapviewComponent implements OnInit, AfterViewInit {
     // });
     const markers = [];
 
-    _.each(dataObj.wasteTrucks, (item: any) => {
+    _.each(dataObj, (item: any) => {
       const location = item.geocoordinates;
       let truckColor = '';
       if (item.status === 'Active') { truckColor = 'green'; }
@@ -691,8 +706,8 @@ export class MapviewComponent implements OnInit, AfterViewInit {
       layer.addTo(this.map);
     }, this);
     if (markers.length > 0) {
-      const group = L.featureGroup(markers);
-      this.map.fitBounds(group.getBounds());
+      this.markerGroup = L.featureGroup(markers);
+      this.map.fitBounds(this.markerGroup.getBounds());
     }
 
   }

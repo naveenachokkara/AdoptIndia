@@ -95,15 +95,20 @@
     </div>
     <div fxFlex='20' style="background-color:white">
       <mat-form-field style="width:100%;margin-top:-17%;text-align: center;">
-        <mat-select disableOptionCentering panelClass="legend" [(value)]="selected"
-          style="border-left: 1px solid gray; padding-right: 8px;">
+        <mat-select (selectionChange)="onSelectLegend($event)" disableOptionCentering panelClass="legend"
+          [(value)]="selected" style="border-left: 1px solid gray; padding-right: 8px;">
           <mat-select-trigger [ngClass]="{
             'active': getStatus(selected) === 'Active',
             'inactive': getStatus(selected) === 'Inactive',
             'all': getStatus(selected) === 'All',
             'idle': getStatus(selected) === 'Idle',
-            'selectedcircle': true
-         }">{{selected}}</mat-select-trigger>
+            'selectedcircle': true,
+            'totalLegend':getStatus(selected) === 'All',
+            'normalLegend':getStatus(selected) !== 'All'
+         }">{{selected}}<span style="position: absolute;
+         right: 5px;
+         top: 9px;
+         font-size: 10px;" *ngIf="getStatus(selected) === 'All'">total</span></mat-select-trigger>
           <mat-option *ngFor="let legend of legends" [value]="legend.total">
             <!-- <mat-icon class="geo geofence"></mat-icon> -->
             <div [ngClass]="{
@@ -111,8 +116,13 @@
               'inactive': legend.status === 'Inactive',
               'all': legend.status === 'All',
               'idle': legend.status === 'Idle',
-              'circle': true
-           }">{{legend.total}}</div>
+              'circle': true,
+              'totalLegend':legend.status === 'All',
+              'normalLegend':legend.status !== 'All'
+           }">{{legend.total}}<span style="position: absolute;
+           right: 20px;
+           top: 17px;
+           font-size: 10px;" *ngIf="legend.status === 'All'">total</span></div>
           </mat-option>
         </mat-select>
       </mat-form-field>
