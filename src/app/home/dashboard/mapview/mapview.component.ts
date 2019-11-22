@@ -13,12 +13,14 @@ import * as moment from 'moment';
   styleUrls: ['./mapview.component.scss']
 })
 export class MapviewComponent implements OnInit, AfterViewInit {
-   private chartContainer: ElementRef;
+  private chartContainer: ElementRef;
+  values = [];
+  data; groupedData; legends = [];
 
   @ViewChild('chartContainer') set content(content: ElementRef) {
-     this.chartContainer = content;
+    this.chartContainer = content;
   }
- @ViewChild('searchcontainer') searchcontainer: ElementRef;
+  @ViewChild('searchcontainer') searchcontainer: ElementRef;
 
   @Input() options;
   @Input() fitBounds;
@@ -39,15 +41,6 @@ export class MapviewComponent implements OnInit, AfterViewInit {
     this.selactiveTile = value;
     this.changetileLayer(value);
   }
-   banks = [
-    {name: 'Bank A (Switzerland)', id: 'A'},
-    {name: 'Bank B (Switzerland)', id: 'B'},
-    {name: 'Bank C (France)', id: 'C'},
-    {name: 'Bank D (France)', id: 'D'}
-  ];
-
-
-
 
   regioncords = [
     [
@@ -597,10 +590,12 @@ export class MapviewComponent implements OnInit, AfterViewInit {
       ]
     ]
   ];
-  constructor(private changeDetector: ChangeDetectorRef ) { }
+  constructor(private changeDetector: ChangeDetectorRef) {
+    this.data = require('../../../../assets/vehicledata.json');
+  }
 
   ngOnInit() {
-    this.currentDate = moment().format('YYYY-MM-DD') ;
+    this.currentDate = moment().format('YYYY-MM-DD');
     // this.options = {
     //   layers: [
     //     // tslint:disable-next-line:max-line-length
@@ -609,8 +604,12 @@ export class MapviewComponent implements OnInit, AfterViewInit {
     //   zoom: 13,
     //   center: [51.505, -0.09]
     // };
-
-
+    const totalTrucks = Object.keys(this.data.wasteTrucks);
+    this.legends.push({ status: 'All', total: totalTrucks.length });
+    this.groupedData = _.groupBy(totalTrucks.map(i => this.data.wasteTrucks[i]), 'status');
+    _.each(this.groupedData, (arr: any, key) => {
+      this.legends.push({ status: key, total: arr.length });
+    });
   }
 
   ngAfterViewInit() {
@@ -620,30 +619,38 @@ export class MapviewComponent implements OnInit, AfterViewInit {
   onMapReady(mapIns: Map): void {
     this.map = mapIns;
 
-    this.map.on('click', function(e) {
-     console.log(e);
-  });
+    this.map.on('click', function (e) {
+      console.log(e);
+    });
     // tslint:disable-next-line:no-unused-expression
     this.activetileLayer &&
       !this.map.hasLayer(this.activetileLayer) &&
       this.activetileLayer.addTo(this.map);
     this.drawRegion();
-    const datajson = require('../../../../assets/vehicledata.json');
+    const datajson = this.data;
     this.dropMarkers(datajson);
     // this._map.fitBounds(this.fitBounds);
   }
 
   dropMarkers(dataObj) {
-    const greenIcon = L.icon({
-      iconUrl: '../../../../assets/truck.png',
-      iconSize: [25, 25]
-    });
+    // const greenIcon = L.icon({
+    //   iconUrl: '../../../../assets/truck.png',
+    //   iconSize: [25, 25]
+    // });
     const markers = [];
 
-    _.each(dataObj.wasteTrucks, function(item) {
-      console.log(item);
+    _.each(dataObj.wasteTrucks, (item: any) => {
       const location = item.geocoordinates;
-      const layer = new L.Marker([location.latitude, location.longitude], { icon: greenIcon });
+      let truckColor = '';
+      if (item.status === 'Active') { truckColor = 'green'; }
+      if (item.status === 'Inactive') { truckColor = 'red'; }
+      if (item.status === 'Idle') { truckColor = 'orange'; }
+      const layer = new L.Marker([location.latitude, location.longitude], {
+        icon: L.icon({
+          iconUrl: `../../../../assets/${truckColor}-truck.png`,
+          iconSize: [25, 25]
+        })
+      });
       // layer.sid = item.sid;
       // layer.label = item.label;
       // layer.status = item.status;
@@ -652,41 +659,41 @@ export class MapviewComponent implements OnInit, AfterViewInit {
         out.push(key + ' : ' + layer[key]);
       }
       layer.bindPopup('<div style="max-height: 120px; overflow-y: auto;"><pre style="color: black;"><code>' +
-      out.join('<br />') + '</code></pre></div>');
+        out.join('<br />') + '</code></pre></div>');
 
       layer.on('mouseover', (): void => {
-                  layer.openPopup();
-                });
-      layer.on('mouseout', (): void => {
-                  layer.closePopup();
-                });
-      if (this.showAction) {
-      layer.on('click', (): void => {
-        if (!this.showDetails) {
-        this.showDetails = true;
-        this.changeDetector.detectChanges();
-        this.searchcontainer.nativeElement.style.marginLeft = '47%';
-        console.log(this.chartContainer);
-        this.drawChart();
-        } else {
-        this.showDetails = false;
-        this.changeDetector.detectChanges();
-        this.searchcontainer.nativeElement.style.marginLeft = '70%';
-        }
+        layer.openPopup();
       });
-    }
+      layer.on('mouseout', (): void => {
+        layer.closePopup();
+      });
+      if (this.showAction) {
+        layer.on('click', (): void => {
+          if (!this.showDetails) {
+            this.showDetails = true;
+            this.changeDetector.detectChanges();
+            this.searchcontainer.nativeElement.style.marginLeft = '47%';
+            console.log(this.chartContainer);
+            this.drawChart();
+          } else {
+            this.showDetails = false;
+            this.changeDetector.detectChanges();
+            this.searchcontainer.nativeElement.style.marginLeft = '70%';
+          }
+        });
+      }
       markers.push(layer);
       layer.addTo(this.map);
     }, this);
     if (markers.length > 0) {
-      const group =  L.featureGroup(markers);
+      const group = L.featureGroup(markers);
       this.map.fitBounds(group.getBounds());
     }
 
   }
 
   changetileLayer(tile: any): void {
-    if (this.map && this.map.hasLayer(this.activetileLayer) ) {
+    if (this.map && this.map.hasLayer(this.activetileLayer)) {
       this.activetileLayer.remove();
     }
 
@@ -732,15 +739,15 @@ export class MapviewComponent implements OnInit, AfterViewInit {
   drawChart() {
     const element = document.getElementById('chartsDiv');
     this.chartoptions = {
-    chart: {
-      type: 'column'
-  },
-  title: {
-      text: 'Activity Monitor',
-      margin: -10
-  },
-  xAxis: {
-      categories: [
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: 'Activity Monitor',
+        margin: -10
+      },
+      xAxis: {
+        categories: [
           'Mon',
           'Tue',
           'Wed',
@@ -748,67 +755,67 @@ export class MapviewComponent implements OnInit, AfterViewInit {
           'Fri',
           'Sat',
           'Sun'
-      ],
-      crosshair: true
-  },
-  yAxis: {
-      min: 0,
-      title: {
+        ],
+        crosshair: true
+      },
+      yAxis: {
+        min: 0,
+        title: {
           //  text: 'Rainfall (mm)' ,
           // margin:4,
           // floating: false,
           // verticalAlign: null
-       }
-  },
-  tooltip: {
-      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-      pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+        }
+      },
+      tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
           '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
-      footerFormat: '</table>',
-      shared: true,
-      useHTML: true
-  },
-  credits: {
-    enabled: false
-  },
-  plotOptions: {
-      column: {
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+      },
+      credits: {
+        enabled: false
+      },
+      plotOptions: {
+        column: {
           pointPadding: 0.2,
           borderWidth: 0
-      }
-  },
-  legend: {
-    enabled: true,
-    align: 'center',
-    floating: false,
-    itemWidth: null,
-    layout: 'horizontal',
-    verticalAlign: 'top',
-    itemStyle: {
-      color: '#000000',
-      fontSize: '8px',
-      fontWeight: 'normal',
-      textDecoration: 'underline',
-      fontFamily: 'Lucida Grande,Lucida Sans Unicode, Arial, Helvetica, sans-serif'
-    }
-  },
-  series: [{
-      name: 'Day',
-      data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6]
+        }
+      },
+      legend: {
+        enabled: true,
+        align: 'center',
+        floating: false,
+        itemWidth: null,
+        layout: 'horizontal',
+        verticalAlign: 'top',
+        itemStyle: {
+          color: '#000000',
+          fontSize: '8px',
+          fontWeight: 'normal',
+          textDecoration: 'underline',
+          fontFamily: 'Lucida Grande,Lucida Sans Unicode, Arial, Helvetica, sans-serif'
+        }
+      },
+      series: [{
+        name: 'Day',
+        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6]
 
 
-  }, {
-      name: 'Week',
-      data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0],
-      visible: false
+      }, {
+        name: 'Week',
+        data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0],
+        visible: false
 
-  }, {
-      name: 'Month',
-      data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0],
-      visible: false
+      }, {
+        name: 'Month',
+        data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0],
+        visible: false
 
-  }]
-};
+      }]
+    };
 
     Highcharts.chart(this.chartContainer.nativeElement, this.chartoptions);
     // console.log(this.container);
@@ -818,39 +825,39 @@ export class MapviewComponent implements OnInit, AfterViewInit {
   }
 
   addRoute() {
-  console.log(this.map);
-  const data = [
-    {lat: 16.960168570809433, lng: 82.24521366724679},
-    {lat: 16.962219517057594, lng: 82.23834909390479},
-    {lat: 16.96574709222348, lng: 82.22865288405919},
-    {lat: 16.960742838015914, lng: 82.22187411788391},
-    {lat: 16.955328248897295, lng: 82.22144508205005},
-    {lat: 16.948436728029463, lng: 82.22573544038883}
-  ];
-  const latlngs = [];
-  data.forEach((item, index) => {
-  latlngs.push([item.lat, item.lng]);
-});
-  const polyline = L.polyline(latlngs, {color: 'blue'}).addTo(this.map);
-  this.map.fitBounds(polyline.getBounds());
+    console.log(this.map);
+    const data = [
+      { lat: 16.960168570809433, lng: 82.24521366724679 },
+      { lat: 16.962219517057594, lng: 82.23834909390479 },
+      { lat: 16.96574709222348, lng: 82.22865288405919 },
+      { lat: 16.960742838015914, lng: 82.22187411788391 },
+      { lat: 16.955328248897295, lng: 82.22144508205005 },
+      { lat: 16.948436728029463, lng: 82.22573544038883 }
+    ];
+    const latlngs = [];
+    data.forEach((item, index) => {
+      latlngs.push([item.lat, item.lng]);
+    });
+    const polyline = L.polyline(latlngs, { color: 'blue' }).addTo(this.map);
+    this.map.fitBounds(polyline.getBounds());
   }
 
   addGeoFence() {
-  const data =[
-   { lat: 16.961563216694344, lng: 82.22041539604876},
-{lat: 16.968700360011653, lng: 82.2362039147354},
-{lat: 16.95787148443053, lng: 82.24238203074319},
-{lat: 16.948518771430518, lng: 82.23560326456797},
-{lat: 16.951144141359723, lng: 82.22050120321553},
-{lat: 16.962301554441787, lng: 82.22084443188263},
-{lat: 16.961563216694344, lng: 82.22041539604876}
-  ];
-  const latlongs= [];
-  data.forEach((item, index) => {
-    latlongs.push([item.lat, item.lng]);
-  });
-  const polygon = L.polygon(latlongs, {color: 'red'}).addTo(this.map);
-  this.map.fitBounds(polygon.getBounds());
+    const data = [
+      { lat: 16.961563216694344, lng: 82.22041539604876 },
+      { lat: 16.968700360011653, lng: 82.2362039147354 },
+      { lat: 16.95787148443053, lng: 82.24238203074319 },
+      { lat: 16.948518771430518, lng: 82.23560326456797 },
+      { lat: 16.951144141359723, lng: 82.22050120321553 },
+      { lat: 16.962301554441787, lng: 82.22084443188263 },
+      { lat: 16.961563216694344, lng: 82.22041539604876 }
+    ];
+    const latlongs = [];
+    data.forEach((item, index) => {
+      latlongs.push([item.lat, item.lng]);
+    });
+    const polygon = L.polygon(latlongs, { color: 'red' }).addTo(this.map);
+    this.map.fitBounds(polygon.getBounds());
   }
 
   addGeo() {

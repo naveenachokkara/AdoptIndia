@@ -180,7 +180,19 @@ img {
   color        : #fff;
   line-height  : 25px;
   text-align   : center;
-  background   : red
+}
+
+.active{
+  background-color: green;
+}
+.inactive{
+  background-color: red;
+}
+.idle{
+  background-color: orange;
+}
+.all{
+  background-color:blue;
 }
 
 // ::ng-deep .mat-select-panel {
