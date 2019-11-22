@@ -16,7 +16,7 @@ export const AddVehicle = createSelector(
 export const AddedDriverData = createSelector(
   getReportState,
 (state: SearchState) => state.AddedDriverData
-)
+);
 // export const searchVehicleData = createSelector(
 //   getReportState,
 //   (state: SearchState) => state.SearchingData

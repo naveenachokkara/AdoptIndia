@@ -10,7 +10,7 @@ import { StoreModule } from '@ngrx/store';
 import { ReportdetailsComponent } from './reportdetails.component';
 import { DriverComponent } from './driver/driver.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
-import { CustomtableComponent } from './customtable/customtable.component';
+import { CustomtableComponent } from '../customtable/customtable.component';
 import { reportsreducer } from './store/reports.reducer';
 
 const routes: Routes = [
