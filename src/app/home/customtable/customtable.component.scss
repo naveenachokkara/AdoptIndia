@@ -6,6 +6,8 @@
     height: 75vh;
     width: 95vw;
     margin: 0;
+
+
   }
   .reportImg{
     // background-image: url('../../../../assets/export.svg');
@@ -34,4 +36,23 @@
     background-color: #666;
     color: white;
   }
+
+
+
+}
+
+
+::ng-deep {
+  .ngx-datatable.material
+{
+  .datatable-footer .datatable-pager li.active a{
+    background-color: #4286F5;
+  }
+  .datatable-footer .datatable-pager a:hover{
+    background-color: #4286F5;
+  }
+}
+ .datatable-checkbox input[type='checkbox']:checked:before{
+  border-color: #4286F5;
+}
 }
