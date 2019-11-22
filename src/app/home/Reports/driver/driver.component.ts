@@ -15,11 +15,13 @@ export class DriverComponent implements OnInit, OnDestroy {
  driverData ;
  columns = [];
 Data = [];
+total=[];
  private readonly destroyed$ = new Subject<boolean>();
 
   constructor(private store: Store<SearchState>) {
    // this.driverData = Data;
    this.store.select(AddedDriverData).pipe(takeUntil(this.destroyed$)).subscribe(data => {
+     this.total=data;
     this.driverData = data;
     //  if (Object.keys(data).length !== 0) {
     //   this.Data.push(data);
@@ -28,7 +30,7 @@ Data = [];
   });
 
    this.store.select(searchdata).pipe(takeUntil(this.destroyed$)).subscribe(data => {
-      //this.driverData = this.Data;
+      this.driverData = this.total;
       this.driverData = this.driverData &&  this.driverData.filter(row => {
         return (JSON.stringify(row).toLowerCase().indexOf(data) > -1);
       });

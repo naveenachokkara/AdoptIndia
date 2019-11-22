@@ -13,25 +13,39 @@ import { takeUntil, take } from 'rxjs/operators';
   styleUrls: ['./vehicle.component.css']
 })
 export class VehicleComponent implements OnInit, OnDestroy {
-  vehicleData =[] ;
+  vehicleData = [];
   columns = [];
-  Data =[];
+  Data = [];
+  total = [];
 
   private readonly destroyed$ = new Subject<boolean>();
 
-  constructor(private store: Store<SearchState>,private changeDetector: ChangeDetectorRef) {
-  //  this.vehicleData = Data;
-  this.store.select(AddVehicle).pipe(takeUntil(this.destroyed$)).subscribe(data => {
-    this.vehicleData = data;
-  });
+  constructor(private store: Store<SearchState>, private changeDetector: ChangeDetectorRef) {
+    //  this.vehicleData = Data;
+    this.store.select(AddVehicle).pipe(takeUntil(this.destroyed$)).subscribe(data => {
+      this.vehicleData = data;
+      this.total = data;
+      // this.vehicleData = [{
+      //   regNumber: 'TN123456',
+      //   vehicleType: 'car',
+      //   VehicleBrand: 'xyz',
+      //   mfgDate: 'jan 2019',
+      //   engineNumber: '123456',
+      //   insurance: 'ICIC394683947',
+      //   VendorName: 'jyothi',
+      //   topSpeed: '120km/h',
+      //   location: 'Visakhapatnam'
+      // }, ...this.vehicleData];
 
-  this.store.select(searchdata).pipe(takeUntil(this.destroyed$)).subscribe(data => {
-     // this.vehicleData = this.Data;
+    });
+
+    this.store.select(searchdata).pipe(takeUntil(this.destroyed$)).subscribe(data => {
+      this.vehicleData = this.total;
       this.vehicleData = this.vehicleData && this.vehicleData.filter(row => {
         return (JSON.stringify(row).toLowerCase().indexOf(data) > -1);
       });
       if (this.vehicleData.length === 0) {
-       // this.vehicleData = this.Data;
+        // this.vehicleData = this.Data;
       }
     });
 
