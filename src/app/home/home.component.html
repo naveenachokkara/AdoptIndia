@@ -21,7 +21,7 @@
             </mat-menu>
           </div>
           <div class="ring">
-            <button mat-icon-button [matMenuTriggerFor]="notiMenu" (click)="onNotiMenuClick()" #noti="matMenuTrigger" title="Notifications" style="outline: 0; height: 100%;width: 100%;">
+            <button mat-icon-button [matMenuTriggerFor]="notiMenu" (menuClosed)="onNotiMenuClosed()" #noti="matMenuTrigger" title="Notifications" style="outline: 0; height: 100%;width: 100%;">
               <mat-icon style="display: block;" [matBadge]="count" [matBadgeHidden]="noti.menuOpen || count === 0" matBadgeColor="warn">notifications</mat-icon>
               <span class="cdk-visually-hidden">
               </span>

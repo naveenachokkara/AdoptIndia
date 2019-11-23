@@ -22,8 +22,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  onNotiMenuClick() {
-    this.count = 0;
+  onNotiMenuClosed() {
+    this.notifications = [];
+    this.count = this.notifications.length;
   }
 
   increase() {
