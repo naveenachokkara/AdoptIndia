@@ -14,6 +14,7 @@ import { TableComponent } from './table/table.component';
 import { MatSelectModule, MatIconModule } from '@angular/material';
 import { PiechartReportComponent } from './piechart-report/piechart-report.component';
 import { Routes, RouterModule } from '@angular/router';
+import { CustomtableModule } from '../customtable/customtable.module';
 
 
 const routes: Routes = [{
@@ -21,7 +22,7 @@ path: '', component: DashboardComponent}
 ];
 @NgModule({
   imports: [FlexLayoutModule, LeafletModule, CommonModule, MatFormFieldModule, NgxDatatableModule,
-    MatSelectModule, MatTabsModule, MatIconModule, MatMenuModule , RouterModule.forChild(routes)],
+    MatSelectModule, MatTabsModule, MatIconModule, MatMenuModule , RouterModule.forChild(routes), CustomtableModule],
   declarations: [DashboardComponent, MapviewComponent, ReportsComponent, TableComponent, PiechartReportComponent],
   providers: [],
   exports: [DashboardComponent, MapviewComponent, ReportsComponent, TableComponent]

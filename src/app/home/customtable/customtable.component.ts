@@ -9,14 +9,14 @@ import { SelectionType, ColumnMode } from '@swimlane/ngx-datatable';
   styleUrls: ['./customtable.component.scss']
 })
 
-export class CustomtableComponent implements OnInit,AfterViewInit {
+export class CustomtableComponent implements OnInit, AfterViewInit {
 
   @Input() rows = [];
-  @Input() columns= [];
+  @Input() columns = [];
   constructor() {
     //this.setPage({offset: 0, pageSize: 10});
-   // this.rows= Data;
-   }
+    // this.rows= Data;
+  }
 
   // page = new Page();
   //   columns = [];

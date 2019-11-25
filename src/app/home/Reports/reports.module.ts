@@ -11,7 +11,7 @@ import { ReportdetailsComponent } from './reportdetails.component';
 import { DriverComponent } from './driver/driver.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { reportsreducer } from './store/reports.reducer';
-import { CustomtableComponent } from '../customtable/customtable.component';
+import { CustomtableModule } from '../customtable/customtable.module';
 
 const routes: Routes = [
   {
@@ -24,8 +24,8 @@ const routes: Routes = [
 @NgModule({
   imports: [CommonModule, MatTabsModule, MatIconModule, RouterModule, NgxDatatableModule, MatCheckboxModule,
     MatInputModule, RouterModule.forChild(routes),
-    StoreModule.forFeature('reports', reportsreducer)],
-  declarations: [ReportdetailsComponent, DriverComponent, VehicleComponent, CustomtableComponent],
+    StoreModule.forFeature('reports', reportsreducer), CustomtableModule],
+  declarations: [ReportdetailsComponent, DriverComponent, VehicleComponent],
   providers: [],
   exports: [ReportdetailsComponent]
 })
