@@ -3,7 +3,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule, MatCheckboxModule, MatInputModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+//import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { StoreModule } from '@ngrx/store';
 // import { InlineSVGModule } from 'ng-inline-svg';
 
@@ -12,6 +12,7 @@ import { DriverComponent } from './driver/driver.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { reportsreducer } from './store/reports.reducer';
 import { CustomtableComponent } from '../customtable/customtable.component';
+
 
 const routes: Routes = [
   {
@@ -22,10 +23,10 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  imports: [CommonModule, MatTabsModule, MatIconModule, RouterModule, NgxDatatableModule, MatCheckboxModule,
+  imports: [CommonModule, MatTabsModule, MatIconModule, RouterModule, MatCheckboxModule,
     MatInputModule, RouterModule.forChild(routes),
     StoreModule.forFeature('reports', reportsreducer)],
-  declarations: [ReportdetailsComponent, DriverComponent, VehicleComponent, CustomtableComponent],
+  declarations: [ReportdetailsComponent, DriverComponent, VehicleComponent],
   providers: [],
   exports: [ReportdetailsComponent]
 })

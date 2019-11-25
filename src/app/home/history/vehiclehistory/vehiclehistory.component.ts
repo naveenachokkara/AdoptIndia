@@ -4,10 +4,10 @@ import { Data } from '../../../../assets/reportsdata';
 
 @Component({
   selector: 'app-vehicle',
-  templateUrl: './vehicle.component.html',
-  styleUrls: ['./vehicle.component.css']
+  templateUrl: './vehiclehistory.component.html',
+  styleUrls: ['./vehiclehistory.component.css']
 })
-export class VehicleComponent implements OnInit {
+export class VehicleHistoryComponent implements OnInit {
   vehicleData = [];
   columns = [];
 

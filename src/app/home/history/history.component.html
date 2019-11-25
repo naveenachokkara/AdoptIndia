@@ -7,19 +7,50 @@
       </button>
     </div>
   </div>
-  <div fxFlex="20" class="searchcontainer">
-    <div class="add">
-        <button mat-menu-item (click)="onAddRow()">
-            <mat-icon>add_circle_outline</mat-icon>
-            <span>Add</span>
-          </button>
+  <div fxFlex="10" class="searchcontainer">
+    <div class="vehicletype" style="display: inline;">
+      <mat-label>Vehicle type</mat-label>
+      <mat-form-field appearance= "outline">
+        <mat-select [(value)]="selected">
+          <mat-select-trigger>{{selected}}</mat-select-trigger>
+          <mat-option *ngFor="let source of ['car','bus']" [value]="source">
+           {{source}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
-    <div class="search">
-      <mat-icon>search</mat-icon>
-      <input type="text" placeholder="Search" #searchInput (change)="onSearch($event)">
+    <div class="Reporttype">
+      <mat-label>Report type</mat-label>
+      <mat-form-field appearance= "outline">
+        <mat-select [(value)]="selected">
+          <mat-select-trigger>{{selected}}</mat-select-trigger>
+          <mat-option *ngFor="let source of ['Four Wheeler','Two wheeler']" [value]="source">
+           {{source}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="datefrom">
+      <mat-label>Date From</mat-label>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker1"  placeholder="From Date" [formControl]="'date'">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="dateto">
+      <mat-label>Date To</mat-label>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker2"  placeholder="to Date" [formControl]="'date'">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="reset" style="background-color: green;">
     </div>
   </div>
-  <div fxFlex="60" style="padding-top: 10px;">
+  <div fxFlex=70 style="padding-top: 10px;">
     <router-outlet ></router-outlet>
   </div>
 </div>

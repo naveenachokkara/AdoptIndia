@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-//import { Data } from '../../../../assets/reportsdata';
+// import { Data } from '../../../../assets/reportsdata';
 import { Store } from '@ngrx/store';
 import { SearchState } from '../store/reports.reducer';
 import { searchdata, AddedDriverData } from '../store/reports.selector';
@@ -15,14 +15,14 @@ export class DriverComponent implements OnInit, OnDestroy {
  driverData ;
  columns = [];
 Data = [];
-total=[];
+total = [];
  private readonly destroyed$ = new Subject<boolean>();
 
   constructor(private store: Store<SearchState>) {
    // this.driverData = Data;
    this.store.select(AddedDriverData).pipe(takeUntil(this.destroyed$)).subscribe(data => {
-     this.total=data;
-    this.driverData = data;
+     this.total = data;
+     this.driverData = data;
     //  if (Object.keys(data).length !== 0) {
     //   this.Data.push(data);
     //   this.driverData = this.Data;

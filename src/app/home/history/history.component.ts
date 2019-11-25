@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-history',
@@ -10,6 +11,8 @@ export class HistoryComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+   const date = new FormControl(new Date());
+   const serializedDate = new FormControl((new Date()).toISOString());
   }
 
 }

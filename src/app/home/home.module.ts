@@ -2,6 +2,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+
 import { AuthModule } from '../auth/auth.module';
 import { AuthService } from '../auth/auth.service';
 import { AuthGuard } from '../auth/auth.guard';
@@ -18,6 +19,9 @@ import { SubhomeComponent } from './subhome/subhome.component';
 import { SubhomeModule } from './subhome/subhome.module';
 import { ReportsModule } from './Reports/reports.module';
 import { HistoryModule } from './history/history.module';
+
+
+
 
 const routes: Routes = [
   {
@@ -41,7 +45,7 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [MatToolbarModule, MatIconModule, MatSidenavModule, MaterialModule, MatMenuModule,
-    DashboardModule, RouterModule.forChild(routes), CommonModule, FlexLayoutModule, DashboardModule,
+    DashboardModule, RouterModule.forChild(routes), CommonModule , FlexLayoutModule, DashboardModule,
     SubhomeModule, ReportsModule, HistoryModule],
   declarations: [HomeComponent],
   providers: [],
