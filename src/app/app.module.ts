@@ -8,7 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 
 import {
   MatGridListModule, MatCardModule, MatSidenavModule
@@ -20,7 +20,6 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
-import { CustomtableComponent } from './home/customtable/customtable.component';
 import { HomeModule } from './home/home.module';
 import { MaterialModule } from 'src/material-module';
 
@@ -28,7 +27,7 @@ import { MaterialModule } from 'src/material-module';
 
 @NgModule({
   declarations: [
-    AppComponent, CustomtableComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -51,12 +50,11 @@ import { MaterialModule } from 'src/material-module';
     AuthModule,
     HomeModule,
     FlexLayoutModule,
-    MaterialModule,
-    NgxDatatableModule
+    MaterialModule
       ],
   providers: [
   ],
   bootstrap: [AppComponent],
-  exports: [MatSidenavModule, CustomtableComponent, NgxDatatableModule]
+  exports: [MatSidenavModule]
 })
 export class AppModule { }

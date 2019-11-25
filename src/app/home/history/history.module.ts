@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { MatTabsModule, MatIconModule, MatCheckboxModule, MatInputModule, MatSelectModule, MatDatepickerModule } from '@angular/material';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { CustomtableModule } from '../customtable/customtable.module';
 
 import { HistoryComponent } from './history.component';
 import { DriverHistoryComponent } from './driverhistory/driverhistory.component';
 import { VehicleHistoryComponent } from './vehiclehistory/vehiclehistory.component';
 import { SubHistoryComponent } from './sub-history/sub-history.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
 
 const routes: Routes = [
   {
@@ -23,7 +24,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [HistoryComponent, DriverHistoryComponent, VehicleHistoryComponent, SubHistoryComponent],
   imports: [
-    CommonModule, MatTabsModule, MatIconModule, RouterModule, NgxDatatableModule, MatCheckboxModule,
+    CommonModule, MatTabsModule, MatIconModule, RouterModule, CustomtableModule, MatCheckboxModule,
     MatSelectModule,MatDatepickerModule,ReactiveFormsModule ,
     MatInputModule, RouterModule.forChild(routes)
   ]

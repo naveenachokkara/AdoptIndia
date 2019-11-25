@@ -9,7 +9,7 @@
   </div>
   <div fxFlex="10" class="searchcontainer">
     <div class="vehicletype" style="display: inline;">
-      <mat-label>Vehicle type</mat-label>
+      <mat-label  class="lblClass" >Vehicle type</mat-label>
       <mat-form-field appearance= "outline">
         <mat-select [(value)]="selected">
           <mat-select-trigger>{{selected}}</mat-select-trigger>
@@ -20,7 +20,7 @@
       </mat-form-field>
     </div>
     <div class="Reporttype">
-      <mat-label>Report type</mat-label>
+      <mat-label class="lblClass">Report type</mat-label>
       <mat-form-field appearance= "outline">
         <mat-select [(value)]="selected">
           <mat-select-trigger>{{selected}}</mat-select-trigger>
@@ -31,24 +31,27 @@
       </mat-form-field>
     </div>
     <div class="datefrom">
-      <mat-label>Date From</mat-label>
-      <mat-form-field>
+      <mat-label class="lblClass">Date From</mat-label>
+      <mat-form-field appearance= "outline">
         <input matInput [matDatepicker]="picker1"  placeholder="From Date" [formControl]="'date'">
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field>
     </div>
     <div class="dateto">
-      <mat-label>Date To</mat-label>
-      <mat-form-field>
+      <mat-label class="lblClass">Date To</mat-label>
+      <mat-form-field appearance= "outline">
         <input matInput [matDatepicker]="picker2"  placeholder="to Date" [formControl]="'date'">
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field>
     </div>
 
-    <div class="reset" style="background-color: green;">
-    </div>
+    <!-- <div class="reset" style="background-color: green;"> -->
+      <button class="reset btnReset">Reset Filter</button>
+    <!-- </div> -->
+    <button class="btn btn-primary reportsBtn">Search
+      </button>
   </div>
   <div fxFlex=70 style="padding-top: 10px;">
     <router-outlet ></router-outlet>
