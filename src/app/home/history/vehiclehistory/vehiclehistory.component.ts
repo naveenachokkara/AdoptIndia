@@ -10,6 +10,7 @@ import { Data } from '../../../../assets/reportsdata';
 export class VehicleHistoryComponent implements OnInit {
   vehicleData = [];
   columns = [];
+  isHistoric = true;
 
   constructor() {
     this.vehicleData = Data;

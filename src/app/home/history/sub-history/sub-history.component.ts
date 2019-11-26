@@ -9,6 +9,7 @@ import { Data } from '../../../../assets/reportsdata';
 export class SubHistoryComponent implements OnInit {
   historyData = [];
   columns = [];
+  isHistoric= true;
   constructor() {
   this.historyData = Data;
   }

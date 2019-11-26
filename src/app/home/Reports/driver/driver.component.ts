@@ -16,6 +16,7 @@ export class DriverComponent implements OnInit, OnDestroy {
  columns = [];
 Data = [];
 total = [];
+isHistoric =false;
  private readonly destroyed$ = new Subject<boolean>();
 
   constructor(private store: Store<SearchState>) {

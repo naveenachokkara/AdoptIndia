@@ -17,6 +17,7 @@ export class VehicleComponent implements OnInit, OnDestroy {
   columns = [];
   Data = [];
   total = [];
+  isHistoric= false;
 
   private readonly destroyed$ = new Subject<boolean>();
 
@@ -57,6 +58,7 @@ export class VehicleComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+
     this.columns = [
       { prop: 'regNumber', name: 'Reg Number' },
       { prop: 'vehicleType', name: 'Vehicle Type' },

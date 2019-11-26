@@ -25,7 +25,8 @@
       <ng-template let-value="value" let-row="row" *ngIf="col.name==='Documents'" ngx-datatable-cell-template>
         <span>
           <button  class="alignBtn btnReport" (click)='onSelectRed(row)'><svg class="reportImg"></svg></button>
-          <button   class="btnReport" (click)='onSelectBlue(value)'><svg class="reportImg"></svg></button>
+          <button *ngIf="!isHistoric"  class="btnReport" (click)='onSelectBlue(value)'><svg class="reportImg"></svg></button>
+          <button *ngIf="isHistoric"  class="btnReport" (click)='onSelectBlue(value)'><svg class="reportImg1"></svg></button>
         </span>
       </ng-template>
     </ngx-datatable-column>

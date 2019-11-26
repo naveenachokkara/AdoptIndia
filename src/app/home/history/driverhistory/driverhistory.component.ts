@@ -7,7 +7,7 @@ import { Data } from '../../../../assets/reportsdata';
   styleUrls: ['./driverhistory.component.css']
 })
 export class DriverHistoryComponent implements OnInit {
-
+  isHistoric = true;
   driverHistory ;
   columns = [];
   constructor() { }
