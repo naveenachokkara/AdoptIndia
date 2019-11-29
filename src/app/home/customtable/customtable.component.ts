@@ -13,6 +13,7 @@ export class CustomtableComponent implements OnInit, AfterViewInit {
 
   @Input() rows = [];
   @Input() columns = [];
+  @Input() limit = '8';
   constructor() {
     //this.setPage({offset: 0, pageSize: 10});
     // this.rows= Data;
@@ -23,7 +24,7 @@ export class CustomtableComponent implements OnInit, AfterViewInit {
   // rows = [];
   cache: any = {};
   private isLoading = false;
-  @Input() isHistoric ;
+  @Input() isHistoric;
   @ViewChild('dataTable') table;
   @ViewChild('buttonTemplate') buttonsTemplate: TemplateRef<any>;
   @ViewChild('checkboxTemplate') checkboxsTemplate: TemplateRef<any>;

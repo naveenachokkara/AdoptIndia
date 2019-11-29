@@ -1,5 +1,5 @@
-<div fxFlex fxLayout="column wrap">
-  <div fxFlex="20" class="tabsmenu">
+<div fxFlex fxLayout="column wrap" fxFlexFill>
+  <div fxFlex="10" class="tabsmenu">
     <div class='tab' *ngFor="let tab of tabs; let isFirst = first; let index = index">
       <button mat-menu-item [routerLink]='tab?.route' [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:
         true}">
@@ -7,7 +7,7 @@
       </button>
     </div>
   </div>
-  <div fxFlex="10" class="searchcontainer">
+  <div fxFlex="20" class="searchcontainer">
     <div class="vehicletype" style="display: inline;">
       <mat-label class="lblClass">Vehicle type</mat-label>
       <mat-form-field appearance="outline">
@@ -46,14 +46,11 @@
         <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field>
     </div>
-
-    <!-- <div class="reset" style="background-color: green;"> -->
     <button class="reset btnReset" (click)="onResetFilter()">Reset Filter</button>
-    <!-- </div> -->
     <button class="btn btn-primary reportsBtn" (click)="onSearch($event)">Search
     </button>
   </div>
-  <div fxFlex=70 style="padding-top: 10px;">
-    <router-outlet></router-outlet>
+  <div fxFlex=70 style="padding-top: 10px; width: 99%; height: 71vh;">
+    <router-outlet style="height: 100%; width: 100%;"></router-outlet>
   </div>
 </div>

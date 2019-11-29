@@ -1,5 +1,5 @@
 <div style='height:100%'>
-  <div fxLayout="column" fxFlex>
+  <div fxLayout="column wrap" fxFlex fxFlexFill>
     <header fxFlex='8'>
       <div class="header-main">
         <div class="logo" fxFlex="7">Logo</div>
@@ -41,7 +41,7 @@
       </div>
     </header>
     <div class="bounds" fxFlex='92'>
-      <div class="content" fxLayout="row" fxFlexFill>
+      <div class="content" fxLayout="row wrap" fxFlex fxFlexFill>
         <div [fxFlex]="sidenavWidth" class="nav">
           <mat-sidenav #entitiesMenu class="items-sidenav" mode='side' [class.open]="navOpen" (mouseover)="navOpen=true"
             (mouseout)="navOpen=false">

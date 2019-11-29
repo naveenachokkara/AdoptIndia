@@ -1,51 +1,72 @@
+::ng-deep .ngx-datatable {
+  height: 100%;
+  width : 100%;
+  margin: 0;
+
+  .visible {
+    height: 100%;
+  }
+
+  .datatable-header {
+    height: 10%;
+    width : 100%;
+  }
+
+  .datatable-body {
+    width : 100%;
+    height: 78%;
+  }
+
+  .datatable-footer {
+    height: 12%;
+    width : 100%;
+  }
+}
+
 :host {
   display: block;
-  width: 100%;
-  height: 100%;
-  .ngx-datatable {
-    height: 75vh;
-    width: 95vw;
-    margin: 0;
-
-
-  }
-  .reportImg{
+  width  : 100%;
+  height : 100%;
+  .reportImg {
     // background-image: url('../../../../assets/export.svg');
-    background-image: url('../../../assets/export.svg');
+    background-image   : url('../../../assets/export.svg');
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 35%;
-    height: 50%;
-    cursor: pointer;
+    background-repeat  : no-repeat;
+    background-size    : contain;
+    width              : 35%;
+    height             : 50%;
+    cursor             : pointer;
   }
 
-  .reportImg1{
+  .reportImg1 {
     // background-image: url('../../../../assets/export.svg');
-    background-image: url('../../../assets/dashboard.svg');
+    background-image   : url('../../../assets/dashboard.svg');
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 35%;
-    height: 50%;
-    cursor: pointer;
+    background-repeat  : no-repeat;
+    background-size    : contain;
+    width              : 35%;
+    height             : 50%;
+    cursor             : pointer;
   }
-  .btnReport{
-    width: 50px;
-    height: 30px;
-    background: none;
-    border: none;
-    outline:none;
+
+  .btnReport {
+    width        : 50px;
+    height       : 30px;
+    background   : none;
+    border       : none;
+    outline      : none;
     border-radius: 5px;
   }
-  .alignBtn
-  {
-    margin-left: -10px;
+
+  .alignBtn {
+    margin-left : -10px;
     margin-right: -15px;
   }
-  .active, .btnReport:hover {
+
+  .active,
+  .btnReport:hover {
     background-color: #666;
-    color: white;
+    color           : white;
   }
 
 
@@ -54,16 +75,17 @@
 
 
 ::ng-deep {
-  .ngx-datatable.material
-{
-  .datatable-footer .datatable-pager li.active a{
-    background-color: #4286F5;
+  .ngx-datatable.material {
+    .datatable-footer .datatable-pager li.active a {
+      background-color: #4286F5;
+    }
+
+    .datatable-footer .datatable-pager a:hover {
+      background-color: #4286F5;
+    }
   }
-  .datatable-footer .datatable-pager a:hover{
-    background-color: #4286F5;
+
+  .datatable-checkbox input[type='checkbox']:checked:before {
+    border-color: #4286F5;
   }
-}
- .datatable-checkbox input[type='checkbox']:checked:before{
-  border-color: #4286F5;
-}
 }
