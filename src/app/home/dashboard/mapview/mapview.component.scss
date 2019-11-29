@@ -257,6 +257,7 @@ img {
   border-top         : 15px solid transparent !important;
   border-image-source: url('../../../../assets/doublearrow.png') !important;
   border-image-repeat: stretch !important;
+  transform: rotate(180deg);
 }
 
 .geoRef {
