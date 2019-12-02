@@ -1,29 +1,29 @@
-.history{
+::ng-deep .history {
   .tabsmenu {
     display       : flex;
     flex-direction: row;
     padding       : 10px;
-  
+
     .tab {
       padding-left: 5px;
-  
+
       button {
         border          : none;
         background-color: #fafafa;
-  
+
         &:focus {
           outline: none;
         }
       }
-  
+
       .active {
         color        : blue;
         border-bottom: solid 1px blue;
       }
     }
   }
-  
-  ::ng-deep .searchcontainer {
+
+  .searchcontainer {
     display        : flex;
     flex-direction : row;
     justify-content: flex-start;
@@ -32,7 +32,7 @@
     border         : #80808038 solid 1px;
     padding        : 5px;
     width          : 99%;
-  
+
     .vehicletype,
     .Reporttype {
       display        : flex;
@@ -41,7 +41,7 @@
       flex-wrap      : wrap;
       align-items    : stretch;
       padding        : 1px;
-  
+
       mat-label {
         height        : 13px;
         position      : relative;
@@ -54,30 +54,38 @@
         letter-spacing: normal;
         color         : #4a4a4a;
       }
-  
+
       mat-form-field {
         height  : 40px;
         width   : 150px;
         position: relative;
-  
+
         .mat-form-field-wrapper {
           height  : 100%;
           position: relative;
           padding : 0px;
-  
+
           .mat-form-field-flex {
             height  : inherit;
             position: relative;
-  
+
             .mat-form-field-infix {
               padding: 0px;
               margin : 0px;
+
+              .mat-select-arrow {
+                border-image-source: url('/assets/downarrow.png') !important;
+                border-image-repeat: stretch !important;
+                border-left        : 15px solid transparent !important;
+                border-right       : none !important;
+                border-top         : 15px solid transparent !important;
+              }
             }
           }
         }
       }
     }
-  
+
     .datefrom,
     .dateto {
       display        : flex;
@@ -86,7 +94,7 @@
       flex-wrap      : wrap;
       align-items    : stretch;
       padding        : 1px;
-  
+
       mat-label {
         height        : 13px;
         position      : relative;
@@ -99,25 +107,25 @@
         letter-spacing: normal;
         color         : #4a4a4a;
       }
-  
+
       mat-form-field {
         height    : 40px;
         width     : 150px;
         margin-top: 4px;
-  
+
         .mat-form-field-wrapper {
           height  : 100%;
           position: relative;
           padding : 0px;
           margin  : 0px;
-  
+
           .mat-form-field-flex {
             .mat-form-field-infix {
               height : 100%;
               padding: 0px;
               margin : 0px;
             }
-  
+
             .mat-form-field-suffix {
               button {
                 right: -17px;
@@ -127,7 +135,7 @@
         }
       }
     }
-  
+
     .btnReset {
       font-size       : 12px;
       font-weight     : bold;
@@ -140,7 +148,7 @@
       border          : none;
       background-color: white;
     }
-  
+
     .reportsBtn {
       font-size       : 16px;
       font-weight     : bold;
@@ -155,7 +163,6 @@
       background-color: #4285f4;
       margin          : 10px 0px 0px 0px;
     }
-  
+
   }
 }
-
