@@ -1,4 +1,4 @@
-<div fxFlex fxLayout="column wrap" fxFlexFill>
+<div fxFlex fxLayout="column wrap" fxFlexFill class="history">
   <div fxFlex="10" class="tabsmenu">
     <div class='tab' *ngFor="let tab of tabs; let isFirst = first; let index = index">
       <button mat-menu-item [routerLink]='tab?.route' [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:
@@ -8,7 +8,7 @@
     </div>
   </div>
   <div fxFlex="20" class="searchcontainer">
-    <div class="vehicletype" style="display: inline;">
+    <div class="vehicletype">
       <mat-label class="lblClass">Vehicle type</mat-label>
       <mat-form-field appearance="outline">
         <mat-select [(value)]="selectedvehicletype">

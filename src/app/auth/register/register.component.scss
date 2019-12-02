@@ -1,0 +1,82 @@
+:host ::ng-deep .logindiv {
+  display        : inline-block;
+  justify-content: center;
+  margin         : 10% 21% 0 21%;
+  height         : 450px;
+
+  .mainheader{
+    font-size: 24px;color:#757575;font-weight: 400;margin-top: 8%;
+  }
+
+  mat-card-title {
+    justify-content: center;
+    font-weight    : 0 !important;
+  }
+
+  .subheader {
+    font-size  : 11px;
+    color      : #A1A1A1;
+    font-weight: 400
+  }
+
+  mat-card-content {
+    justify-content: center;
+    font-weight    : 0 !important;
+
+
+    p {
+      margin-bottom: 0px;
+
+      .mat-form-field {
+        width    : 100%;
+        min-width: 300px;
+
+        .mat-form-field-flex {
+          height: 30px;
+        }
+      }
+    }
+
+    .button {
+      display         : flex;
+      background-color: #548BC8;
+      float           : right;
+      width           : 33%;
+      border-radius   : 3px;
+
+      .loginbtn {
+        padding: 15px;
+        color  : white;
+      }
+    }
+  }
+
+  .mat-radio-outer-circle {
+    height: 15px !important;
+    width : 15px !important;
+  }
+
+}
+
+.footerdiv {
+  margin-top: 6%;
+  display: flex;
+  padding-left: 20%;
+
+  p {
+    margin-bottom: 0px;
+  }
+
+  .footercontent {
+    font-size   : 10px;
+    margin-right: 15px;
+    color       : #757575
+  }
+}
+
+// .error {
+//   padding         : 16px;
+//   width           : 300px;
+//   color           : white;
+//   background-color: red;
+// }

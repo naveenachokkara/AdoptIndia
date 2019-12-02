@@ -1,4 +1,4 @@
-<div fxFlex fxLayout="column wrap">
+<div fxFlex fxLayout="column wrap" class="reportdetails">
   <div fxFlex="20" class="tabsmenu">
     <div class='tab' *ngFor="let tab of tabs; let isFirst = first; let index = index">
       <button mat-menu-item [routerLink]='tab?.route' [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:
