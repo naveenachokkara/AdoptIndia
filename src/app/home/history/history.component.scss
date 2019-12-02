@@ -147,6 +147,10 @@
       margin-top      : 20px;
       border          : none;
       background-color: white;
+
+      &:focus {
+        outline: none;
+      }
     }
 
     .reportsBtn {
