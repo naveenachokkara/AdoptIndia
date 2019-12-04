@@ -50,7 +50,11 @@
     <button class="btn btn-primary reportsBtn" (click)="onSearch($event)">Search
     </button>
   </div>
-  <div fxFlex=70 style="padding-top: 10px; width: 99%; height: 71vh;">
+  <div class="search" fxFlex="10" >
+    <mat-icon>search</mat-icon>
+    <input type="text" placeholder="Search" #searchInput (change)="onSearch($event)">
+  </div>
+  <div fxFlex=60 style="padding-top: 10px; width: 99%; height: 71vh;">
     <router-outlet style="height: 100%; width: 100%;"></router-outlet>
   </div>
 </div>

@@ -169,4 +169,20 @@
     }
 
   }
+  .search {
+    width        : 100%;
+    display      : flex;
+    border       : solid 1px #EAEDF2;
+    border-radius: 5px;
+    margin: 5px 8px;
+
+    input {
+      border: none;
+    }
+
+    mat-icon {
+      font-size  : 19px;
+      padding-top: 8px;
+    }
+  }
 }
