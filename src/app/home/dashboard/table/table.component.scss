@@ -1,9 +1,3 @@
-// .table-wrapper {
-//   flex       : 1 1 auto;
-//   margin-left: 10px;
-//   min-width  : 0;
-// }
-
 button {
   &:focus {
     outline: none;
@@ -24,23 +18,33 @@ button {
 }
 
 
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
+::ng-deep {
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
+  // datatable-body-row {
+  //   border: 1px solid gray;
+  //   margin: 2px;
+  // }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px !important;
+  }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background   : #bdaeae !important;
+    border-radius: 10px !important;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #716565 !important;
+  }
+
+
 }
