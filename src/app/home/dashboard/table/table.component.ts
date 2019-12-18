@@ -11,23 +11,17 @@ export class TableComponent implements OnInit {
   columns = [];
 
   constructor() {
-    const data = require('../../../../assets/vehicledata.json');
-    this.rows = data;
+    this.rows = vehicleData;
   }
 
   ngOnInit() {
     this.columns = [
-      { prop: 'regNumber', name: 'Reg Number' },
-      { prop: 'vehicleType', name: 'Vehicle Type' },
-      { prop: 'VehicleBrand', name: 'Vehicle Brand' },
-      { prop: 'mfgDate', name: 'Mfg Date' },
-      { prop: 'engineNumber', name: 'Engine Number' },
-      { prop: 'insurance', name: 'Insurance' },
-      { prop: 'VendorName', name: 'Vendor Name' },
-      { prop: 'topSpeed', name: 'Top Speed' },
-      { prop: 'location', name: 'Location' },
-      { prop: 'documents', name: 'Documents' }
+      { prop: 'name', name: 'Name' },
+      { prop: 'gender', name: 'Gender' },
+      { prop: 'company', name: 'Company' },
+      { prop: 'age', name: 'Age' }
     ];
+    this.rows = vehicleData;
   }
 
 }
