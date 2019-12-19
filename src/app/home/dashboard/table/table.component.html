@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div fxFlex="80" style="width: 100%;">
+  <div fxFlex="80" class="table-container">
     <ngx-datatable class="material table" [rows]="rows"
       [columnMode]="'force'" [limit]="10" [scrollbarV]="true">
       <ngx-datatable-column *ngFor="let col of columns" [name]="col.name">
