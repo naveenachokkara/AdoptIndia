@@ -1,7 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatInput, MatDatepicker } from '@angular/material';
 import { Moment } from 'moment';
+import { Store } from '@ngrx/store';
+import { SearchState } from '../Reports/store/reports.reducer';
+import { Search } from '../Reports/store/reports.action';
+import { NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-history',
@@ -21,8 +25,16 @@ export class HistoryComponent implements OnInit {
   @ViewChild('todate', {
     read: MatInput
   }) todate: MatInput;
+  @ViewChild('searchInput') searchInput: ElementRef;
 
-  constructor() { }
+  constructor(private store: Store<SearchState>, private router: Router) {
+    router.events.forEach((event) => {
+      if (event instanceof NavigationStart) {
+        this.searchInput.nativeElement.value = '';
+        this.store.dispatch(new Search(''));
+      }
+    });
+   }
 
   ngOnInit() {
     this.date = new FormControl(new Date());
@@ -36,8 +48,9 @@ export class HistoryComponent implements OnInit {
     this.selectedvehicletype = null;
   }
 
-  onSearch(){
-    
+  onSearch(event: any) {
+    const val = (event && event.target && event.target.value) ? event.target.value.toLowerCase() : '';
+    this.store.dispatch(new Search(val));
   }
 
 }

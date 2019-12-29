@@ -9,6 +9,8 @@ import { DriverHistoryComponent } from './driverhistory/driverhistory.component'
 import { VehicleHistoryComponent } from './vehiclehistory/vehiclehistory.component';
 import { SubHistoryComponent } from './sub-history/sub-history.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { HistoryReducer } from './store/history.reducer';
 
 
 const routes: Routes = [
@@ -26,7 +28,9 @@ const routes: Routes = [
   imports: [
     CommonModule, MatTabsModule, MatIconModule, RouterModule, CustomtableModule, MatCheckboxModule,
     MatSelectModule,MatDatepickerModule,ReactiveFormsModule ,
-    MatInputModule, RouterModule.forChild(routes)
+    MatInputModule, 
+    StoreModule.forFeature('historyReports', HistoryReducer), 
+    RouterModule.forChild(routes)
   ]
 })
 export class HistoryModule { }

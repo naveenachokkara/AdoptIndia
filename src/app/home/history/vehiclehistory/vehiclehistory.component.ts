@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Data } from '../../../../assets/reportsdata';
+import { Store } from '@ngrx/store';
+import { SearchState } from '../../Reports/store/reports.reducer';
+import { searchdata } from '../../Reports/store/reports.selector';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-vehicle',
@@ -11,9 +16,18 @@ export class VehicleHistoryComponent implements OnInit {
   vehicleData = [];
   columns = [];
   isHistoric = true;
-
-  constructor() {
+  private readonly destroyed$ = new Subject<boolean>();
+  constructor(private store: Store<SearchState>) {
     this.vehicleData = Data;
+    this.store.select(searchdata).pipe(takeUntil(this.destroyed$)).subscribe(data => {
+      // this.historyData = this.total;
+      this.vehicleData = this.vehicleData && this.vehicleData.filter(row => {
+        return (JSON.stringify(row).toLowerCase().indexOf(data) > -1);
+      });
+      if (this.vehicleData.length === 0) {
+        // this.vehicleData = this.Data;
+      }
+    });
    }
 
   ngOnInit() {
