@@ -4,3 +4,7 @@
 html, body { height: 100%; }
 
 body { margin: 0;overflow: hidden; font-family:  Helvetica}
+
+button:focus{
+    outline: none;
+}

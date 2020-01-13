@@ -17,6 +17,8 @@ export class HistoryComponent implements OnInit {
   date = null;
   selectedreporttype = null;
   selectedvehicletype = null;
+  vehicles =['car','bus'];
+  reportType= ['Four Wheeler','Two wheeler'];
 
   @ViewChild('fromdate', {
     read: MatInput
@@ -51,6 +53,10 @@ export class HistoryComponent implements OnInit {
   onSearch(event: any) {
     const val = (event && event.target && event.target.value) ? event.target.value.toLowerCase() : '';
     this.store.dispatch(new Search(val));
+  }
+
+  onChange(event: any){
+
   }
 
 }
